@@ -11,7 +11,7 @@ Template Name: Homepage
 						  <div class="orbit-wrapper">
 							<ul class="centered orbit-container homepage-orbit-container">
 								<?php if( have_rows('rbanner') ): ?>
-								<?php while( have_rows('rbanner') ): the_row(); 
+								<?php while( have_rows('rbanner') ): the_row();
 								// vars
 								$rbanner_header = get_sub_field('rbanner_header', false, false);
 								$rbanner_subheader = get_sub_field('rbanner_subheader');
@@ -63,14 +63,14 @@ Template Name: Homepage
 							</nav>
 			</div>
 		</div>
-			
+
 		<!-- WHAT WE DO -->
 			<?php if( get_field('background_pattern') != "" ): ?>
-			<div class="image-bg" style="background: url('<?php echo get_field('background_pattern'); ?>');"> 
+			<div class="image-bg" style="background: url('<?php echo get_field('background_pattern'); ?>');">
 			<?php else: ?>
-			<div class="grey-background"> 
+			<div class="grey-background">
 			<?php endif; ?>
-			
+
 			<?php if( get_field('section_header') != "" ): ?>
 			<div class="row">
 				<div class="large-8 medium-10 large-centered medium-centered columns">
@@ -79,10 +79,10 @@ Template Name: Homepage
 				</div>
 			</div>
 			<?php endif; ?>
-			                  
+
 				<div class="row">
 					<?php if( have_rows('homepage_modules') ): ?>
-					<?php while( have_rows('homepage_modules') ): the_row(); 
+					<?php while( have_rows('homepage_modules') ): the_row();
 					// vars
 					$icon = get_sub_field('icon');
 					$header = get_sub_field('module_title');
@@ -112,15 +112,15 @@ Template Name: Homepage
 							<div class="orange-strip">
 							</div>
 						</div>
-					<?php endif; ?>	
+					<?php endif; ?>
 					<?php endwhile; ?>
 					<?php endif; ?>
-				</div>			
+				</div>
 			</div>
-		
-		
+
+
 		<!-- KIT BANNER -->
-		<div class="image-bg" style="background: url('<?php echo get_field('kit_background_pattern'); ?>');"> 
+		<div class="image-bg" style="background: url('<?php echo get_field('kit_background_pattern'); ?>');">
 		<div class="kit-banner">
 			<div class="row">
 				<div class="medium-12 columns">
@@ -142,7 +142,7 @@ Template Name: Homepage
 			</div>
 		</div>
 		</div>
-		
+
 		<!-- TESTIMONIAL QUOTE -->
 			<div class="row">
 				<div class="large-10 medium-12 large-centered medium-centered columns">
@@ -152,13 +152,13 @@ Template Name: Homepage
 					</div>
 				</div>
 			</div>
-			
+
 		<!-- COMMITTED TO SUCCESS -->
-			<div class="image-bg" style="background: url('<?php echo get_field('background_image'); ?>');">       
+			<div class="image-bg" style="background: url('<?php echo get_field('background_image'); ?>');">
 				<div class="row">
 					<div class="large-8 medium-10 large-centered medium-centered columns">
 						<div class="lower-center-icon">
-						<?php 
+						<?php
 
 						$icon = get_field('icon');
 						if( !empty($icon) ): ?>
@@ -167,10 +167,10 @@ Template Name: Homepage
 						</div>
 						<p class="section-header-icon"><?php echo get_field('section_header_3'); ?></p>
 					</div>
-					
+
 					<div class="medium-12 large-centered medium-centered columns">
 						<?php if( have_rows('content_paragraph') ): ?>
-						<?php while( have_rows('content_paragraph') ): the_row(); 
+						<?php while( have_rows('content_paragraph') ): the_row();
 						// vars
 						$cont_head = get_sub_field('content_paragraph_header');
 						$cont_text = get_sub_field('content_paragraph_text');
@@ -185,16 +185,16 @@ Template Name: Homepage
 						<?php endif; ?>
 					</div>
 				</div>
-			
+
 		<!-- CTA -->
 			<div class="cta-fullwidth-banner">
 				<div class="row">
 					<div class="large-10 medium-12 large-centered medium-centered columns">
 						<p class="cta-header"><?php echo get_field('cta_caption'); ?></p>
 					<div class="button-div">
-					
+
 						<?php if( have_rows('cta') ): ?>
-						<?php while( have_rows('cta') ): the_row(); 
+						<?php while( have_rows('cta') ): the_row();
 						// vars
 						$ctabl = get_sub_field('cta_button_text');
 						$link = get_sub_field('link');
@@ -211,11 +211,11 @@ Template Name: Homepage
 
 						<?php endwhile; ?>
 						<?php endif; ?>
-						
+
 					</div>
 					</div>
 				</div>
 			</div>
-			
+
 
 <?php get_footer(); ?>

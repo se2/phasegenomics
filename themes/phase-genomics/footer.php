@@ -1,20 +1,17 @@
-				<footer class="footer" role="contentinfo">
-					<div id="inner-footer" class="row">
-
-						<div class="large-2 large-offset-2 medium-4 columns" style="padding: 0 .75rem;">
+			</div>  <!-- end .main-content -->
+			<footer class="footer" role="contentinfo">
+				<div class="container">
+					<div id="inner-footer" class="grid-x">
+						<div class="large-2 medium-4 cell">
 							<?php
 								$image = get_field('header_logo', 'option');
-
-								if( !empty($image) ): ?>
+								if ( !empty( $image ) ): ?>
 								<div class="mobile-logo-center">
 									<a class="mobile-logo-cell" href="<?php echo home_url(); ?>"><img class="header-logo" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
 								</div>
-
 							<?php endif; ?>
-						
 						</div>
-						
-						<div class="large-7 large-offset-1 medium-8 columns">
+						<div class="large-9 large-offset-1 medium-8 cell">
 							<nav role="navigation">
 								<?php joints_footer_links(); ?>
 							</nav>
@@ -23,8 +20,8 @@
 							</div>
 						</div>
 					</div> <!-- end #inner-footer -->
-				</footer> <!-- end .footer -->
-			</div>  <!-- end .main-content -->
+				</div>
+			</footer> <!-- end .footer -->
 		</div> <!-- end .off-canvas-wrapper -->
 		<?php wp_footer(); ?>
 	</body>

@@ -7,7 +7,7 @@ require_once(UPDRAFTPLUS_DIR.'/methods/s3.php');
 class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 {
 
 	private $vault_mothership = 'https://vault.updraftplus.com/plugin-info/';
-
+	
 	private $vault_config;
 
 	/**
@@ -44,7 +44,7 @@ class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 
 	 */
 	public function get_supported_features() {
 		// This options format is handled via only accessing options via $this->get_options()
-		return array('multi_options');
+		return array('multi_options', 'config_templates');
 	}
 	
 	/**
@@ -131,10 +131,9 @@ class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 
 
 		// Use SSL to prevent snooping
 		if (empty($getconfig) || !is_array($getconfig) || empty($getconfig['accesskey'])) {
-			$getconfig = wp_remote_post($this->vault_mothership.'/?udm_action=vault_getconfig', array(
-				'timeout' => 25,
-				'body' => $post_body,
-			));
+			$config_array = apply_filters('updraftplus_vault_config_add_headers', array('timeout' => 25, 'body' => $post_body));
+			
+			$getconfig = wp_remote_post($this->vault_mothership.'/?udm_action=vault_getconfig', $config_array);
 		}
 		
 		$details_retrieved = false;
@@ -144,7 +143,6 @@ class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 
 		
 			if ($response_code >= 200 && $response_code < 300) {
 				$response = json_decode(wp_remote_retrieve_body($getconfig), true);
-
 				if (is_array($response) && isset($response['user_messages']) && is_array($response['user_messages'])) {
 					foreach ($response['user_messages'] as $message) {
 						if (!is_array($message)) continue;
@@ -174,6 +172,7 @@ class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 
 					$config['accesskey'] = $response['accesskey'];
 					$config['secretkey'] = $response['secretkey'];
 					$config['path'] = $response['path'];
+					$config['sessiontoken'] = (isset($response['sessiontoken']) ? $response['sessiontoken'] : '');
 				} elseif (is_array($response) && isset($response['result']) && ('token_unknown' == $response['result'] || 'site_duplicated' == $response['result'])) {
 					$updraftplus->log("This site appears to not be connected to UpdraftPlus Vault (".$response['result'].")");
 					$config['error'] = array('message' => 'site_not_connected', 'values' => array($response['result']));
@@ -181,6 +180,7 @@ class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 
 					$config['accesskey'] = '';
 					$config['secretkey'] = '';
 					$config['path'] = '';
+					$config['sessiontoken'] = '';
 					unset($config['quota']);
 					if (!empty($response['message'])) $config['error_message'] = $response['message'];
 					$details_retrieved = true;
@@ -235,6 +235,15 @@ class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 
 		return $config;
 	}
 
+	/**
+	 * Whether to always use server-side encryption - which, with Vault, we do (and our marketing says so).
+	 *
+	 * @return Boolean
+	 */
+	protected function use_sse() {
+		return true;
+	}
+	
 	public function vault_translate_remote_message($message, $code) {
 		switch ($code) {
 			case 'premium_overdue':
@@ -264,7 +273,21 @@ class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 
 		return false;
 	}
 
-	public function config_print() {
+	/**
+	 * Get the pre configuration template
+	 *
+	 * @return Void - currently does not have a pre config template, this method is needed to stop it taking it's parents
+	 */
+	public function get_pre_configuration_template() {
+
+	}
+
+	/**
+	 * Get the configuration template
+	 *
+	 * @return String - the template, ready for substitutions to be carried out
+	 */
+	public function get_configuration_template() {
 		// Used to decide whether we can afford HTTP calls or not, or would prefer to rely on cached data
 		$this->vault_in_config_print = true;
 
@@ -272,101 +295,140 @@ class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 
 		$get_more_quota = $this->get_url('get_more_quota');
 
 		$vault_settings = $this->get_options();
-		$connected = (is_array($vault_settings) && !empty($vault_settings['token']) && !empty($vault_settings['email'])) ? true : false;
+		$connected = (!empty($vault_settings['token']) && !empty($vault_settings['email'])) ? true : false;
 		$classes = $this->get_css_classes();
-		?>
-
-		<tr class="<?php echo $classes; ?>">
-			<th><img id="vaultlogo" src="<?php echo esc_attr(UPDRAFTPLUS_URL.'/images/updraftvault-150.png');?>" alt="UpdraftPlus Vault" width="150" height="116"></th>
-			<td valign="top" id="updraftvault_settings_cell">
-			<?php
-				global $updraftplus_admin;
-				if (!class_exists('SimpleXMLElement')) {
-					
-					$updraftplus_admin->show_double_warning('<strong>'.__('Warning', 'updraftplus').':</strong> '.sprintf(__("Your web server's PHP installation does not included a <strong>required</strong> (for %s) module (%s). Please contact your web hosting provider's support and ask for them to enable it.", 'updraftplus'), 'UpdraftPlus Vault', 'SimpleXMLElement'), 'updraftvault');
-				}
-
-				$updraftplus_admin->curl_check('UpdraftPlus Vault', false, 'updraftvault', true);
-			?>
-			
-				<div id="updraftvault_settings_default"<?php if ($connected) echo ' style="display:none;" class="updraft-hidden"';?>>
-					<p>
-						<?php echo __('UpdraftPlus Vault brings you storage that is <strong>reliable, easy to use and a great price</strong>.', 'updraftplus').' '.__('Press a button to get started.', 'updraftplus');?>
-					</p>
-					<div class="vault_primary_option clear-left">
-						<div><strong><?php _e('First time user?', 'updraftplus');?></strong></div>
-						<button id="updraftvault_showoptions" class="button-primary"><?php _e('Show the options', 'updraftplus');?></button>
+		$template_str = '
+			<tr class="'.$classes.'">
+				<th><img id="vaultlogo" src="'.esc_attr(UPDRAFTPLUS_URL.'/images/updraftvault-150.png').'" alt="UpdraftPlus Vault" width="150" height="116"></th>
+				<td valign="top" id="updraftvault_settings_cell">';
+					global $updraftplus_admin;
+					if (!class_exists('SimpleXMLElement')) {
+						$template_str .= $updraftplus_admin->show_double_warning('<strong>'.__('Warning', 'updraftplus').':</strong> '.sprintf(__("Your web server's PHP installation does not included a <strong>required</strong> (for %s) module (%s). Please contact your web hosting provider's support and ask for them to enable it.", 'updraftplus'), 'UpdraftPlus Vault', 'SimpleXMLElement'), 'updraftvault', false);
+					}
+					$template_str .= $updraftplus_admin->curl_check('UpdraftPlus Vault', false, 'updraftvault', false).'
+					<div id="updraftvault_settings_default"{{#if is_connected}} style="display:none;" class="updraft-hidden"{{/if}}>
+						<p>
+							'.__('UpdraftPlus Vault brings you storage that is <strong>reliable, easy to use and a great price</strong>.', 'updraftplus').' '.__('Press a button to get started.', 'updraftplus').'
+						</p>
+						<div class="vault_primary_option clear-left">
+							<div><strong>'.__('First time user?', 'updraftplus').'</strong></div>
+							<button id="updraftvault_showoptions" class="button-primary">'.__('Show the options', 'updraftplus').'</button>
+						</div>
+						<div class="vault_primary_option">
+							<div><strong>'.__('Already purchased space?', 'updraftplus').'</strong></div>
+							<button id="updraftvault_connect" class="button-primary">'.__('Connect', 'updraftplus').'</button>
+						</div>
+						<p>
+							<em>'.__("UpdraftPlus Vault is built on top of Amazon's world-leading data-centres, with redundant data storage to achieve 99.999999999% reliability.", 'updraftplus').'<a target="_blank" href="'.esc_attr($this->get_url('more_vault_info_landing')).'">'.__('Read more about it here.', 'updraftplus').'</a> <a target="_blank" href="'.esc_attr($this->get_url('more_vault_info_faqs')).'">'.__('Read the FAQs here.', 'updraftplus').'</a></em>
+						</p>
 					</div>
-					<div class="vault_primary_option">
-						<div><strong><?php _e('Already purchased space?', 'updraftplus');?></strong></div>
-						<button id="updraftvault_connect" class="button-primary"><?php _e('Connect', 'updraftplus');?></button>
-					</div>
-					<p>
-						<em><?php _e("UpdraftPlus Vault is built on top of Amazon's world-leading data-centres, with redundant data storage to achieve 99.999999999% reliability.", 'updraftplus');?> <a target="_blank" href="<?php esc_attr_e($this->get_url('more_vault_info_landing')); ?>"><?php _e('Read more about it here.', 'updraftplus');?></a> <a target="_blank" href="<?php echo esc_attr($this->get_url('more_vault_info_faqs')); ?>"><?php _e('Read the FAQs here.', 'updraftplus');?></a></em>
-					</p>
-				</div>
-
+				
 				<div id="updraftvault_settings_showoptions" style="display:none;" class="updraft-hidden">
 					<p>
-						<?php echo __('UpdraftPlus Vault brings you storage that is <strong>reliable, easy to use and a great price</strong>.', 'updraftplus').' '.__('Press a button to get started.', 'updraftplus');?>
-					</p>
+						'. __('UpdraftPlus Vault brings you storage that is <strong>reliable, easy to use and a great price</strong>.', 'updraftplus').' '.__('Press a button to get started.', 'updraftplus').'</p>
 					<div class="vault-purchase-option">
 						<div class="vault-purchase-option-size">5 GB</div>
-						<div class="vault-purchase-option-link"><a target="_blank" href="<?php echo apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-5gb-quarterly");?>"><?php printf(__('%s per quarter', 'updraftplus'), '$10'); ?></a></div>
-						<div class="vault-purchase-option-or"><?php _e('or (annual discount)', 'updraftplus');?></div>
-						<div class="vault-purchase-option-link"><a target="_blank" href="<?php echo apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-5gb-annual");?>"><?php printf(__('%s per year', 'updraftplus'), '$35'); ?></a></div>
+						<div class="vault-purchase-option-link"><a target="_blank" href="'.apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-5gb-quarterly").'">'.sprintf(__('%s per quarter', 'updraftplus'), '$10').'</a></div>
+						<div class="vault-purchase-option-or">'.__('or (annual discount)', 'updraftplus').'</div>
+						<div class="vault-purchase-option-link"><a target="_blank" href="'.apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-5gb-annual").'">'.sprintf(__('%s per year', 'updraftplus'), '$35').'</a></div>
 					</div>
 					<div class="vault-purchase-option">
 						<div class="vault-purchase-option-size">15 GB</div>
-						<div class="vault-purchase-option-link"><a target="_blank" href="<?php echo apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-15gb-quarterly");?>"><?php printf(__('%s per quarter', 'updraftplus'), '$20'); ?></a></div>
-						<div class="vault-purchase-option-or"><?php _e('or (annual discount)', 'updraftplus');?></div>
-						<div class="vault-purchase-option-link"><a target="_blank" href="<?php echo apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-15gb-annual");?>"><?php printf(__('%s per year', 'updraftplus'), '$70');?></a></div>
+						<div class="vault-purchase-option-link"><a target="_blank" href="'.apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-15gb-quarterly").'">'.sprintf(__('%s per quarter', 'updraftplus'), '$20').'</a></div>
+						<div class="vault-purchase-option-or">'.__('or (annual discount)', 'updraftplus').'</div>
+						<div class="vault-purchase-option-link"><a target="_blank" href="'.apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-15gb-annual").'">'.sprintf(__('%s per year', 'updraftplus'), '$70').'</a></div>
 					</div>
 					<div class="vault-purchase-option">
 						<div class="vault-purchase-option-size">50 GB</div>
-						<div class="vault-purchase-option-link"><a target="_blank" href="<?php echo apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-50gb-quarterly");?>"><?php printf(__('%s per quarter', 'updraftplus'), '$50'); ?></a></div>
-						<div class="vault-purchase-option-or"><?php _e('or (annual discount)', 'updraftplus');?></div>
-						<div class="vault-purchase-option-link"><a target="_blank" href="<?php echo apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-50gb-annual");?>"><?php printf(__('%s per year', 'updraftplus'), '$175');?></a></div>
+						<div class="vault-purchase-option-link"><a target="_blank" href="'.apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-50gb-quarterly").'">'.sprintf(__('%s per quarter', 'updraftplus'), '$50').'</a></div>
+						<div class="vault-purchase-option-or">'.__('or (annual discount)', 'updraftplus').'</div>
+						<div class="vault-purchase-option-link"><a target="_blank" href="'.apply_filters("updraftplus_com_link", "https://updraftplus.com/vault-50gb-annual").'">'.sprintf(__('%s per year', 'updraftplus'), '$175').'</a></div>
 					</div>
 					<p class="clear-left padding-top-20px">
-						<?php echo __('Payments can be made in US dollars, euros or GB pounds sterling, via card or PayPal.', 'updraftplus').' '. __('Subscriptions can be cancelled at any time.', 'updraftplus');?>
+						'.__('Payments can be made in US dollars, euros or GB pounds sterling, via card or PayPal.', 'updraftplus').' '. __('Subscriptions can be cancelled at any time.', 'updraftplus').'
 					</p>
 					<p class="clear-left padding-top-20px">
-						<em><?php _e("UpdraftPlus Vault is built on top of Amazon's world-leading data-centres, with redundant data storage to achieve 99.999999999% reliability.", 'updraftplus');?> <a target="_blank" href="<?php echo esc_attr($this->get_url('more_vault_info_landing')); ?>"><?php _e('Read more about it here.', 'updraftplus');?></a> <a target="_blank" href="<?php echo esc_attr($this->get_url('more_vault_info_faqs')); ?>"><?php _e('Read the FAQs here.', 'updraftplus');?></a></em>
+						<em>'.__("UpdraftPlus Vault is built on top of Amazon's world-leading data-centres, with redundant data storage to achieve 99.999999999% reliability.", 'updraftplus').' <a target="_blank" href="'.esc_attr($this->get_url('more_vault_info_landing')).'">'.__('Read more about it here.', 'updraftplus').'</a> <a target="_blank" href="'.esc_attr($this->get_url('more_vault_info_faqs')).'">'.__('Read the FAQs here.', 'updraftplus').'</a></em>
 					</p>
 					<p>
-						<a href="#" class="updraftvault_backtostart"><?php _e('Back...', 'updraftplus');?></a>
+						<a href="#" class="updraftvault_backtostart">'.__('Back...', 'updraftplus').'</a>
 					</p>
 				</div>
-
-				<div id="updraftvault_settings_connect" style="display:none;" class="updraft-hidden">
-					<p><?php _e('Enter your UpdraftPlus.Com email / password here to connect:', 'updraftplus');?></p>
+				<div id="updraftvault_settings_connect" data-instance_id="{{instance_id}}" style="display:none;" class="updraft-hidden">
+					<p>'.__('Enter your UpdraftPlus.Com email / password here to connect:', 'updraftplus').'</p>
 					<p>
-						<input id="updraftvault_email" class="udignorechange" type="text" placeholder="<?php esc_attr_e('E-mail', 'updraftplus');?>">
-						<input id="updraftvault_pass" class="udignorechange" type="password" placeholder="<?php esc_attr_e('Password', 'updraftplus');?>">
-						<button id="updraftvault_connect_go" class="button-primary"><?php _e('Connect', 'updraftplus');?></button>
+						<input id="updraftvault_email" class="udignorechange" type="text" placeholder="'.esc_attr__('E-mail', 'updraftplus').'">
+						<input id="updraftvault_pass" class="udignorechange" type="password" placeholder="'.esc_attr__('Password', 'updraftplus').'">
+						<button id="updraftvault_connect_go" class="button-primary">'.__('Connect', 'updraftplus').'</button>
 					</p>
 					<p class="padding-top-14px">
-						<em><?php echo __("Don't know your email address, or forgotten your password?", 'updraftplus').' <a href="'.esc_attr($this->get_url('vault_forgotten_credentials_links')).'">'.__('Go here for help', 'updraftplus').'</a>';?></em>
+						<em>'.__("Don't know your email address, or forgotten your password?", 'updraftplus').' <a href="'.esc_attr($this->get_url('vault_forgotten_credentials_links')).'">'.__('Go here for help', 'updraftplus').'</a></em>
 					</p>
 					<p class="padding-top-14px">
-						<em><a href="#" class="updraftvault_backtostart"><?php _e('Back...', 'updraftplus');?></a></em>
+						<em><a href="#" class="updraftvault_backtostart">'.__('Back...', 'updraftplus').'</a></em>
 					</p>
-
 				</div>
-
-				<div id="updraftvault_settings_connected"<?php if (!$connected) echo ' style="display:none;" class="updraft-hidden"';?>>
-					<?php echo $this->connected_html($vault_settings); ?>
+				<div id="updraftvault_settings_connected"{{#unless is_connected}} style="display:none;" class="updraft-hidden"{{/unless}}>
+					'.$this->get_connected_configuration_template().'
 				</div>
-
 			</td>
-		</tr>
-
-		<?php
+		</tr>';
 		$this->vault_in_config_print = false;
-
+		return $template_str;
 	}
 
+	/**
+	 * Get the partial configuration template for connected html
+	 *
+	 * @return String - the partial template, ready for substitutions to be carried out
+	 */
+	public function get_connected_configuration_template() {
+		$ret = '{{#if is_connected}}
+					<p id="vault-is-connected">';
+			$ret .= __('This site is <strong>connected</strong> to UpdraftPlus Vault.', 'updraftplus').' '.__("Well done - there's nothing more needed to set up.", 'updraftplus').'</p><p><strong>'.__('Vault owner', 'updraftplus').':</strong> {{email}}';
+			$ret .= '<br><strong>'.__('Quota:', 'updraftplus').'</strong> ';
+			$ret .= '{{{quota_text}}}';
+			$ret .= '</p>';
+			$ret .= '<p><button id="updraftvault_disconnect" class="button-primary">'.__('Disconnect', 'updraftplus').'</button></p>';
+		$ret .= '{{else}}
+					<p>'.__('You are <strong>not connected</strong> to UpdraftPlus Vault.', 'updraftplus').'</p>	
+				{{/if}}';
+		return $ret;
+	}
+	
+	/**
+	 * Modifies handerbar template options
+	 *
+	 * @param array $opts
+	 * @return array - Modified handerbar template options
+	 */
+	public function transform_options_for_template($opts) {
+		if (!empty($opts['token']) || !empty($opts['email'])) {
+			$opts['is_connected'] = true;
+		}
+		if (!isset($opts['quota']) || !is_numeric($opts['quota']) || $opts['quota'] < 0) {
+			$opts['quota_text'] = __('Unknown', 'updraftplus');
+		} else {
+			$opts['quota_text'] = $this->s3_get_quota_info('text', $opts['quota']);
+		}
+		return $opts;
+	}
+	
+	/**
+	 * Gives settings keys which values should not passed to handlebarsjs context.
+	 * The settings stored in UD in the database sometimes also include internal information that it would be best not to send to the front-end (so that it can't be stolen by a man-in-the-middle attacker)
+	 *
+	 * @return array - Settings array keys which should be filtered
+	 */
+	public function filter_frontend_settings_keys() {
+		return array(
+			'last_config',
+			'quota',
+			'quota_root',
+			'token',
+		);
+	}
+	
 	private function connected_html($vault_settings = false) {
 		if (!is_array($vault_settings)) {
 			$vault_settings = $this->get_options();
@@ -425,7 +487,7 @@ class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 
 	}
 	
 	/**
-	 * THis function will return the S3 quota Information
+	 * This function will return the S3 quota Information
 	 *
 	 * @param  string|integer $format n numeric, returns an integer or false for an error (never returns an error)
 	 * @param  integer        $quota  S3 quota information
@@ -595,18 +657,18 @@ class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 
 
 		global $updraftplus;
 
-		// Use SSL to prevent snooping
-		$result = wp_remote_post($this->vault_mothership.'/?udm_action=vault_connect',
-			array(
-				'timeout' => 20,
-				'body' => array(
-					'e' => $email,
-					'p' => base64_encode($password),
-					'sid' => $updraftplus->siteid(),
-					'su' => base64_encode(home_url())
-				)
+		$remote_post_array = apply_filters('updraftplus_vault_config_add_headers', array(
+			'timeout' => 20,
+			'body' => array(
+				'e' => $email,
+				'p' => base64_encode($password),
+				'sid' => $updraftplus->siteid(),
+				'su' => base64_encode(home_url())
 			)
-		);
+		));
+		
+		// Use SSL to prevent snooping
+		$result = wp_remote_post($this->vault_mothership.'/?udm_action=vault_connect', $remote_post_array);
 
 		if (is_wp_error($result) || false === $result) return $result;
 

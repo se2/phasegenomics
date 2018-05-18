@@ -13,7 +13,7 @@ $link_scan			= "{$package->StoreURL}{$package->NameHash}_scan.json";
 
 $debug_on	     = DUP_Settings::Get('package_debug');
 $mysqldump_on	 = DUP_Settings::Get('package_mysqldump') && DUP_DB::getMySqlDumpPath();
-$mysqlcompat_on  = isset($Package->Database->Compatible) && strlen($Package->Database->Compatible);
+$mysqlcompat_on  = isset($package->Database->Compatible) && strlen($package->Database->Compatible);
 $mysqlcompat_on  = ($mysqldump_on && $mysqlcompat_on) ? true : false;
 $dbbuild_mode    = ($mysqldump_on) ? 'mysqldump' : 'PHP';
 ?>
@@ -48,7 +48,7 @@ $dbbuild_mode    = ($mysqldump_on) ? 'mysqldump' : 'PHP';
 </style>
 
 <?php if ($package_id == 0) :?>
-	<div class="error below-h2"><p><?php _e('Invlaid Package ID request.  Please try again!', 'duplicator'); ?></p></div>
+	<div class="notice notice-error is-dismissible"><p><?php _e('Invlaid Package ID request.  Please try again!', 'duplicator'); ?></p></div>
 <?php endif; ?>
 	
 <div class="toggle-box">

@@ -1,0 +1,19 @@
+/* Settings for Foundation */
+@import "settings";
+@import "vendor/foundation-sites/scss/foundation";
+
+/* Modules */
+@import "global";
+@import "content";
+@import "header";
+@import "footer";
+
+/* Templates */
+@import "page/home";
+@import "page/technology";
+@import "page/about";
+@import "page/contact";
+@import "page/services";
+
+/* Responsive */
+@import "responsive";

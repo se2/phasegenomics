@@ -1,0 +1,89 @@
+.fullwidth-center {
+  display: block;
+  width: auto;
+  margin: 0 auto;
+  max-height: 18rem;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.large-text {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #466880;
+  text-align: left;
+  padding: .5rem 0 .5rem !important;
+}
+
+.spacing-enabled {
+  margin-top: 1.25rem;
+}
+
+@media only screen and (max-width: 782px) {
+  .spacing-enabled {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 39.9375em) {
+  .spacing-enabled {
+    margin-top: 0rem;
+  }
+}
+
+.fullw-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.lg-portrait-wrap {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.sm-portrait-wrap {
+  max-width: 190.4px;
+  margin: 0 auto;
+}
+
+.lg-portrait {
+  width: 300px;
+}
+
+.sm-portrait {
+  margin-top: 1rem;
+  width: 190.4px;
+}
+
+.no-top-pad {
+  padding-top: 0rem !important;
+}
+
+.nivo-lightbox-wrap {
+  top: 3%;
+}
+
+.nivo-lightbox-inline {
+  padding: 0;
+}
+
+.reveal-overlay {
+  background-color: rgba(38, 76, 114, 0.71);
+}
+
+.close-button {
+  color: #000000;
+  cursor: pointer;
+  position: absolute;
+}
+
+.centered-thumb {
+  margin: 0.5rem auto;
+  width: 295px;
+}
+
+.centered-thumb-im {
+  border: solid 1px #badaf0;
+  display: block;
+  margin: 0 auto;
+}

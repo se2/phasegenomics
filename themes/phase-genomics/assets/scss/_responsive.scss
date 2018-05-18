@@ -1,0 +1,156 @@
+@media only screen and (max-width: 63.9375em),
+only screen and (max-device-width: 63.9375em) {
+  .header-logo {
+    max-width: 180px;
+    height: auto;
+    margin-left: .65rem;
+  }
+  .repeater-div {
+    height: auto;
+    margin: 1.5rem 0.25rem;
+    min-height: 200px;
+  }
+  .grey-box {
+    padding: 1.5rem 0;
+    margin: 2.75rem 0 4rem;
+    min-height: 365px;
+  }
+  /********** technology ************/
+  .close-button {
+    font-size: 3em;
+    line-height: 1;
+    right: 1rem;
+    top: 0.5rem;
+    &.medium {
+      font-size: 3em;
+      line-height: 1;
+      right: 1rem;
+      top: 0.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 51em),
+only screen and (max-device-width: 51em) {
+  .repeater-div {
+    min-height: 259px;
+  }
+}
+
+@media only screen and (max-width: 39.9375em) {
+  /** Mobile Nav **/
+  .top-bar {
+    .top-bar-left {
+      width: 50%;
+    }
+    .top-bar-right {
+      width: 35%;
+    }
+  }
+  .menu>li>a {
+    padding: 1.25rem 0.65rem 1rem !important;
+  }
+  #menu-icon {
+    float: right;
+    margin-right: 1rem;
+  }
+  /**     HOMEPAGE **/
+  /**    INTERIOR    **/
+  .margin-spacing {
+    margin: 0rem 0 0rem 0;
+  }
+  .bb-header,
+  .bb-sub {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+  .intro-text {
+    margin-left: .75rem !important;
+    margin-right: .75rem !important;
+  }
+  .intro-text2 {
+    margin-left: .75rem;
+    margin-right: .75rem;
+  }
+  .repeater-div {
+    height: auto;
+    margin: 1.5rem .25rem;
+    min-height: 0;
+  }
+  .three-modules {
+    padding: 0 0 1rem;
+  }
+  .grey-box {
+    padding: 1.5rem;
+    margin: .75rem 0;
+    min-height: auto;
+  }
+  .transparent-box {
+    margin: .75rem 0;
+    padding: 2.5rem 1.5rem 3rem;
+    min-height: 0;
+  }
+  /********** about ************/
+  .orbit-bullets {
+    margin-top: .25rem;
+  }
+  .resource-button {
+    margin-bottom: 1rem;
+  }
+  /********** CONTACT ************/
+  .cf7-left {
+    display: table-cell;
+    width: 50%;
+    float: left;
+    padding: 0 .5rem 0 0 !important;
+  }
+  .cf7-right {
+    display: table-cell;
+    width: 50%;
+    float: left;
+    padding: 0 0 0 0 !important;
+  }
+  .contact-header {
+    font-size: 1.75rem;
+    padding: 2rem 0 2rem 0;
+  }
+  .contact-table {
+    margin-bottom: 0;
+    padding: 0 !important;
+    width: 100%;
+  }
+  /********** FOOTER ************/
+  .footer {
+    padding-bottom: .5rem;
+  }
+  .mobile-logo-center {
+    width: 100%;
+    display: table;
+    padding-top: .5rem;
+  }
+  .mobile-logo-cell {
+    display: table-cell;
+    text-align: center;
+  }
+  .footer .menu {
+    >li>a {
+      padding: 0.7rem 0.5rem !important;
+      text-align: center;
+    }
+    &.horizontal>li {
+      display: inline;
+    }
+  }
+  .menu>li {
+    display: inline;
+  }
+}
+
+/* Small only */
+
+@media screen and (max-width: 39.9375em) {
+  .news-link {
+    position: static;
+    text-align: left;
+  }
+}

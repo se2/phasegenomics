@@ -1,0 +1,32 @@
+.footer {
+  clear: both;
+  margin-top: 1em;
+}
+
+.footer {
+  background-color: #e8f4fc;
+  margin-top: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#menu-footer-links a {
+  text-transform: uppercase;
+  font-size: .85rem;
+  color: #466880;
+}
+
+.source-org {
+  font-size: .85rem;
+  color: #466880;
+  line-height: 1.45;
+  margin-bottom: .5rem;
+}
+
+.footer .menu>li>a {
+  padding: 0.7rem .5rem;
+}
+
+.mobile-logo-center {
+  padding-top: .5rem;
+}

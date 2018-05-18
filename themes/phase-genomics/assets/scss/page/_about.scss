@@ -1,0 +1,67 @@
+.news-container {
+  border-bottom: 1px solid #ff7200;
+  margin-bottom: 1.25rem !important;
+}
+
+.relative-div {
+  position: relative;
+}
+
+.post-date {
+  font-size: .875rem;
+  font-weight: bold;
+  margin-bottom: .25rem !important;
+  margin-top: 0rem !important;
+}
+
+.news-article {
+  font-size: 1.125rem;
+  margin-bottom: .75rem !important;
+  font-weight: bold;
+  line-height: 1.35;
+}
+
+.news-link {
+  margin-bottom: .75rem !important;
+  color: #ff7200;
+  text-transform: uppercase;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/*************************************** TESTIMONIALS *****************************************/
+
+/* chevron arrow test */
+
+#chevron-arrow-left {
+  display: inline-block;
+  border-right: 4px solid #ff7200;
+  border-bottom: 4px solid #ff7200;
+  width: 5px;
+  height: 5px;
+  transform: rotate(-225deg);
+  transition: .35s ease;
+  transition: .35s ease-out;
+}
+
+#chevron-arrow-right {
+  display: inline-block;
+  border-right: 4px solid #ff7200;
+  border-bottom: 4px solid #ff7200;
+  width: 5px;
+  height: 5px;
+  transform: rotate(-45deg);
+  transition: .35s ease;
+  transition: .35s ease-out;
+  &:hover {
+    border-right: 4px solid #466880;
+    border-bottom: 4px solid #466880;
+  }
+}
+
+#chevron-arrow-left:hover {
+  border-right: 4px solid #466880;
+  border-bottom: 4px solid #466880;
+}

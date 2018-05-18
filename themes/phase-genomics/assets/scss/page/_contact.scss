@@ -1,0 +1,194 @@
+[type="color"],
+[type="date"],
+[type="datetime-local"],
+[type="datetime"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+textarea {
+  -moz-appearance: none;
+  background-color: #fefefe;
+  border: medium none;
+  border-radius: 0;
+  box-shadow: 0 1px 2px hsla(0, 0%, 4%, 0.1) inset;
+  box-sizing: border-box;
+  color: #0a0a0a;
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  height: 2.4375rem;
+  margin: .25rem 0 .25rem;
+  padding: .25rem;
+  transition: box-shadow 0.5s ease 0s, border-color 0.25s ease-in-out 0s;
+  width: 100%;
+}
+
+.page-id-11 #main {
+  padding-bottom: 5rem;
+  background-color: #f5f5f5;
+}
+
+.contact-fullwidth-module {
+  padding: 3.5rem 0 4.5rem;
+  width: 100%;
+  background-color: #f5f5f5;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.page-title {
+  display: none;
+}
+
+#comments_margin {
+  padding-top: .5rem !important;
+}
+
+.wpcf7-text,
+.wpcf7-textarea {
+  background-color: #ffffff;
+  color: #6b95b3;
+}
+
+#submit-button {
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 0 auto;
+}
+
+/** span.wpcf7-not-valid-tip { display: inline !important;} **/
+
+.contact-table {
+  margin-bottom: 0rem;
+  padding: .25rem !important;
+  display: table;
+  width: 100%;
+}
+
+.cf7-left {
+  display: table-cell;
+  width: 50%;
+  padding: 0 .5rem 0 0 !important;
+}
+
+.cf7-right {
+  display: table-cell;
+  width: 50%;
+  padding: 0 0 0 0 !important;
+}
+
+.wpcf7-text {
+  margin-bottom: 0;
+}
+
+#no-pad {
+  padding: 0 !important;
+}
+
+.pad-left-1c {
+  padding-left: 5rem;
+}
+
+.bold-contact {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  line-height: 1.33;
+  color: #333333;
+  text-align: left;
+}
+
+#contact-padding {
+  padding-top: 1.8rem !important;
+}
+
+.reg-contact {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: auto;
+  line-height: 1.33;
+  color: #333333;
+  text-align: left;
+}
+
+/********** RESPONSE MESSAGE ***********/
+
+div {
+  &.wpcf7-mail-sent-ok {
+    border: 2px solid #466880 !important;
+    padding: 0.4em 1em 0.55em 1em;
+  }
+  &.wpcf7-response-output {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #333333;
+    margin: 1em 0.5em 1em;
+  }
+  &.wpcf7-validation-errors {
+    border: 2px solid #e32526 !important;
+  }
+}
+
+/********** END FORM ***********/
+
+/* SalesForce WordPress to Lead Default CSS */
+
+.entry-content {
+  max-width: 74.9375em;
+  margin: 0 auto;
+}
+
+.w2llabel {
+  font-size: 1rem;
+  color: #466880;
+  line-height: 1.45;
+  margin: 0.5rem 0 0.15rem;
+}
+
+.submit {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ff7200;
+  color: #fff;
+  display: block;
+  border: none;
+  font-size: 01rem;
+  font-weight: bold;
+  margin: .5rem auto;
+  padding: 0.7rem 2.75rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sf_field_first_name {
+  width: 49.5%;
+  float: left;
+  margin-right: .5%;
+}
+
+.sf_field_last_name {
+  width: 49.5%;
+  float: left;
+  margin-left: .5%;
+}
+
+textarea.textarea {
+  min-width: 100%;
+  min-height: 10rem;
+}
+
+.error_message {
+  color: #ff7200;
+}
+
+/** END SALESFORCE FORM AREA **/

@@ -1,0 +1,6 @@
+.DS_Store
+themes/phase-genomics/assets/scss/.sass-cache/*
+themes/phase-genomics/node_modules/
+themes/phase-genomics/bower_components/
+error_log
+updraft

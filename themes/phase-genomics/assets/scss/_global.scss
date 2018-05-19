@@ -23,6 +23,18 @@ a {
   @include xy-grid-container;
 }
 
+.d-ib {
+  display: inline-block;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
 /******************************************************************
 
 Stylesheet: Retina Screens & Devices Stylesheet

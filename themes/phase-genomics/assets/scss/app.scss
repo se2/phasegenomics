@@ -1,17 +1,20 @@
 @charset "UTF-8";
-/* Settings for Foundation */
 
+/* Settings for Foundation */
 @import "settings";
 @import "vendor/foundation-sites/scss/foundation";
 @import "vendor/motion-ui/src/motion-ui";
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
 // Select the components you want to use
 @include foundation-global-styles;
+
 // Select the grid you would like to use
 @include foundation-grid;
 // @include foundation-flex-grid;
 @include foundation-xy-grid-classes;
+
 @include foundation-flex-classes;
 @include foundation-typography;
 @include foundation-forms;
@@ -48,19 +51,19 @@
 @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-/* Modules */
 
+/* Modules */
 @import "global";
 @import "content";
 @import "header";
 @import "footer";
-/* Templates */
 
+/* Templates */
 @import "page/home";
 @import "page/technology";
 @import "page/about";
 @import "page/contact";
 @import "page/services";
-/* Responsive */
 
+/* Responsive */
 @import "responsive";

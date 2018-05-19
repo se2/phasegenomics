@@ -22,6 +22,40 @@
       background: none;
       color: $secondary-color;
     }
+    &.menu-social-media {
+      align-items: center;
+      justify-content: flex-end;
+      .icon-menu i {
+        font-size: 22px;
+        line-height: 1;
+      }
+      li {
+        display: inline-block;
+      }
+      a {
+        font-size: 13px;
+      }
+    }
+    &.submenu {
+      min-width: 163px;
+      border-color: #9fbbcf;
+      margin-top: 24px;
+      a {
+        text-transform: none;
+        text-align: right;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 15px 20px 15px 0;
+      }
+    }
+    li {
+      margin-bottom: 20px;
+      line-height: 1;
+      &.orange-menu a {
+        color: $secondary-color;
+        font-weight: bold;
+      }
+    }
     a {
       text-transform: uppercase;
       font-size: 15px;
@@ -29,90 +63,12 @@
       font-weight: normal;
       padding: 0 10px;
       line-height: 1;
+      &:hover {
+        color: $secondary-color;
+      }
     }
   }
   .header-logo {
     max-width: 200px;
   }
 }
-
-// /*********************
-// HEADER STYLES
-// *********************/
-// .header ul.off-canvas-list li {
-//   list-style: none;
-// }
-// /*********************
-// NAVIGATION STYLES
-// *********************/
-// .top-bar .title-area {
-//   z-index: 1;
-// }
-// .off-canvas-list ul {
-//   margin-left: 0;
-//   li a {
-//     border-bottom: 0px;
-//   }
-//   .dropdown {
-//     margin-left: 20px;
-//   }
-// }
-// .menu .active>a {
-//   background: none repeat scroll 0 0 !important;
-//   color: #466880;
-// }
-// .header-logo {
-//   max-width: 180px;
-//   height: auto;
-//   margin-left: 2rem;
-// }
-// .top-bar {
-//   background-color: #ffffff;
-//   text-transform: uppercase;
-//   font-size: .9rem;
-//   margin: 0 .25rem;
-//   ul {
-//     background-color: #ffffff;
-//     text-transform: uppercase;
-//     font-size: .9rem;
-//     margin: 0 .25rem;
-//     a {
-//       background-color: #ffffff;
-//       text-transform: uppercase;
-//       font-size: .9rem;
-//       margin: 0 .25rem;
-//     }
-//   }
-//   padding: 1.25rem 0;
-// }
-// #menu-main-navigation-1 {
-//   margin-top: .5rem;
-// }
-// .menu>li>a {
-//   padding: .7rem 0.65rem !important;
-// }
-// .nav-button {
-//   >a {
-//     background-color: #ff7200 !important;
-//     color: #ffffff !important;
-//     margin: 0 .7rem !important;
-//   }
-//   &:hover>a {
-//     background-color: #6a96b4 !important;
-//   }
-// }
-// @media only screen and (max-width: 782px) {
-//   .header-logo {
-//     margin-left: 0;
-//   }
-//   .top-bar {
-//     padding: 1.25rem 0;
-//     margin: 0 0;
-//     ul {
-//       margin: 0 0;
-//       a {
-//         margin: 0 0;
-//       }
-//     }
-//   }
-// }

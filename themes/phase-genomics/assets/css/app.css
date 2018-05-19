@@ -9354,6 +9354,10 @@ COMMENT FORM STYLES
 .nocomments {
   margin: 0 20px 1.1em; }
 
+.icon-menu i {
+  font-size: 22px;
+  line-height: 1; }
+
 .top-bar {
   background-color: transparent;
   min-height: 106px;
@@ -9375,9 +9379,6 @@ COMMENT FORM STYLES
     align-items: center;
     -ms-flex-pack: end;
     justify-content: flex-end; }
-    .top-bar .menu.menu-social-media .icon-menu i {
-      font-size: 22px;
-      line-height: 1; }
     .top-bar .menu.menu-social-media li {
       display: inline-block; }
     .top-bar .menu.menu-social-media a {
@@ -9412,30 +9413,29 @@ COMMENT FORM STYLES
 
 .footer {
   clear: both;
-  margin-top: 1em; }
-
-.footer {
-  background-color: #e8f4fc;
-  margin-top: 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem; }
-
-#menu-footer-links a {
-  text-transform: uppercase;
-  font-size: .85rem;
-  color: #466880; }
+  padding: 36px 0;
+  background-color: #363636; }
+  .footer li,
+  .footer p {
+    margin-bottom: 0; }
+  .footer .icon-menu {
+    padding-left: 20px; }
+  .footer .menu li.small-menu a {
+    font-size: 14px;
+    padding-bottom: 20px; }
+  .footer .menu li a {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 20px 36px 0; }
 
 .source-org {
-  font-size: .85rem;
-  color: #466880;
-  line-height: 1.45;
-  margin-bottom: .5rem; }
-
-.footer .menu > li > a {
-  padding: 0.7rem .5rem; }
-
-.mobile-logo-center {
-  padding-top: .5rem; }
+  font-size: 14px;
+  color: #a8a8a8;
+  line-height: 1; }
+  .source-org a {
+    text-transform: uppercase;
+    color: white; }
 
 /* Templates */
 /****************Home Billboard***********************/

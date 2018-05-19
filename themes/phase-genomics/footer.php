@@ -1,22 +1,40 @@
+<?php
+	/**
+	 * Main Footer
+	 *
+	 * @category   Components
+	 * @package    WordPress
+	 * @subpackage Phase Genomics
+	 * @author     Delin Design <contact@delindesign.com>
+	 * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+	 * @link       https://delindesign.com
+	 */
+
+?>
 			</div>  <!-- end .main-content -->
 			<footer class="footer" role="contentinfo">
 				<div class="container">
-					<div id="inner-footer" class="grid-x">
-						<div class="large-2 medium-4 cell">
-							<?php
-								$image = get_field('header_logo', 'option');
-								if ( !empty( $image ) ): ?>
-								<div class="mobile-logo-center">
-									<a class="mobile-logo-cell" href="<?php echo home_url(); ?>"><img class="header-logo" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
-								</div>
-							<?php endif; ?>
+					<div id="inner-footer">
+						<div class="grid-x">
+							<div class="large-5 medium-12 cell">
+								<nav role="navigation">
+									<?php joints_footer_links(); ?>
+								</nav>
+							</div>
+							<div class="cell large-1 large-offset-6 text-right">
+								<a href="https://twitter.com/phasegenomics" class="icon-menu" target="_blank">
+									<i class="step fi-social-twitter"></i>
+								</a>
+								<a href="https://www.linkedin.com/company/phase-genomics-inc/" class="icon-menu">
+								<i class="step fi-social-linkedin"></i>
+								</a>
+							</div>
 						</div>
-						<div class="large-9 large-offset-1 medium-8 cell">
-							<nav role="navigation">
-								<?php joints_footer_links(); ?>
-							</nav>
-							<div style="padding-left: .5rem;">
-								<p class="source-org copyright">Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?><?php the_field('footer_info', 'option', false, false); ?> <a href="https://phasegenomics.com/terms-of-service/" style="font-size: .75rem; color: #466880; text-transform: uppercase;">Terms of Service</a></p>
+						<div class="grid-x">
+							<div class="cell">
+								<p class="source-org copyright">
+									Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?><?php the_field( 'footer_info', 'option', false, false ); ?> <a href="/terms-of-service/">Terms of Service</a>
+								</p>
 							</div>
 						</div>
 					</div> <!-- end #inner-footer -->

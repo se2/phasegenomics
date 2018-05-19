@@ -1,3 +1,7 @@
+.icon-menu i {
+  font-size: 22px;
+  line-height: 1;
+}
 .top-bar {
   background-color: transparent;
   min-height: 106px;
@@ -25,10 +29,6 @@
     &.menu-social-media {
       align-items: center;
       justify-content: flex-end;
-      .icon-menu i {
-        font-size: 22px;
-        line-height: 1;
-      }
       li {
         display: inline-block;
       }

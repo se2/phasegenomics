@@ -16,12 +16,12 @@
 				<div class="container">
 					<div id="inner-footer">
 						<div class="grid-x">
-							<div class="large-5 medium-12 cell">
+							<div class="large-5 medium-10 small-12 cell">
 								<nav role="navigation">
 									<?php joints_footer_links(); ?>
 								</nav>
 							</div>
-							<div class="cell large-1 large-offset-6 text-right">
+							<div class="cell medium-2 large-1 large-offset-6 text-right">
 								<a href="https://twitter.com/phasegenomics" class="icon-menu" target="_blank">
 									<i class="step fi-social-twitter"></i>
 								</a>

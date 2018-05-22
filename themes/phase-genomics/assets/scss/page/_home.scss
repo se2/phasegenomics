@@ -1,3 +1,126 @@
+.home {
+  &--banner {
+    @include breakpoint(small) {
+      .main-container,
+      .container {
+        min-height: 345px;
+      }
+    }
+    @include breakpoint(large) {
+      background-position: center -90px;
+      .main-container,
+      .container {
+        height: auto;
+        padding-bottom: 28.75%;
+      }
+    }
+    &__cta-group {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+      left: 0;
+      min-height: 70px;
+      align-items: center;
+      color: white;
+      h6 {
+        font-size: 13px;
+        color: #c2d6e5;
+        text-transform: uppercase;
+        font-weight: bold;
+        line-height: 1;
+      }
+      .cell {
+        position: relative;
+        background: #7d97a8;
+        transition: background 300ms;
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 70px;
+        p {
+          transition: color 300ms;
+        }
+        a {
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: table;
+        }
+        .inner {
+          display: table-cell;
+          vertical-align: middle;
+        }
+        @include breakpoint(medium) {
+          cursor: pointer;
+          &:hover {
+            background: darken(#7d97a8, 20);
+            p {
+              color: $secondary-color;
+            }
+          }
+          &:nth-child(2) {
+            z-index: 2;
+            &:before,
+            &:after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 2px;
+              height: 50px;
+              background-color: #b3cbdc;
+            }
+            &:before {
+              left: -1px;
+            }
+            &:after {
+              right: -1px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &--products {
+    @include breakpoint(medium) {
+      padding: 70px 0 55px;
+    }
+    &__cell {
+      height: 0;
+      padding-bottom: 39.1666666667%;
+    }
+  }
+  &--cta {
+    @include breakpoint(medium) {
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+    &__title {
+      color: #2a627a;
+      line-height: 1;
+      margin-bottom: 21px;
+    }
+  }
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+  &__title {
+    color: $secondary-color;
+    line-height: 1.2;
+  }
+  &__subtitle {
+    font-size: 20px;
+    color: $primary-color;
+    line-height: 1.4;
+  }
+}
+
 /****************Home Billboard***********************/
 
 .header-bg {
@@ -280,8 +403,6 @@
     transition: all .35s ease;
   }
 }
-
-
 
 .homepage-orbit-previous,
 .homepage-orbit-next {

@@ -41,6 +41,9 @@ require_once(get_template_directory().'/assets/translation/translation.php');
 // Customize the WordPress admin
 // require_once(get_template_directory().'/assets/functions/admin.php');
 
+// Miscellaneous function
+require_once(get_template_directory().'/assets/functions/misc.php');
+
 // Hide Admin Bar
 add_filter('show_admin_bar', '__return_false');
 

@@ -89,9 +89,111 @@
     @include breakpoint(medium) {
       padding: 70px 0 55px;
     }
+    $padding: 3px;
+    &__kits {
+      margin-bottom: 40px;
+    }
+    &__hic {
+      margin-left: -#{$padding};
+      margin-right: -#{$padding};
+    }
+    $padding-bottom: 36px;
+    $button-height: 42px;
+    $transition-duration: 800ms;
     &__cell {
-      height: 0;
-      padding-bottom: 39.1666666667%;
+      text-align: center;
+      height: auto;
+      padding-left: #{$padding};
+      padding-right: #{$padding};
+      &:hover {
+        .home--products__cell__inner--mask {
+          top: -100%;
+        }
+        a.secondary-button {
+          background: $secondary-color;
+          border-color: $secondary-color;
+          color: white;
+        }
+      }
+      &__inner {
+        width: 100%;
+        height: 0;
+        padding-bottom: 156.6666666667%;
+        position: relative;
+        z-index: 1;
+        &--mask {
+          transition: top #{$transition-duration} ease-in-out;
+          position: absolute;
+          width: calc(100% - #{$padding} * 2);
+          height: 100%;
+          background-color: #eef7fd;
+          left: $padding;
+          top: 0;
+          z-index: 2;
+          padding-bottom: 0;
+          img {
+            width: 200px;
+            position: absolute;
+            top: 45px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+          }
+          .home--products__cell__content {
+            padding-bottom: 0;
+            bottom: calc(#{$padding-bottom} + #{$button-height});
+          }
+        }
+      }
+      &__content {
+        width: 100%;
+        padding: 0 20px #{$padding-bottom};
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+        a.secondary-button {
+          transition-duration: $transition-duration;
+          background: transparent;
+          border: 3px solid #a5aeb4;
+          color: #a5aeb4;
+          line-height: 36px;
+        }
+      }
+      &--border {
+        border: 3px solid #eef7fd;
+        padding: 24px 50px 28px;
+        p,
+        ul,
+        strong {
+          text-align: left;
+        }
+        strong {
+          font-size: 17px;
+        }
+        ul {
+          margin-left: 17px;
+          li {
+            font-size: 14px;
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+    &__title {
+      color: $secondary-color;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+    &__desc {
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.3;
+      margin-bottom: 23px;
     }
   }
   &--cta {
@@ -99,10 +201,53 @@
       padding-top: 65px;
       padding-bottom: 65px;
     }
-    &__title {
-      color: #2a627a;
+    .title {
       line-height: 1;
       margin-bottom: 21px;
+    }
+    &--large {
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 360px;
+      .title {
+        margin-bottom: 35px;
+      }
+    }
+  }
+  &--announcement {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    &__content {
+      color: white;
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.2;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &--quotes {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    h2 {
+      margin-bottom: 28px;
+    }
+    &__cell {
+      text-align: left;
+      @include breakpoint(large) {
+        padding: 0 46px;
+      }
+      .quote {
+        font-size: 18px;
+        line-height: 1.33;
+      }
+      .referee {
+        font-size: 14px;
+      }
+      .source {
+        font-size: 13px;
+      }
     }
   }
 }

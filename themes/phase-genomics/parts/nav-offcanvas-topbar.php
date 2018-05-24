@@ -33,7 +33,7 @@
 		<?php joints_top_nav(); ?>
 	</div>
 
-	<div class="top-bar-right float-right show-for-small-only">
+	<div class="top-bar-right float-right show-for-small-only show-for-mobile-only">
 		<ul class="menu">
 			<li id="menu-icon"><a data-toggle="off-canvas"><?php esc_html_e( 'Menu', 'phasegenomics' ); ?></a></li>
 		</ul>

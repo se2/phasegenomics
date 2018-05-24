@@ -1,3 +1,6 @@
+// Colors
+$blue-color: #2a627a;
+
 h1 a,
 .h1 a,
 h2 a,
@@ -154,6 +157,10 @@ a {
   color: white;
 }
 
+.blue-color {
+  color: $blue-color;
+}
+
 .bg-center-top {
   background-position: center top;
 }
@@ -175,22 +182,27 @@ a {
 }
 
 .primary-button {
-  transition: all 300ms;
   background-color: $primary-color;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
+  text-align: center;
   text-transform: uppercase;
-  line-height: 1;
   padding: 0 23px;
   min-width: 125px;
   display: inline-block;
-  height: 46px;
-  line-height: 46px;
+  height: 42px;
+  line-height: 42px;
+  cursor: pointer;
   &--small {
     height: 37px;
     line-height: 37px;
     font-size: 15px;
     padding: 0 17px;
+  }
+  &--large {
+    height: 46px;
+    line-height: 46px;
+    font-size: 18px;
   }
   &:hover {
     color: white;
@@ -206,6 +218,11 @@ a {
     line-height: 37px;
     font-size: 15px;
     padding: 0 17px;
+  }
+  &--large {
+    height: 46px;
+    line-height: 46px;
+    font-size: 18px;
   }
   &:hover {
     color: white;
@@ -223,6 +240,10 @@ a {
 
 .mb0 {
   margin-bottom: 0;
+}
+
+.no-overflow {
+  overflow: hidden;
 }
 
 /******************************************************************

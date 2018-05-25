@@ -117,7 +117,7 @@
 	</div>
 	<div class="container">
 		<div class="section-heading">
-			<h2 class="section-heading__title">The world’s most complete genomeand metagenome assemblies.</h2>
+			<h2 class="section-heading__title">The world’s most complete genome and metagenome assemblies.</h2>
 			<p class="section-heading__subtitle">Our genome and metagenome platforms allow for highly accurate, affordable, rapid results.</p>
 		</div>
 	</div>

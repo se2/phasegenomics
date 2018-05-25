@@ -6,7 +6,7 @@
         min-height: 345px;
       }
     }
-    @include breakpoint(large) {
+    @include breakpoint(xlarge) {
       background-position: center -90px;
       .main-container,
       .container {

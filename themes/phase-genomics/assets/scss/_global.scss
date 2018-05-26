@@ -270,7 +270,7 @@ This is the print stylesheet. There's probably not a lot
 of reasons to edit this stylesheet.
 
 Remember to add things that won't make sense to print at
-the bottom. Things like nav, ads, and forms shouldbe set
+the bottom. Things like nav, ads, and forms should be set
 to display none.
 ******************************************************************/
 
@@ -342,7 +342,7 @@ to display none.
   .respond-form,
   nav {
     display: none;
-  }
+	}
 }
 
 /*********************
@@ -383,7 +383,8 @@ p,
 li {
   font-size: 1rem;
   color: #466880;
-  line-height: 1.53;
+  // line-height: 1.53;
+  line-height: 1.4;
   margin-bottom: .5rem;
 }
 

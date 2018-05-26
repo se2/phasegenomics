@@ -1,18 +1,27 @@
 <?php
-/*
- * Template Name: Homepage
-*/
+	/**
+	 * Template Name: Homepage
+	 *
+	 * @category   Template
+	 * @package    WordPress
+	 * @subpackage PhaseGenomics
+	 * @author     Delin Design <contact@delindesign.com>
+	 * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+	 * @link       https://delindesign.com
+	 */
+
+get_header();
+
+if ( have_posts() ) :
+	while ( have_posts() ) :
+		the_post();
 ?>
 
-<?php get_header(); ?>
-
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-<!-- Home Banner -->
-<section class="home bg-cover bg-center-top home--banner" style="background-image:url('<?php the_field( 'banner_image' ); ?>');">
+<!-- Banner -->
+<section class="home bg-cover bg-center-top banner" style="background-image:url('<?php the_field( 'home_banner_image' ); ?>');">
 	<div class="main-container pos-rel h100p">
-		<h1 class="white-color lighter text-shadow uppercase text-center abs-center"><?php the_field( 'banner_header' ); ?></h1>
-		<div class="grid-x home--banner__cta-group">
+		<h1 class="white-color lighter text-shadow uppercase text-center abs-center"><?php the_field( 'home_banner_header' ); ?></h1>
+		<div class="grid-x banner__cta-group">
 			<div class="cell small-12 medium-4">
 				<a href="#!">
 					<div class="inner">
@@ -40,7 +49,7 @@
 		</div>
 	</div>
 </section>
-<!-- /Home Banner -->
+<!-- /Banner -->
 
 <!-- Default Announcement -->
 <section class="home home--announcement" style="background-color:#99b7cc;">
@@ -74,9 +83,9 @@
 				'field'    => 'term_id',
 				'terms'    => $category_id,
 				'operator' => 'IN', // Possible values are 'IN', 'NOT IN', 'AND'.
-			)
+			),
 		);
-		$args = array(
+		$args         = array(
 			'post_type'   => 'product',
 			'post_status' => 'publish',
 			'order'       => 'ASC',
@@ -90,7 +99,7 @@
 			while ( $hic_products->have_posts() ) :
 				$hic_products->the_post();
 				$attachment_ids[0] = get_post_thumbnail_id( $product->id );
-				$product_image = wp_get_attachment_image_src( $attachment_ids[0], 'full' );
+				$product_image     = wp_get_attachment_image_src( $attachment_ids[0], 'full' );
 			?>
 			<div class="cell medium-3 home--products__cell pos-rel no-overflow">
 				<div class="home--products__cell__inner pos-rel bg-cover" style="background-image:url('<?php echo esc_attr( $product_image[0] ); ?>');">
@@ -123,26 +132,26 @@
 	</div>
 	<div class="container">
 		<?php
-		$tax_query = array(
+		$tax_query         = array(
 			array(
-				'taxonomy'      => 'product_cat',
-				'field'         => 'term_id',
-				'terms'         => $category_id,
-				'operator'      => 'NOT IN', // Possible values are 'IN', 'NOT IN', 'AND'.
-			)
+				'taxonomy' => 'product_cat',
+				'field'    => 'term_id',
+				'terms'    => $category_id,
+				'operator' => 'NOT IN', // Possible values are 'IN', 'NOT IN', 'AND'.
+			),
 		);
 		$args['tax_query'] = $tax_query;
-		$products = new WP_Query( $args );
+		$products          = new WP_Query( $args );
 		if ( $products->have_posts() ) :
 		?>
-		<div class="grid-x grid-margin-x home--products__regular">
+		<div class="grid-x home--products__regular">
 			<?php
 			while ( $products->have_posts() ) :
 				$products->the_post();
 			?>
 			<div class="cell medium-6 home--products__cell home--products__cell--border">
 				<h4 class="bold secondary-color uppercase"><?php the_title(); ?></h4>
-				<?php the_field( 'product_short_description' );?>
+				<?php the_field( 'product_short_description' ); ?>
 				<a href="<?php the_permalink(); ?>" class="secondary-button secondary-button--large">Learn More</a>
 			</div>
 			<?php endwhile; ?>
@@ -173,8 +182,8 @@
 		<?php if ( have_rows( 'testimonial' ) ) : ?>
 		<div class="grid-x grid-margin-x home--quotes__wrapper">
 			<?php
-				while ( have_rows( 'testimonial' ) ) :
-					the_row();
+			while ( have_rows( 'testimonial' ) ) :
+				the_row();
 			?>
 			<div class="cell medium-6 home--quotes__cell">
 				<p class="quote"><?php the_sub_field( 'quote' ); ?></p>
@@ -190,7 +199,7 @@
 </section>
 <!-- /Home Quotes -->
 
-<!-- Home CTA -->
+<!-- CTA -->
 <section class="home home--cta bg-cover bg-center-right" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/cta-bg.png');">
 	<div class="container">
 			<div class="grid-x">
@@ -201,7 +210,7 @@
 			</div>
 	</div>
 </section>
-<!-- /Home CTA -->
+<!-- /CTA -->
 
 <?php endwhile; else : ?>
 	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>

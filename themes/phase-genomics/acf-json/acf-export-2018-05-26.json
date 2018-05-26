@@ -661,7 +661,7 @@
             {
                 "key": "field_585852c748bf1",
                 "label": "Banner Image",
-                "name": "banner_image",
+                "name": "home_banner_image",
                 "type": "image",
                 "instructions": "",
                 "required": 0,
@@ -674,18 +674,18 @@
                 "return_format": "url",
                 "preview_size": "thumbnail",
                 "library": "all",
-                "min_width": 0,
-                "min_height": 0,
-                "min_size": 0,
-                "max_width": 0,
-                "max_height": 0,
-                "max_size": 0,
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
                 "mime_types": ""
             },
             {
                 "key": "field_5858530a48bf2",
                 "label": "Banner Header",
-                "name": "banner_header",
+                "name": "home_banner_header",
                 "type": "text",
                 "instructions": "",
                 "required": 0,
@@ -696,11 +696,10 @@
                     "id": ""
                 },
                 "default_value": "",
-                "maxlength": "",
                 "placeholder": "",
                 "prepend": "",
                 "append": "",
-                "formatting": "html"
+                "maxlength": ""
             },
             {
                 "key": "field_5862907f0764d",
@@ -802,7 +801,7 @@
                 {
                     "param": "page_template",
                     "operator": "==",
-                    "value": "template-homepage.php"
+                    "value": "templates\/template-homepage.php"
                 }
             ]
         ],
@@ -820,197 +819,6 @@
             "slug",
             "author",
             "format",
-            "tags",
-            "send-trackbacks"
-        ],
-        "active": 1,
-        "description": ""
-    },
-    {
-        "key": "group_58597ad93fb4b",
-        "title": "Interior Page Billboard",
-        "fields": [
-            {
-                "key": "field_58597ae2a1703",
-                "label": "Background Image",
-                "name": "background_image",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "return_format": "url",
-                "preview_size": "thumbnail",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": ""
-            },
-            {
-                "key": "field_58597b08a1704",
-                "label": "Icon",
-                "name": "icon",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "return_format": "array",
-                "preview_size": "thumbnail",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": ""
-            },
-            {
-                "key": "field_58597b1ea1705",
-                "label": "Header",
-                "name": "header",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_58597b2aa1706",
-                "label": "Sub Header",
-                "name": "sub_header",
-                "type": "textarea",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "new_lines": "br",
-                "maxlength": "",
-                "placeholder": "",
-                "rows": 3
-            }
-        ],
-        "location": [
-            [
-                {
-                    "param": "page",
-                    "operator": "==",
-                    "value": "11"
-                }
-            ],
-            [
-                {
-                    "param": "page",
-                    "operator": "==",
-                    "value": "7"
-                }
-            ],
-            [
-                {
-                    "param": "page",
-                    "operator": "==",
-                    "value": "9"
-                }
-            ],
-            [
-                {
-                    "param": "page_template",
-                    "operator": "==",
-                    "value": "template-about.php"
-                }
-            ],
-            [
-                {
-                    "param": "page_template",
-                    "operator": "==",
-                    "value": "template-technology.php"
-                }
-            ],
-            [
-                {
-                    "param": "page_template",
-                    "operator": "==",
-                    "value": "template-blog.php"
-                }
-            ],
-            [
-                {
-                    "param": "page_type",
-                    "operator": "==",
-                    "value": "posts_page"
-                }
-            ],
-            [
-                {
-                    "param": "page_template",
-                    "operator": "==",
-                    "value": "template-proximeta-example.php"
-                }
-            ],
-            [
-                {
-                    "param": "page_template",
-                    "operator": "==",
-                    "value": "template-careers.php"
-                }
-            ],
-            [
-                {
-                    "param": "page_template",
-                    "operator": "==",
-                    "value": "template-kits.php"
-                }
-            ],
-            [
-                {
-                    "param": "page_template",
-                    "operator": "==",
-                    "value": "template-kit-overview.php"
-                }
-            ]
-        ],
-        "menu_order": 0,
-        "position": "normal",
-        "style": "default",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": [
-            "the_content",
-            "excerpt",
-            "discussion",
-            "comments",
-            "revisions",
-            "slug",
-            "author",
-            "format",
-            "categories",
             "tags",
             "send-trackbacks"
         ],
@@ -1052,6 +860,158 @@
                     "param": "options_page",
                     "operator": "==",
                     "value": "acf-options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt",
+            "discussion",
+            "comments",
+            "revisions",
+            "slug",
+            "author",
+            "format",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_58597ad93fb4b",
+        "title": "Page Billboard",
+        "fields": [
+            {
+                "key": "field_58597ae2a1703",
+                "label": "Billboard Background Image",
+                "name": "billboard_background_image",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_58597b1ea1705",
+                "label": "Page Title",
+                "name": "page_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5b099d45e183b",
+                "label": "Page Subtitle",
+                "name": "page_subtitle",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5b099e0ee183c",
+                "label": "Page Header CTA Title",
+                "name": "page_header_cta_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5b099e2ae183d",
+                "label": "Page Header CTA Link",
+                "name": "page_header_cta_link",
+                "type": "link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url"
+            },
+            {
+                "key": "field_5b099e5ee183e",
+                "label": "Page Header Embed",
+                "name": "page_header_embed",
+                "type": "oembed",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "width": "",
+                "height": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                },
+                {
+                    "param": "page_template",
+                    "operator": "!=",
+                    "value": "templates\/template-homepage.php"
                 }
             ]
         ],

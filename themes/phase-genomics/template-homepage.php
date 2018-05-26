@@ -67,20 +67,20 @@
 	</div>
 	<div class="main-content-full-width home--products__kits">
 		<?php
-		$category_ID = 57; // Hi-C Category, change this if admin changes category for Hi-C products
-		$tax_query   = array(
+		$category_id  = 57; // Hi-C Category, change this if admin changes category for Hi-C products.
+		$tax_query    = array(
 			array(
-				'taxonomy'      => 'product_cat',
-				'field'         => 'term_id',
-				'terms'         => $category_ID,
-				'operator'      => 'IN', // Possible values are 'IN', 'NOT IN', 'AND'.
+				'taxonomy' => 'product_cat',
+				'field'    => 'term_id',
+				'terms'    => $category_id,
+				'operator' => 'IN', // Possible values are 'IN', 'NOT IN', 'AND'.
 			)
 		);
 		$args = array(
-			'post_type'             => 'product',
-			'post_status'           => 'publish',
-			'order'                 => 'ASC',
-			'tax_query'             => $tax_query,
+			'post_type'   => 'product',
+			'post_status' => 'publish',
+			'order'       => 'ASC',
+			'tax_query'   => $tax_query,
 		);
 		$hic_products = new WP_Query( $args );
 		if ( $hic_products->have_posts() ) :
@@ -127,7 +127,7 @@
 			array(
 				'taxonomy'      => 'product_cat',
 				'field'         => 'term_id',
-				'terms'         => $category_ID,
+				'terms'         => $category_id,
 				'operator'      => 'NOT IN', // Possible values are 'IN', 'NOT IN', 'AND'.
 			)
 		);
@@ -141,7 +141,7 @@
 				$products->the_post();
 			?>
 			<div class="cell medium-6 home--products__cell home--products__cell--border">
-				<h4 class="bold secondary-color"><?php the_title(); ?></h4>
+				<h4 class="bold secondary-color uppercase"><?php the_title(); ?></h4>
 				<?php the_field( 'product_short_description' );?>
 				<a href="<?php the_permalink(); ?>" class="secondary-button secondary-button--large">Learn More</a>
 			</div>

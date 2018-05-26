@@ -1,6 +1,5 @@
 // Colors
 $blue-color: #2a627a;
-
 h1 a,
 .h1 a,
 h2 a,
@@ -244,6 +243,13 @@ a {
 
 .no-overflow {
   overflow: hidden;
+}
+
+.footer .menu .active>a,
+.footer .menu .is-active>a {
+  background-color: transparent;
+  background: transparent;
+  color: $secondary-color;
 }
 
 /******************************************************************

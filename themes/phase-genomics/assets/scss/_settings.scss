@@ -125,7 +125,7 @@ $grid-column-count: 12;
 $grid-column-gutter: (
   small: 20px,
   medium: 20px,
-  large: 40px
+  large: 20px
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
@@ -868,7 +868,7 @@ $grid-columns: 12;
 $grid-margin-gutters: (
   small: 20px,
   medium: 20px,
-  large: 40px
+  large: 20px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;

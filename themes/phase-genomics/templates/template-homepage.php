@@ -76,22 +76,9 @@ if ( have_posts() ) :
 	</div>
 	<div class="main-content-full-width home--products__kits">
 		<?php
-		$category_id  = 57; // Hi-C Category, change this if admin changes category for Hi-C products.
-		$tax_query    = array(
-			array(
-				'taxonomy' => 'product_cat',
-				'field'    => 'term_id',
-				'terms'    => $category_id,
-				'operator' => 'IN', // Possible values are 'IN', 'NOT IN', 'AND'.
-			),
-		);
-		$args         = array(
-			'post_type'   => 'product',
-			'post_status' => 'publish',
-			'order'       => 'ASC',
-			'tax_query'   => $tax_query,
-		);
-		$hic_products = new WP_Query( $args );
+		// Hi-C Category, change this if admin changes category for Hi-C products.
+		$hic_category = 57;
+		$hic_products = get_products_query( $hic_category );
 		if ( $hic_products->have_posts() ) :
 		?>
 		<div class="grid-x home--products__hic">
@@ -132,19 +119,10 @@ if ( have_posts() ) :
 	</div>
 	<div class="container">
 		<?php
-		$tax_query         = array(
-			array(
-				'taxonomy' => 'product_cat',
-				'field'    => 'term_id',
-				'terms'    => $category_id,
-				'operator' => 'NOT IN', // Possible values are 'IN', 'NOT IN', 'AND'.
-			),
-		);
-		$args['tax_query'] = $tax_query;
-		$products          = new WP_Query( $args );
+		$products = get_products_query( $hic_category, 'NOT IN' );
 		if ( $products->have_posts() ) :
 		?>
-		<div class="grid-x home--products__regular">
+		<div class="grid-x grid-margin-x home--products__regular">
 			<?php
 			while ( $products->have_posts() ) :
 				$products->the_post();
@@ -213,7 +191,9 @@ if ( have_posts() ) :
 <!-- /CTA -->
 
 <?php endwhile; else : ?>
-	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+	<div class="main-container">
+		<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+	</div>
 <?php endif; ?>
 
 <?php get_footer(); ?>

@@ -88,14 +88,6 @@
             line-height: 1.2;
           }
 				}
-				@include breakpoint(medium) {
-					&.medium-6,
-					&.large-6 {
-						width: calc(50% - #{map-get($grid-column-gutter, large)} / 2) !important;
-						margin-left: calc(#{map-get($grid-column-gutter, large)} / 4);
-						margin-right: calc(#{map-get($grid-column-gutter, large)} / 4);
-					}
-				}
       }
     }
     &__title {
@@ -136,7 +128,7 @@
     &__cell {
       text-align: left;
       @include breakpoint(large) {
-        padding: 0 46px;
+        padding: 0 48px;
       }
       .quote {
         font-size: 18px;

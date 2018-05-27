@@ -65,16 +65,17 @@
 // 1. Global
 // ---------
 
-$global-font-size: 18px;
+$global-font-size: 16px;
 $global-width: rem-calc(1200);
 $container-width: rem-calc(980);
-$global-lineheight: 1.5;
+$global-lineheight: 1.4;
 $foundation-palette: (
   primary: #466880,
   secondary: #ff7200,
   success: #ff7200,
   warning: #ffae00,
-  alert: #cc4b37,
+	alert: #cc4b37,
+	blue: #99b7cc,
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
@@ -85,10 +86,10 @@ $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Montserrat', sans-serif;
 $body-antialiased: true;
-$global-margin: 1rem;
+$global-margin: 0.75rem;
 $global-padding: 1rem;
 $global-position: 1rem;
-$global-weight-normal: normal;
+$global-weight-normal: 500;
 $global-weight-bold: bold;
 $global-radius: 0;
 $global-menu-padding: 0.7rem 1rem;
@@ -138,7 +139,7 @@ $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
-$header-lineheight: 1.4;
+$header-lineheight: 1.2;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
@@ -282,20 +283,20 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // ----------
 
 $button-font-family: inherit;
-$button-padding: 0.85em 1em;
-$button-margin: 0 0 $global-margin 0;
+$button-padding: 12px 24px;
+$button-margin: 0;
 $button-fill: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
-$button-color-alt: $black;
+$button-color-alt: $white;
 $button-radius: $global-radius;
-$button-hollow-border-width: 1px;
+$button-hollow-border-width: 0;
 $button-sizes: (
-  tiny: 0.6rem,
-  small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+  tiny: 14px,
+  small: 15px,
+  default: 16px,
+  large: 18px,
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;

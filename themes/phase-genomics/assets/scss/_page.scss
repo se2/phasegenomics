@@ -98,16 +98,46 @@
 }
 
 .page-block {
-	&--text {
-		padding-top: 50px;
-		padding-bottom: 30px;
-		h2 {
-			line-height: 1.2;
-			margin-bottom: 10px;
+  &--cta {
+    @include breakpoint(medium) {
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+    .title {
+      line-height: 1;
+      margin-bottom: 21px;
+    }
+    &--large {
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 360px;
+      .title {
+        margin-bottom: 35px;
+      }
+    }
+	}
+	&--product-cta {
+		padding: 70px 80px;
+		h4 {
+			margin-bottom: 20px;
 		}
-		p {
-			font-size: 20px;
-			line-height: 1.4;
+		.button {
+			margin-bottom: 13px;
 		}
 	}
+}
+
+.page-block {
+  &--text {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    h2 {
+      line-height: 1.2;
+      margin-bottom: 11px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+  }
 }

@@ -59,7 +59,7 @@ if ( have_posts() ) :
 				<h6 class="title">Phase Genomics Unveils a Hi-C Kit for Human Samples, Expanding Their Hi-C Product Portfolio.</h6>
 			</div>
 			<div class="cell medium-3 home--announcement__cta">
-				<a href="<?php the_clean_url(); ?>/shop" class="secondary-button">Learn More</a>
+				<a href="<?php the_clean_url(); ?>/shop" class="button secondary uppercase uppercase">Learn More</a>
 			</div>
 		</div>
 	</div>
@@ -106,7 +106,7 @@ if ( have_posts() ) :
 					<div class="home--products__cell__content">
 						<h5 class="home--products__title"><?php the_title(); ?></h5>
 						<p class="home--products__desc">Complete chromosome-scale scaffolds and deconvoluted metagenomes.</p>
-						<a href="<?php the_permalink(); ?>" class="secondary-button">Order</a>
+						<a href="<?php the_permalink(); ?>" class="button secondary uppercase border semibold small">Order</a>
 					</div>
 				</div>
 				<div class="home--products__cell__inner home--products__cell__inner--mask">
@@ -116,7 +116,7 @@ if ( have_posts() ) :
 					</div>
 				</div>
 				<div class="home--products__cell__content">
-					<a href="<?php the_permalink(); ?>" class="secondary-button">Order</a>
+					<a href="<?php the_permalink(); ?>" class="button secondary uppercase border semibold small">Order</a>
 				</div>
 			</div>
 			<?php endwhile; ?>
@@ -152,7 +152,7 @@ if ( have_posts() ) :
 			<div class="cell medium-6 home--products__cell home--products__cell--border">
 				<h4 class="bold secondary-color uppercase"><?php the_title(); ?></h4>
 				<?php the_field( 'product_short_description' ); ?>
-				<a href="<?php the_permalink(); ?>" class="secondary-button secondary-button--large">Learn More</a>
+				<a href="<?php the_permalink(); ?>" class="button secondary uppercase large">Learn More</a>
 			</div>
 			<?php endwhile; ?>
 		</div>
@@ -163,12 +163,12 @@ if ( have_posts() ) :
 <!-- /Home Products -->
 
 <!-- Home CTA Large -->
-<section class="home home--cta home--cta--large bg-cover bg-center" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/background-blue.png');">
+<section class="home page-block--cta page-block--cta--large bg-cover bg-center" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/background-blue.png');">
 	<div class="container h100p">
 			<div class="grid-x h100p flex-center-items">
 				<div class="cell small-12 medium-12 large-12 text-center">
 					<h2 class="title white-color">Shorten the path to complete genomes</h2>
-					<a href="<?php the_clean_url(); ?>/blog" class="secondary-button secondary-button--large">Latest News</a>
+					<a href="<?php the_clean_url(); ?>/blog" class="button secondary uppercase large">Latest News</a>
 				</div>
 			</div>
 	</div>
@@ -200,12 +200,12 @@ if ( have_posts() ) :
 <!-- /Home Quotes -->
 
 <!-- CTA -->
-<section class="home home--cta bg-cover bg-center-right" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/cta-bg.png');">
+<section class="home page-block--cta bg-cover bg-center-right" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/cta-bg.png');">
 	<div class="container">
 			<div class="grid-x">
 				<div class="cell small-12 medium-12 large-7">
 					<h5 class="title blue-color">Interested in proximity-guided assembly?</h5>
-					<a href="<?php the_clean_url(); ?>/contact" class="secondary-button secondary-button--small">Contact Us</a>
+					<a href="<?php the_clean_url(); ?>/contact" class="button secondary uppercase small">Contact Us</a>
 				</div>
 			</div>
 	</div>

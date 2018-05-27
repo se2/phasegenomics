@@ -10,7 +10,8 @@ h4 a,
 .h4 a,
 h5 a,
 .h5 a {
-  text-decoration: none;
+	text-decoration: none;
+	font-weight: 300;
 }
 
 a {
@@ -114,20 +115,28 @@ a {
   position: absolute;
 }
 
-.light {
-  font-weight: 400;
+.bolder {
+  font-weight: 900 !important;
 }
 
-.lighter {
-  font-weight: 300;
+.semibold {
+	font-weight: 600 !important;
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: 700 !important;
 }
 
-.bolder {
-  font-weight: bolder;
+.regular {
+	font-weight: 500 !important;
+}
+
+.light {
+  font-weight: 400 !important;
+}
+
+.lighter {
+  font-weight: 300 !important;
 }
 
 .flex-center-items {
@@ -180,53 +189,15 @@ a {
   background-position: center left;
 }
 
-.primary-button {
-  background-color: $primary-color;
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 0 23px;
-  min-width: 125px;
-  display: inline-block;
-  height: 42px;
-  line-height: 42px;
-  cursor: pointer;
-  &--small {
-    height: 37px;
-    line-height: 37px;
-    font-size: 15px;
-    padding: 0 17px;
-  }
-  &--large {
-    height: 46px;
-    line-height: 46px;
-    font-size: 18px;
-  }
-  &:hover {
-    color: white;
-    background-color: darken($primary-color, 10);
-  }
-}
-
-.secondary-button {
-  @extend .primary-button;
-  background-color: $secondary-color;
-  &--small {
-    height: 37px;
-    line-height: 37px;
-    font-size: 15px;
-    padding: 0 17px;
-  }
-  &--large {
-    height: 46px;
-    line-height: 46px;
-    font-size: 18px;
-  }
-  &:hover {
-    color: white;
-    background-color: darken($secondary-color, 10);
-  }
+.button {
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	&.border {
+		background: $white;
+		border: 3px solid #a5aeb4;
+		color: #a5aeb4;
+		padding: 8px 30px;
+	}
 }
 
 .uppercase {
@@ -237,8 +208,16 @@ a {
   height: 100%;
 }
 
+.w100p {
+	width: 100%;
+}
+
 .mb0 {
   margin-bottom: 0;
+}
+
+.lh1 {
+	line-height: 1;
 }
 
 .no-overflow {
@@ -342,7 +321,7 @@ to display none.
   .respond-form,
   nav {
     display: none;
-	}
+  }
 }
 
 /*********************
@@ -383,7 +362,6 @@ p,
 li {
   font-size: 1rem;
   color: #466880;
-  // line-height: 1.53;
   line-height: 1.4;
   margin-bottom: .5rem;
 }

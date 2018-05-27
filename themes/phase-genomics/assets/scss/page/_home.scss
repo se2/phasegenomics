@@ -12,7 +12,6 @@
       margin-right: -#{$padding};
     }
     $padding-bottom: 36px;
-    $button-height: 42px;
     $transition-duration: 800ms;
     &__cell {
       text-align: center;
@@ -23,7 +22,7 @@
         .home--products__cell__inner--mask {
           top: -100%;
         }
-        a.secondary-button {
+        .button.border {
           background: $secondary-color;
           border-color: $secondary-color;
           color: white;
@@ -55,7 +54,7 @@
           }
           .home--products__cell__content {
             padding-bottom: 0;
-            bottom: calc(#{$padding-bottom} + #{$button-height});
+            bottom: calc(#{$padding-bottom} + 46px);
           }
         }
       }
@@ -67,12 +66,8 @@
         bottom: 0;
         left: 0;
         z-index: 3;
-        a.secondary-button {
-          transition-duration: $transition-duration;
-          background: transparent;
-          border: 3px solid #a5aeb4;
-          color: #a5aeb4;
-          line-height: 36px;
+        .button.border {
+					transition: all $transition-duration;
         }
       }
       &--border {
@@ -119,24 +114,6 @@
       margin-bottom: 23px;
     }
   }
-  &--cta {
-    @include breakpoint(medium) {
-      padding-top: 65px;
-      padding-bottom: 65px;
-    }
-    .title {
-      line-height: 1;
-      margin-bottom: 21px;
-    }
-    &--large {
-      padding-top: 0;
-      padding-bottom: 0;
-      height: 360px;
-      .title {
-        margin-bottom: 35px;
-      }
-    }
-  }
   &--announcement {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -163,7 +140,8 @@
       }
       .quote {
         font-size: 18px;
-        line-height: 1.33;
+				line-height: 1.33;
+				font-weight: normal;
       }
       .referee {
         font-size: 14px;

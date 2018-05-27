@@ -13,16 +13,28 @@
     li {
       &.small-menu a {
         font-size: 14px;
-        padding-bottom: 20px;
+        margin-bottom: 20px;
       }
       a {
         color: white;
         font-size: 16px;
         font-weight: 500;
-        padding: 0 20px 36px 0;
+				padding: 0;
+				margin-right: 20px;
+				margin-bottom: 36px;
+				&:hover {
+					color: $secondary-color;
+				}
       }
     }
   }
+}
+
+.footer .menu .active>a,
+.footer .menu .is-active>a {
+  background-color: transparent;
+  background: transparent;
+  color: $secondary-color;
 }
 
 .source-org {
@@ -31,6 +43,9 @@
   line-height: 1;
   a {
     text-transform: uppercase;
-    color: white;
+		color: white;
+		&:hover {
+			color: $secondary-color;
+		}
   }
 }

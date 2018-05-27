@@ -224,13 +224,6 @@ a {
   overflow: hidden;
 }
 
-.footer .menu .active>a,
-.footer .menu .is-active>a {
-  background-color: transparent;
-  background: transparent;
-  color: $secondary-color;
-}
-
 .fz-36 {
 	line-height: 1.11;
 	@include breakpoint(small) {

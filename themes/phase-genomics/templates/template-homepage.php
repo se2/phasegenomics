@@ -88,21 +88,23 @@ if ( have_posts() ) :
 				$attachment_ids[0] = get_post_thumbnail_id( $product->id );
 				$product_image     = wp_get_attachment_image_src( $attachment_ids[0], 'full' );
 			?>
-			<div class="cell medium-3 home--products__cell pos-rel no-overflow">
-				<div class="home--products__cell__inner pos-rel bg-cover" style="background-image:url('<?php echo esc_attr( $product_image[0] ); ?>');">
+			<div class="cell small-6 mobile-6 medium-6 large-3 home--products__cell pos-rel">
+				<div class="home--products__cell__inner pos-rel bg-cover show-for-large" style="background-image:url('<?php echo esc_attr( $product_image[0] ); ?>');">
 					<div class="home--products__cell__content">
-						<h5 class="home--products__title"><?php the_title(); ?></h5>
-						<p class="home--products__desc">Complete chromosome-scale scaffolds and deconvoluted metagenomes.</p>
+						<h5 class="home--products__title secondary-color"><?php the_title(); ?></h5>
+						<p class="white-color home--products__desc">Complete chromosome-scale scaffolds and deconvoluted metagenomes.</p>
 						<a href="<?php the_permalink(); ?>" class="button secondary uppercase border semibold small">Order</a>
 					</div>
 				</div>
 				<div class="home--products__cell__inner home--products__cell__inner--mask">
 					<img src="<?php the_field( 'hexagon_thumbnail' ); ?>" alt="<?php the_title(); ?>">
 					<div class="home--products__cell__content">
-						<h5 class="home--products__title" style="color:#2a627a;"><?php the_title(); ?></h5>
+						<h5 class="home--products__title secondary-color"><?php the_title(); ?></h5>
+						<p class="home--products__desc primary-color hide-for-large">Complete chromosome-scale scaffolds and deconvoluted metagenomes.</p>
+						<a href="<?php the_permalink(); ?>" class="button secondary uppercase border semibold small hide-for-large">Order</a>
 					</div>
 				</div>
-				<div class="home--products__cell__content">
+				<div class="home--products__cell__content show-for-large">
 					<a href="<?php the_permalink(); ?>" class="button secondary uppercase border semibold small">Order</a>
 				</div>
 			</div>

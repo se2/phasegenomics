@@ -10,8 +10,8 @@ h4 a,
 .h4 a,
 h5 a,
 .h5 a {
-	text-decoration: none;
-	font-weight: 300;
+  text-decoration: none;
+  font-weight: 300;
 }
 
 a {
@@ -120,7 +120,7 @@ a {
 }
 
 .semibold {
-	font-weight: 600 !important;
+  font-weight: 600 !important;
 }
 
 .bold {
@@ -128,7 +128,7 @@ a {
 }
 
 .regular {
-	font-weight: 500 !important;
+  font-weight: 500 !important;
 }
 
 .light {
@@ -190,14 +190,14 @@ a {
 }
 
 .button {
-	font-weight: 600;
-	letter-spacing: 0.02em;
-	&.border {
-		background: $white;
-		border: 3px solid #a5aeb4;
-		color: #a5aeb4;
-		padding: 8px 30px;
-	}
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  &.border {
+    background: $white;
+    border: 3px solid #a5aeb4;
+    color: #a5aeb4;
+    padding: 8px 30px;
+  }
 }
 
 .uppercase {
@@ -209,7 +209,7 @@ a {
 }
 
 .w100p {
-	width: 100%;
+  width: 100%;
 }
 
 .mb0 {
@@ -217,7 +217,7 @@ a {
 }
 
 .lh1 {
-	line-height: 1;
+  line-height: 1;
 }
 
 .no-overflow {
@@ -225,21 +225,43 @@ a {
 }
 
 .fz-36 {
-	line-height: 1.11;
-	@include breakpoint(small) {
-		font-size: 23px;
-	}
-	@include breakpoint(medium) {
-		font-size: 30px;
-	}
-	@include breakpoint(large) {
-		font-size: 36px;
-	}
+  line-height: 1.11;
+  @include breakpoint(small) {
+    font-size: 23px;
+  }
+  @include breakpoint(medium) {
+    font-size: 30px;
+  }
+  @include breakpoint(large) {
+    font-size: 36px;
+  }
 }
 
 p.small {
-	font-size: 16px;
-	font-weight: normal;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+// Responsive Mixins for iPad Pro
+@mixin respond($media) {
+  @if $media==ipad-pro {
+    /* Portrait and Landscape */
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+      @content;
+    }
+  }
+  @else if $media==ipad-pro-portrait {
+    /* Portrait */
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+      @content;
+    }
+  }
+  @else if $media==ipad-pro-landscape {
+    /* Landscape */
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+      @content;
+    }
+  }
 }
 
 /******************************************************************

@@ -45,35 +45,43 @@
           z-index: 2;
           padding-bottom: 0;
           img {
-            width: 200px;
             position: absolute;
             top: 45px;
             left: 0;
             right: 0;
             margin: 0 auto;
+            @include breakpoint(small) {
+              width: auto;
+            }
+            @include breakpoint(xlarge) {
+              width: 200px;
+            }
           }
           .home--products__cell__content {
             padding-bottom: 0;
             bottom: calc(#{$padding-bottom} + 46px);
-          }
+					}
+					@include respond(ipad-pro) {
+						display: none;
+					}
         }
       }
       &__content {
         width: 100%;
-        padding: 0 20px #{$padding-bottom};
+        padding: 0 12px #{$padding-bottom};
         text-align: center;
         position: absolute;
         bottom: 0;
         left: 0;
         z-index: 3;
         .button.border {
-					transition: all $transition-duration;
+          transition: all $transition-duration;
         }
       }
       &--border {
         border: 3px solid #eef7fd;
-				padding: 24px 50px 28px;
-				p,
+        padding: 24px 50px 28px;
+        p,
         ul,
         strong {
           text-align: left;
@@ -87,7 +95,7 @@
             font-size: 14px;
             line-height: 1.2;
           }
-				}
+        }
       }
     }
     &__title {
@@ -95,8 +103,8 @@
       font-weight: 600;
       font-size: 24px;
       line-height: 1;
-			margin-bottom: 15px;
-			text-transform: uppercase;
+      margin-bottom: 15px;
+      text-transform: uppercase;
     }
     &__desc {
       color: white;
@@ -132,8 +140,8 @@
       }
       .quote {
         font-size: 18px;
-				line-height: 1.33;
-				font-weight: normal;
+        line-height: 1.33;
+        font-weight: normal;
       }
       .referee {
         font-size: 14px;

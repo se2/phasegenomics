@@ -46,54 +46,39 @@ if ( have_posts() ) :
 </section>
 <!-- /Big Text -->
 
+<?php
+// Hi-C Category, change this if admin changes category for Hi-C products.
+$hic_category = 57;
+$products = get_products_query( $hic_category, 'NOT IN' );
+if ( $products->have_posts() ) :
+	while ( $products->have_posts() ) :
+		$products->the_post();
+?>
 <!-- Product CTA -->
-<section class="page page-block page-block--product-cta bg-cover bg-center-bottom" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/Proximeta.png');">
+<section class="page page-block page-block--product-cta bg-cover bg-center-bottom" style="background-image:url('<?php the_field( 'background_image' ); ?>');">
 	<div class="main-container">
 		<div class="grid-x grid-margin-x">
 			<div class="cell large-8">
-				<h4 class="bold uppercase secondary-color">PROXIMETA HI-C METAGENOMIC DECONVOLUTION</h4>
-				<p>
-					A true revolution in microbial research, ProxiMeta Hi-C metagenome deconvolution
-					offers researchers the ability to identify dozens or hundreds of high-quality,
-					strain-level microbial genomes from a single sample, with no culturing or high
-					molecular weight DNA extraction required. With high-quality genomes for microbes
-					with as little as 0.05% cellular abundance in a sample, you can discover novel organisms
-					and strains, identify plasmid-host relationships, study eukaryotic metagenomes, and more.
-				</p>
+				<h4 class="bold uppercase secondary-color"><?php the_title(); ?></h4>
+				<p><?php the_field( 'product_description_overview' ) ?></p>
 			</div>
 			<div class="cell large-3 large-offset-1">
-				<a href="<?php the_clean_url(); ?>/product" class="button uppercase secondary w100p">Buy Kits</a>
-				<a href="<?php the_clean_url(); ?>/product" class="button uppercase blue light w100p">Our Services</a>
-				<a href="<?php the_clean_url(); ?>/product" class="button uppercase blue light w100p">Product FAQ</a>
+				<a href="<?php the_permalink(); ?>" class="button uppercase secondary w100p">Buy Kits</a>
+				<?php
+				while ( have_rows( 'product_overview_ctas' ) ) :
+					the_row();
+				?>
+				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button uppercase blue light w100p"><?php the_sub_field( 'cta_title' ); ?></a>
+				<?php endwhile; ?>
+				<?php reset_rows(); ?>
 			</div>
 		</div>
 	</div>
 </section>
 <!-- /Product CTA -->
-
-<!-- Product CTA -->
-<section class="page page-block page-block--product-cta bg-cover bg-center-bottom" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/bg-hex.png');">
-	<div class="main-container">
-		<div class="grid-x grid-margin-x">
-			<div class="cell large-8">
-				<h4 class="bold uppercase secondary-color">Proximo HI-C Scaffolding</h4>
-				<p>
-					The best solution on the market to create complete end-to-end chromosome-scale
-					genome scaffolds—even from short-read assemblies–are our Proximo Hi-C genome scaffolding
-					kits and services. Proximo Hi-C’s ability capture ultra-long genomic contiguity information
-					from unbroken chromosomes enables researchers to answer questions difficult or impossible
-					though other means, including structural variation, complex gene structure, gene linkage,
-					gene regulation, and more.
-				</p>
-			</div>
-			<div class="cell large-3 large-offset-1">
-				<a href="<?php the_clean_url(); ?>/product" class="button uppercase secondary w100p">Buy Kits</a>
-				<a href="<?php the_clean_url(); ?>/product" class="button uppercase blue light w100p">Our Services</a>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- /Product CTA -->
+<?php endwhile; ?>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
 
 <!-- Overlap Products -->
 <section class="page page-block page-block--products-overlap" style="background-color:#466880;">
@@ -104,8 +89,6 @@ if ( have_posts() ) :
 			</div>
 		</div>
 		<?php
-		// Hi-C Category, change this if admin changes category for Hi-C products.
-		$hic_category = 57;
 		$hic_products = get_products_query( $hic_category );
 		if ( $hic_products->have_posts() ) :
 		?>

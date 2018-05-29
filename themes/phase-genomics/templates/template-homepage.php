@@ -131,7 +131,7 @@ if ( have_posts() ) :
 			?>
 			<div class="cell medium-6 home--products__cell home--products__cell--border">
 				<h4 class="bold secondary-color uppercase"><?php the_title(); ?></h4>
-				<?php the_field( 'product_short_description' ); ?>
+				<?php the_excerpt(); ?>
 				<a href="<?php the_permalink(); ?>" class="button secondary uppercase large">Learn More</a>
 			</div>
 			<?php endwhile; ?>

@@ -823,7 +823,8 @@
             "send-trackbacks"
         ],
         "active": 1,
-        "description": ""
+        "description": "",
+        "modified": 1527368660
     },
     {
         "key": "group_58652f595cc4a",
@@ -1034,7 +1035,8 @@
             "send-trackbacks"
         ],
         "active": 1,
-        "description": ""
+        "description": "",
+        "modified": 1527368983
     },
     {
         "key": "group_5b06d649820ac",
@@ -1085,13 +1087,13 @@
     },
     {
         "key": "group_5b06f9238f9c6",
-        "title": "Product Short Description",
+        "title": "Product Overview",
         "fields": [
             {
                 "key": "field_5b06f9375df5f",
-                "label": "Product Short Description",
-                "name": "product_short_description",
-                "type": "wysiwyg",
+                "label": "Product Description for Overview",
+                "name": "product_description_overview",
+                "type": "textarea",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1101,10 +1103,89 @@
                     "id": ""
                 },
                 "default_value": "",
-                "tabs": "all",
-                "toolbar": "full",
-                "media_upload": 0,
-                "delay": 0
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_5b0d5c9cf3118",
+                "label": "Background Image",
+                "name": "background_image",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_5b0d5cabf3119",
+                "label": "Product Overview CTAs",
+                "name": "product_overview_ctas",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "row",
+                "button_label": "Add CTA",
+                "sub_fields": [
+                    {
+                        "key": "field_5b0d5ce3f311a",
+                        "label": "CTA Title",
+                        "name": "cta_title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_5b0d5ceff311b",
+                        "label": "CTA Link",
+                        "name": "cta_link",
+                        "type": "link",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url"
+                    }
+                ]
             }
         ],
         "location": [

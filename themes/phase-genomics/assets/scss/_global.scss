@@ -198,6 +198,9 @@ a {
     color: #a5aeb4;
     padding: 8px 30px;
   }
+  &.small {
+    padding: 10px 22px;
+  }
 }
 
 .uppercase {
@@ -239,7 +242,7 @@ a {
 
 p.small {
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 500;
 }
 
 // Responsive Mixins for iPad Pro

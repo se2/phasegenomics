@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * Template Name: Main Theme Functions
+	 * Main Theme Functions
 	 *
 	 * @category   Function
 	 * @package    WordPress

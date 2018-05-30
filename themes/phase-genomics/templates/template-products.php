@@ -17,17 +17,7 @@ if ( have_posts() ) :
 		the_post();
 ?>
 
-<!-- Banner -->
-<section class="page bg-cover bg-center-top banner" style="background-image:url('<?php the_field( 'billboard_background_image' ); ?>');">
-	<div class="main-container pos-rel h100p">
-		<div class="grid-x h100p flex-bottom">
-			<div class="cell small-12 large-7">
-				<h3 class="white-color bold text-shadow uppercase banner__title"><?php the_field( 'page_title' ); ?></h3>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- /Banner -->
+<?php get_template_part( 'parts/page', 'header' ); ?>
 
 <!-- Big Text -->
 <section class="page page-block page-block--text">
@@ -158,18 +148,7 @@ if ( $products->have_posts() ) :
 </section>
 <!-- /2-Column Text Block -->
 
-<!-- CTA -->
-<section class="page page-block--cta bg-cover bg-center-right" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/cta-bg.png');">
-	<div class="container">
-			<div class="grid-x">
-				<div class="cell small-12 medium-12 large-7">
-					<h5 class="title blue-color">Interested in proximity-guided assembly?</h5>
-					<a href="<?php the_clean_url(); ?>/contact" class="button secondary uppercase small">Contact Us</a>
-				</div>
-			</div>
-	</div>
-</section>
-<!-- /CTA -->
+<?php get_template_part( 'parts/page', 'footer' ); ?>
 
 <?php endwhile; else : ?>
 	<div class="main-container">

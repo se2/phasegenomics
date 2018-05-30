@@ -1,24 +1,27 @@
 <?php
-/*
-Template Name: About
-*/
-?>
+/**
+ * Template About.
+ *
+ * @package    Backup
+ * @deprecated No longer used.
+ */
 
-<?php get_header(); ?>
-			
+get_header(); ?>
+
+<?php // phpcs:disable ?>
 
 		<div class="header-bg" style="background: url('<?php echo get_field('background_image'); ?>');">
 				<div class="row">
 					<div class="large-10 medium-12 large-centered medium-centered columns">
 						<div class="fullwidth-module">
 							<div class="center-icon">
-							<?php 
+							<?php
 
 							$icon = get_field('icon');
 							if( !empty($icon) ): ?>
-							
+
 								<img class="three-mod-icon" src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt'] ?>" />
-								
+
 							<?php endif; ?>
 							</div>
 							<h2 class="bb-header"><?php echo get_field('header'); ?></h2>
@@ -33,7 +36,7 @@ Template Name: About
 			<div class="row">
 				<div class="large-6 medium-10 large-centered medium-centered columns">
 					<div class="center-icon">
-						<?php 
+						<?php
 						$icon_1 = get_field('icon_1');
 						if( !empty($icon_1) ): ?>
 						<img class="three-mod-icon" src="<?php echo $icon_1['url']; ?>" alt="<?php echo $icon_1['alt'] ?>" />
@@ -45,7 +48,7 @@ Template Name: About
 			<div class="row">
 				<div class="large-10 medium-10 large-centered medium-centered columns">
 					<?php if( have_rows('news_article') ): ?>
-						<?php while( have_rows('news_article') ): the_row(); 
+						<?php while( have_rows('news_article') ): the_row();
 							// vars
 							$article_post_date = get_sub_field('article_post_date');
 							$article_description = get_sub_field('article_description');
@@ -75,7 +78,7 @@ Template Name: About
 			<div class="row">
 				<div class="large-6 medium-10 large-centered medium-centered columns">
 					<div class="center-icon">
-						<?php 
+						<?php
 						$icon_2 = get_field('icon_2');
 						if( !empty($icon_2) ): ?>
 						<img class="three-mod-icon" src="<?php echo $icon_2['url']; ?>" alt="<?php echo $icon_2['alt'] ?>" />
@@ -97,7 +100,7 @@ Template Name: About
 							</div>
 							<ul class="orbit-container">
 								<?php if( have_rows('testimonial') ): ?>
-								<?php while( have_rows('testimonial') ): the_row(); 
+								<?php while( have_rows('testimonial') ): the_row();
 								// vars
 								$testimonial_text = get_sub_field('testimonial_text', false, false);
 								$attribution = get_sub_field('attribution');
@@ -124,15 +127,15 @@ Template Name: About
 						</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 </div>
-		
+
 	<!-- SECTION 3 — TEAM -->
 		<div class="fullwidth-module" style="background: url('<?php echo get_field('background_3'); ?>');">
 			<div class="row">
 				<div class="large-6 medium-10 large-centered medium-centered columns">
 					<div class="center-icon">
-						<?php 
+						<?php
 						$icon_3 = get_field('icon_3');
 						if( !empty($icon_3) ): ?>
 						<img class="three-mod-icon" src="<?php echo $icon_3['url']; ?>" alt="<?php echo $icon_3['alt'] ?>" />
@@ -156,7 +159,7 @@ Template Name: About
 				<div class="medium-8 large-centered medium-centered columns">
 					<div class="row">
 						<?php if( have_rows('executives') ): ?>
-							<?php while( have_rows('executives') ): the_row(); 
+							<?php while( have_rows('executives') ): the_row();
 								// vars
 								$portrait = get_sub_field('portrait');
 								$name = get_sub_field('name');
@@ -166,7 +169,7 @@ Template Name: About
 								$l_link = get_sub_field('lightbox_link');
 								?>
 								<div class="medium-6 columns">
-									<a data-toggle="<?php echo $l_link; ?>">						
+									<a data-toggle="<?php echo $l_link; ?>">
 										<div class="lg-portrait-wrap">
 											<div class="overlay-container">
 												<img class="lg-portrait block-display-img" src="<?php echo $portrait['url']; ?>" alt="<?php echo $portrait['alt'] ?>" />
@@ -190,7 +193,7 @@ Template Name: About
 										<p><?php echo $bio; ?></p>
 										<div class="center-icon">
 											<img class="three-mod-icon" src="http://www.phasegenomics.dev/wp-content/uploads/2017/06/logomark.png" alt="Phase Genomics" />
-										</div>	
+										</div>
 										<button class="close-button" data-close aria-label="Close modal" type="button">
 											<span aria-hidden="true">&times;</span>
 										</button>
@@ -208,7 +211,7 @@ Template Name: About
 					<p class="interior-header"><?php echo get_field('headline_4'); ?></p>
 					<div class="row small-up-2 medium-up-3 medium-centered large-up-3">
 						<?php if( have_rows('advisors') ): ?>
-						<?php while( have_rows('advisors') ): the_row(); 
+						<?php while( have_rows('advisors') ): the_row();
 						// vars
 						$portrait_2 = get_sub_field('portrait_2');
 						$name2 = get_sub_field('name_2');
@@ -241,7 +244,7 @@ Template Name: About
 								<p><?php echo $bio; ?></p>
 								<div class="center-icon">
 									<img class="three-mod-icon" src="http://www.phasegenomics.dev/wp-content/uploads/2017/06/logomark.png" alt="Phase Genomics" />
-								</div>	
+								</div>
 								<button class="close-button" data-close aria-label="Close modal" type="button">
 									<span aria-hidden="true">&times;</span>
 								</button>
@@ -253,13 +256,13 @@ Template Name: About
 			</div>
 		</div>
 	</div>
-		
+
 		<!-- SECTION 4 RESOURCES -->
 		<div class="fullwidth-module" style="background: url('<?php echo get_field('background_4'); ?>');">
 			<div class="row">
 				<div class="large-6 medium-10 large-centered medium-centered columns">
 					<div class="center-icon">
-						<?php 
+						<?php
 						$icon_3 = get_field('icon_4');
 						if( !empty($icon_3) ): ?>
 						<img class="three-mod-icon" src="<?php echo $icon_3['url']; ?>" alt="<?php echo $icon_3['alt'] ?>" />
@@ -273,12 +276,12 @@ Template Name: About
 					<div class="row">
 						<div class="medium-5 small-11 columns">
 							<div class="button-div">
-								<?php 
+								<?php
 									$resource_img = get_field('resource_image');
 									if( !empty($resource_img) ): ?>
 										<img class="resource-img" src="<?php echo $resource_img['url']; ?>" alt="<?php echo $resource_img['alt'] ?>" />
 								<?php endif; ?>
-								<?php 
+								<?php
 									$resource_url = get_field('resource_link_url');
 									if( $resource_url ): ?>
 										<a class="resource-button" href="<?php echo $resource_url['url']; ?>"><?php echo the_field('resource_link_text'); ?></a>
@@ -292,10 +295,10 @@ Template Name: About
 				</div>
 			</div>
 		</div>
-					
-					
-					
-			
+
+
+
+
 	<!-- CTA -->
 		<div class="cta-fullwidth-banner">
 			<div class="row">
@@ -303,7 +306,7 @@ Template Name: About
 					<p class="cta-header"><?php echo get_field('cta_caption'); ?></p>
 					<div class="button-div">
 						<?php if( have_rows('cta') ): ?>
-						<?php while( have_rows('cta') ): the_row(); 
+						<?php while( have_rows('cta') ): the_row();
 						// vars
 						$ctabl = get_sub_field('cta_button_text');
 						$link = get_sub_field('link');
@@ -320,8 +323,8 @@ Template Name: About
 
 						<?php endwhile; ?>
 						<?php endif; ?>
-						
-						
+
+
 					</div>
 				</div>
 			</div>

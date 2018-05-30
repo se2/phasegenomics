@@ -167,5 +167,69 @@
 				bottom: 0;
 			}
 		}
-	}
+  }
+  &--announcement {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    &__content {
+      color: white;
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.2;
+        margin-bottom: 0;
+      }
+    }
+    &--normal {
+      padding-top: 60px;
+      padding-bottom: 50px;
+      p {
+        margin-top: 15px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &--posts {
+    padding-top: 50px;
+    padding-bottom: 70px;
+    &__grid {
+      margin-top: 30px;
+    }
+    &__thumbnail {
+      width: 100%;
+      height: 0;
+      padding-bottom: 48.667%;
+      border-bottom: 0.5px solid #eaeaea;
+    }
+    &__info {
+      padding: 20px 17px 30px;
+      p {
+        font-size: 14px;
+        line-height: 1.28;
+      }
+    }
+  }
+  &--news {
+    padding-top: 32px;
+    padding-bottom: 46px;
+    h2 {
+      margin-bottom: 50px;
+      line-height: 1;
+    }
+    p {
+      line-height: 1.375;
+      &.page-block--news__date {
+        font-size: 14px;
+        margin-bottom: 10px;
+        line-height: 1;
+
+      }
+    }
+    a.button {
+      margin-top: 20px;
+    }
+    &__item {
+      margin-bottom: 30px;
+    }
+  }
 }

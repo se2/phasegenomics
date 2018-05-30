@@ -91,6 +91,9 @@ a {
 
 .box-shadow {
   box-shadow: 8px 13px 18px 0px rgba(0, 0, 0, 0.15);
+  &--posts {
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.35);
+  }
 }
 
 .text-shadow {

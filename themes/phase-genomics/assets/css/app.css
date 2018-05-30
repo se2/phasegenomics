@@ -9836,6 +9836,8 @@ a {
 
 .box-shadow {
   box-shadow: 8px 13px 18px 0px rgba(0, 0, 0, 0.15); }
+  .box-shadow--posts {
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.35); }
 
 .text-shadow {
   text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25); }
@@ -10853,6 +10855,56 @@ COMMENT FORM STYLES
       left: 0;
       bottom: 0; }
 
+.page-block--announcement {
+  padding-top: 24px;
+  padding-bottom: 24px; }
+  .page-block--announcement__content {
+    color: white; }
+    .page-block--announcement__content .title {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.2;
+      margin-bottom: 0; }
+  .page-block--announcement--normal {
+    padding-top: 60px;
+    padding-bottom: 50px; }
+    .page-block--announcement--normal p {
+      margin-top: 15px;
+      margin-bottom: 20px; }
+
+.page-block--posts {
+  padding-top: 50px;
+  padding-bottom: 70px; }
+  .page-block--posts__grid {
+    margin-top: 30px; }
+  .page-block--posts__thumbnail {
+    width: 100%;
+    height: 0;
+    padding-bottom: 48.667%;
+    border-bottom: 0.5px solid #eaeaea; }
+  .page-block--posts__info {
+    padding: 20px 17px 30px; }
+    .page-block--posts__info p {
+      font-size: 14px;
+      line-height: 1.28; }
+
+.page-block--news {
+  padding-top: 32px;
+  padding-bottom: 46px; }
+  .page-block--news h2 {
+    margin-bottom: 50px;
+    line-height: 1; }
+  .page-block--news p {
+    line-height: 1.375; }
+    .page-block--news p.page-block--news__date {
+      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: 1; }
+  .page-block--news a.button {
+    margin-top: 20px; }
+  .page-block--news__item {
+    margin-bottom: 30px; }
+
 /* Templates */
 @media print, screen and (min-width: 48em) {
   .home--products {
@@ -10998,17 +11050,6 @@ COMMENT FORM STYLES
     .home--products__desc {
       font-size: 16px;
       margin-bottom: 23px; } }
-
-.home--announcement {
-  padding-top: 24px;
-  padding-bottom: 24px; }
-  .home--announcement__content {
-    color: white; }
-    .home--announcement__content .title {
-      font-size: 20px;
-      font-weight: bold;
-      line-height: 1.2;
-      margin-bottom: 0; }
 
 .home--quotes {
   padding-top: 40px;

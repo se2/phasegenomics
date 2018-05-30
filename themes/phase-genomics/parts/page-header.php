@@ -34,25 +34,10 @@
 </section>
 <!-- /Banner -->
 
-<!-- Default Announcement -->
-<section class="home home--announcement" style="background-color:#99b7cc;">
-	<div class="container">
-		<div class="grid-x grid-margin-x">
-			<div class="cell medium-9 home--announcement__content">
-				<h6 class="title">Phase Genomics Unveils a Hi-C Kit for Human Samples, Expanding Their Hi-C Product Portfolio.</h6>
-			</div>
-			<div class="cell medium-3 home--announcement__cta">
-				<a href="<?php the_clean_url(); ?>/shop" class="button secondary uppercase uppercase">Learn More</a>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- /Default Announcement -->
-
 <?php else : ?>
 
 <!-- Banner -->
-<section class="page bg-cover bg-center-top banner" style="background-image:url('<?php the_field( 'billboard_background_image' ); ?>');">
+<section class="page bg-cover bg-center-bottom banner" style="background-image:url('<?php the_field( 'billboard_background_image' ); ?>');">
 	<div class="main-container pos-rel h100p">
 		<div class="grid-x h100p flex-bottom">
 			<div class="cell small-12 large-7">
@@ -62,5 +47,49 @@
 	</div>
 </section>
 <!-- /Banner -->
+
+<?php endif; ?>
+
+<?php if ( get_field( 'show_announcement' ) ) : ?>
+
+	<?php if ( 'thin' === get_field( 'announcement_layout' ) ) : ?>
+
+	<!-- Thin Announcement -->
+	<section class="page page-block page-block--announcement" style="background-color:#99b7cc;">
+		<div class="container">
+			<div class="grid-x grid-margin-x">
+				<div class="cell medium-9 page-block--announcement__content">
+					<h6 class="title"><?php the_field( 'announcement_title' ); ?></h6>
+				</div>
+				<div class="cell medium-3 page-block--announcement__cta">
+					<a href="<?php the_field( 'announcement_cta_link' ); ?>" class="button secondary uppercase uppercase"><?php the_field( 'announcement_cta_title' ); ?></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /Thin Announcement -->
+
+	<?php elseif ( 'normal' === get_field( 'announcement_layout' ) ) : ?>
+
+	<!-- Normal Announcement -->
+	<section class="page page-block--announcement page-block--announcement--normal " style="background-color:#eef7fd;">
+		<div class="container">
+			<div class="grid-x grid-margin-x">
+				<div class="cell medium-4 page-block--announcement__content">
+					<?php if ( get_field( 'announcement_image' ) ) : ?>
+					<img src="<?php the_field( 'announcement_image' ); ?>" alt="<?php the_field( 'announcement_title' ); ?>">
+					<?php endif; ?>
+				</div>
+				<div class="cell medium-8 page-block--announcement__cta">
+					<h4 class="bold uppercase secondary-color"><?php the_field( 'announcement_title' ); ?></h4>
+					<p><?php the_field( 'announcement_content' ); ?></p>
+					<a href="<?php the_field( 'announcement_cta_link' ); ?>" class=""><?php the_field( 'announcement_cta_title' ); ?></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /Normal Announcement -->
+
+	<?php endif; ?>
 
 <?php endif; ?>

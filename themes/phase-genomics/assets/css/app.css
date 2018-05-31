@@ -9942,6 +9942,9 @@ a {
 .no-overflow {
   overflow: hidden; }
 
+.no-outline {
+  outline: none !important; }
+
 .fz-36 {
   line-height: 1.11;
   font-size: 23px; }

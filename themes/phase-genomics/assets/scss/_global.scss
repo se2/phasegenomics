@@ -230,6 +230,10 @@ a {
   overflow: hidden;
 }
 
+.no-outline {
+  outline: none !important;
+}
+
 .fz-36 {
   line-height: 1.11;
   @include breakpoint(small) {

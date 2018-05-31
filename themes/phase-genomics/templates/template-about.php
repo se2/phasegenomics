@@ -38,7 +38,7 @@ if ( have_posts() ) :
 	<!-- /Icon -->
 
 	<div class="row">
-		<div class="large-10 medium-10 large-centered medium-centered columns">
+		<div class="large-11 medium-11 large-centered medium-centered columns">
 			<p class="centered"><?php echo get_field( 'intro_text_3' ); ?></p>
 		</div>
 	</div>
@@ -55,7 +55,7 @@ if ( have_posts() ) :
 			<div class="row">
 				<?php
 				if ( have_rows( 'executives' ) ) :
-					while( have_rows( 'executives' ) ) :
+					while ( have_rows( 'executives' ) ) :
 						the_row();
 						$portrait = get_sub_field( 'portrait' );
 						$name     = get_sub_field( 'name' );
@@ -65,7 +65,7 @@ if ( have_posts() ) :
 						$l_link   = get_sub_field( 'lightbox_link' );
 				?>
 				<div class="medium-6 columns">
-					<a data-toggle="<?php echo $l_link; ?>">
+					<a data-toggle="<?php echo $l_link; ?>" class="no-outline">
 						<div class="lg-portrait-wrap">
 							<div class="overlay-container">
 								<img class="lg-portrait block-display-img" src="<?php echo $portrait['url']; ?>" alt="<?php echo $portrait['alt'] ?>" />
@@ -118,7 +118,7 @@ if ( have_posts() ) :
 						$l_link     = get_sub_field( 'lightbox_link' );
 				?>
 				<div class="columns">
-					<a data-toggle="<?php echo $l_link; ?>">
+					<a data-toggle="<?php echo $l_link; ?>" class="no-outline">
 						<div class="sm-portrait-wrap">
 							<div class="overlay-container">
 								<img class="sm-portrait block-display-img" src="<?php echo $portrait_2['url']; ?>" alt="<?php echo $portrait_2['alt'] ?>" />

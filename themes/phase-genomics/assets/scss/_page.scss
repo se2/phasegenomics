@@ -18,11 +18,27 @@
     .container {
       height: 345px;
     }
+    &__content {
+      margin-bottom: 20px;
+    }
   }
   @include breakpoint(medium) {
     &__title {
-      margin-bottom: 30px;
+      margin-bottom: 0;
       letter-spacing: 0.02em;
+    }
+    &__content {
+      margin-bottom: 30px;
+    }
+  }
+  &--video {
+    .flex-bottom {
+      align-items: center;
+    }
+    .banner__content,
+    .banner__embed {
+      width: 50%;
+      margin-bottom: 0;
     }
   }
   &__cta-group {
@@ -230,6 +246,52 @@
     }
     &__item {
       margin-bottom: 30px;
+    }
+  }
+  &--team {
+    @include breakpoint(small) {
+      padding-top: 30px;
+      padding-bottom: 70px;
+    }
+  }
+  &--testimonial {
+    @include breakpoint(small) {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+    .orbit-controls {
+      @include breakpoint(medium) {
+        .orbit-previous {
+          cursor: pointer;
+          padding: 0;
+          margin: 0;
+          margin-left: -46px;
+          outline: none;
+        }
+        .orbit-next {
+          cursor: pointer;
+          outline: none;
+          padding: 0;
+          margin: 0;
+          margin-right: -46px;
+        }
+      }
+      @include breakpoint(large) {
+        position: absolute;
+        width: 100vw;
+        height: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: calc((#{$container-width} - 100vw) / 2 - #{$container-width * 0.08333333} - #{map-get($grid-column-gutter, large)} / 2);
+        .orbit-previous {
+          margin-left: 0;
+          left: 40px;
+        }
+        .orbit-next {
+          margin-right: 0;
+          right: 40px;
+        }
+      }
     }
   }
 }

@@ -14,6 +14,10 @@ h5 a,
   font-weight: 300;
 }
 
+hr {
+  border-color: #7297af;
+}
+
 a {
   transition: all 300ms;
   &:link,
@@ -219,7 +223,7 @@ a {
 }
 
 .mb0 {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .lh1 {
@@ -248,8 +252,13 @@ a {
 }
 
 p.small {
-  font-size: 16px;
+  font-size: 16px !important;
   font-weight: 500;
+}
+
+.flex-video,
+.responsive-embed {
+  margin-bottom: 0;
 }
 
 // Responsive Mixins for iPad Pro

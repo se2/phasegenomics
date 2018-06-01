@@ -18,7 +18,7 @@
   font-size: 1.125rem;
   margin-bottom: .75rem !important;
   font-weight: bold;
-  line-heigåht: 1.35;
+  line-height: 1.35;
 }
 
 .news-link {
@@ -31,37 +31,91 @@
   right: 0;
 }
 
-/*************************************** TESTIMONIALS *****************************************/
-
-/* chevron arrow test */
-
-#chevron-arrow-left {
-  display: inline-block;
-  border-right: 4px solid #ff7200;
-  border-bottom: 4px solid #ff7200;
-  width: 5px;
-  height: 5px;
-  transform: rotate(-225deg);
-  transition: .35s ease;
-  transition: .35s ease-out;
+.interior-intro {
+  font-size: 19.8px;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
 }
 
-#chevron-arrow-right {
-  display: inline-block;
-  border-right: 4px solid #ff7200;
-  border-bottom: 4px solid #ff7200;
-  width: 5px;
-  height: 5px;
-  transform: rotate(-45deg);
-  transition: .35s ease;
-  transition: .35s ease-out;
-  &:hover {
-    border-right: 4px solid #466880;
-    border-bottom: 4px solid #466880;
+.arrow {
+  img {
+    width: 23px;
   }
 }
 
-#chevron-arrow-left:hover {
-  border-right: 4px solid #466880;
-  border-bottom: 4px solid #466880;
+#events-carousel {
+  opacity: 0;
+  transition: opacity 500ms;
+  margin-top: 25px;
+  &.slick-initialized {
+    opacity: 1;
+  }
+  .event-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    @include breakpoint(small) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    @include breakpoint(medium) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    @include breakpoint(large) {
+      padding-left: calc(#{map-get($grid-column-gutter, large)} / 2);
+      padding-right: calc(#{map-get($grid-column-gutter, large)} / 2);
+    }
+    outline: none;
+    p {
+      margin-bottom: 10px;
+      line-height: 1.28;
+    }
+    .button {
+      position: absolute;
+      width: 160px;
+      bottom: 23px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    .inner {
+      width: 100%;
+      min-height: 175px;
+      padding-top: 23px;
+      padding-left: 17px;
+      padding-right: 17px;
+    }
+    &__date-location {
+      font-size: 13px;
+    }
+    &__title {
+      font-size: 14px;
+    }
+  }
+  .arrow {
+    cursor: pointer;
+    z-index: 1;
+    &.prev {
+      @include breakpoint(small) {
+        left: 0;
+      }
+      @include breakpoint(large) {
+        left: -23px;
+      }
+      @include breakpoint(xlarge) {
+        left: -70px;
+      }
+    }
+    &.next {
+      @include breakpoint(small) {
+        right: 0;
+      }
+      @include breakpoint(large) {
+        right: -23px;
+      }
+      @include breakpoint(xlarge) {
+        right: -70px;
+      }
+    }
+  }
 }

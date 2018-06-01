@@ -58,11 +58,16 @@
 @import "header";
 @import "footer";
 @import "page";
+@import '../../node_modules/font-awesome/scss/font-awesome';
+
+/* Libraries */
+@import "../../vendor/slick-carousel/slick.scss";
+@import "../../vendor/slick-carousel/slick-theme.scss";
 
 /* Templates */
 @import "page/home";
 @import "page/technology";
-// @import "page/about";
+@import "page/about";
 @import "page/contact";
 // @import "page/services";
 @import "page/products";

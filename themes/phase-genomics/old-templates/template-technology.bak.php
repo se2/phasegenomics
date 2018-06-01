@@ -1,24 +1,27 @@
 <?php
-/*
-Template Name: Technology
-*/
-?>
+/**
+ * Template Technology.
+ *
+ * @package    Backup
+ * @deprecated No longer used.
+ */
 
-<?php get_header(); ?>
-			
+get_header(); ?>
+
+<?php // phpcs:disable ?>
 
 		<div class="header-bg" style="background: url('<?php echo get_field('background_image'); ?>');">
 				<div class="row">
 					<div class="large-10 medium-12 large-centered medium-centered columns">
 						<div class="fullwidth-module">
 							<div class="center-icon">
-							<?php 
+							<?php
 
 							$icon = get_field('icon');
 							if( !empty($icon) ): ?>
-							
+
 								<img class="three-mod-icon" src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt'] ?>" />
-								
+
 							<?php endif; ?>
 							</div>
 							<h2 class="bb-header"><?php echo get_field('header'); ?></h2>
@@ -27,34 +30,34 @@ Template Name: Technology
                     </div>
                 </div>
    		 	</div>
-   		 	
-   		 	
+
+
 
 			   <!-- MAIN TECHNOLOGY PAGE MODULE -->
 		<?php if( have_rows('content_container') ): ?>
 			<?php while( have_rows('content_container') ): the_row(); ?>
-				<?php 
+				<?php
 					$linking_id = get_sub_field('linking_id');
 					$section_background = get_sub_field('section_background');
-					$main_content = get_sub_field('main_content'); 
+					$main_content = get_sub_field('main_content');
 				?>
 				<div class="fullwidth-tech-module" id="<?php echo $linking_id; ?>" style="background: url('<?php echo $section_background; ?>');">
 
 					<?php if( have_rows('main_content') ): ?>
 						<?php while( have_rows('main_content') ): the_row(); ?>
 
-								<?php 
-									$content_type = get_sub_field('content_type'); 
+								<?php
+									$content_type = get_sub_field('content_type');
 									$intro_text = get_sub_field('introductory_text', false, false);
-									$section_icon = get_sub_field('section_icon'); 
+									$section_icon = get_sub_field('section_icon');
 									$section_headline = get_sub_field('section_headline');
-									$one_col_img = get_sub_field('one_column_image'); 
+									$one_col_img = get_sub_field('one_column_image');
 									$right_text = get_sub_field('right_text', false, false);
 									$one_col_img_right = get_sub_field('one_column_image_right');
 									$left_text = get_sub_field('left_text', false, false);
-									$top_spacing = get_sub_field('top_spacing'); 
+									$top_spacing = get_sub_field('top_spacing');
 									$full_width = get_sub_field('full_width_image');
-									$full_width_text = get_sub_field('full_width_text', false, false); 
+									$full_width_text = get_sub_field('full_width_text', false, false);
 								?>
 									<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ Section ICON ~~~~~~~~~~~~~~~~~~~~~~~~ -->
 									<?php if( get_sub_field('content_type') == 'Section Headline with Icon' ): ?>
@@ -90,7 +93,7 @@ Template Name: Technology
 												</div>
 											</div>
 									<?php endif; // end of if field_name logic ?>
-									
+
 									<?php if ($content_type == 'Left Text Right Graphic' ): ?>
 									<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ 2 column ~~~~~~~~~~~~~~~~~~~~~~~~ -->
 											<div class="row">
@@ -102,8 +105,8 @@ Template Name: Technology
 												</div>
 											</div>
 									<?php endif; // end of if field_name logic ?>
-									
-												
+
+
 									<?php if( get_sub_field('content_type') == 'Full width Image' ): ?>
 									<!-- ~~~~~~~~~~~~~~~~~~~~~~~~Image~~~~~~~~~~~~~~~~~~~~~~~~ -->
 												<div class="row">
@@ -114,8 +117,8 @@ Template Name: Technology
 													</div>
 												</div>
 										<?php else: // field_name returned false ?>
-									<?php endif; ?>			
-									
+									<?php endif; ?>
+
 							<?php if( get_sub_field('content_type') == 'Full width text' ): ?>
 									<!-- ~~~~~~~~~~~~~~~~~~~~~~~~Full width WYSIWYG~~~~~~~~~~~~~~~~~~~~~~~~ -->
 									<div class="row">
@@ -131,7 +134,7 @@ Template Name: Technology
 								<div class="row">
 									<div class="large-10 medium-12 large-centered medium-centered columns">
 										<div class="button-div">
-											<?php while( have_rows('section_cta') ): the_row(); 
+											<?php while( have_rows('section_cta') ): the_row();
 												// vars
 												$ctabl = get_sub_field('cta_button_text');
 												$link = get_sub_field('link');
@@ -153,12 +156,12 @@ Template Name: Technology
 
 						<?php endwhile; ?>
 					<?php endif; ?>
-					
+
 				</div>
 				<?php endwhile; ?>
 			<?php endif; ?>
 
-			
+
 	<!-- CTA -->
 		<div class="cta-fullwidth-banner">
 			<div class="row">
@@ -166,7 +169,7 @@ Template Name: Technology
 					<p class="cta-header"><?php echo get_field('cta_caption'); ?></p>
 					<div class="button-div">
 						<?php if( have_rows('cta') ): ?>
-						<?php while( have_rows('cta') ): the_row(); 
+						<?php while( have_rows('cta') ): the_row();
 						// vars
 						$ctabl = get_sub_field('cta_button_text');
 						$link = get_sub_field('link');
@@ -183,8 +186,8 @@ Template Name: Technology
 
 						<?php endwhile; ?>
 						<?php endif; ?>
-						
-						
+
+
 					</div>
 				</div>
 			</div>

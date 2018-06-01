@@ -22,8 +22,16 @@ function site_scripts() {
 	// Adding Foundation scripts file in the footer.
 	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/vendor/foundation-sites/dist//js/foundation.min.js', array( 'jquery' ), '6.2.3', true );
 
+	// Adding Slick carousel
+	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/vendor/slick-carousel/slick.min.js', array( 'jquery' ), '6.2.3', true );
+
 	// Adding scripts file in the footer.
 	wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', true );
+
+	$data = array(
+		'THEME_URL' => get_template_directory_uri(),
+	);
+	wp_localize_script( 'site-js', 'theme', $data );
 
 	// Register Motion-UI.
 	// phpcs:ignore
@@ -47,3 +55,4 @@ function site_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'site_scripts', 999 );
+

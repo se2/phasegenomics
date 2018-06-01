@@ -37,12 +37,25 @@
 <?php else : ?>
 
 <!-- Banner -->
-<section class="page bg-cover bg-center-bottom banner" style="background-image:url('<?php the_field( 'billboard_background_image' ); ?>');">
+<section class="page bg-cover bg-center-bottom banner <?php echo get_field( 'page_header_embed' ) ? 'banner--video' : ''; ?>" style="background-image:url('<?php the_field( 'billboard_background_image' ); ?>');">
 	<div class="main-container pos-rel h100p">
 		<div class="grid-x h100p flex-bottom">
-			<div class="cell small-12 large-7">
+			<div class="cell small-12 large-7 banner__content">
 				<h3 class="white-color bold text-shadow uppercase banner__title"><?php get_field( 'page_title' ) ? the_field( 'page_title' ) : the_title() ; ?></h3>
+				<?php if ( get_field( 'page_subtitle' ) ) : ?>
+				<h5 class="white-color banner__subtitle"><?php the_field( 'page_subtitle' ); ?></h5><br>
+				<?php endif; ?>
+				<?php if ( get_field( 'page_header_cta_title' ) && ( get_field( 'page_header_cta_link' ) ) ) : ?>
+				<a href="<?php the_field( 'page_header_cta_link' ) ?>" class="button secondary"><?php the_field( 'page_header_cta_title' ); ?></a>
+				<?php endif; ?>
 			</div>
+			<?php if ( get_field( 'page_header_embed' ) ) : ?>
+			<div class="cell small-12 large-5 banner__embed">
+				<div class="responsive-embed">
+					<?php the_field( 'page_header_embed' ); ?>
+				</div>
+			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>

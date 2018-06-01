@@ -1,24 +1,28 @@
 <?php
-/*
-Template Name: Technology Backup
-*/
-?>
+/**
+ * Template Technology Backup.
+ *
+ * @package    Backup
+ * @deprecated No longer used.
+ */
 
-<?php get_header(); ?>
-			
+get_header(); ?>
+
+<?php // phpcs:disable ?>
+
 
 		<div class="header-bg" style="background: url('<?php echo get_field('background_image'); ?>');">
 				<div class="row">
 					<div class="large-10 medium-12 large-centered medium-centered columns">
 						<div class="fullwidth-module">
 							<div class="center-icon">
-							<?php 
+							<?php
 
 							$icon = get_field('icon');
 							if( !empty($icon) ): ?>
-							
+
 								<img class="three-mod-icon" src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt'] ?>" />
-								
+
 							<?php endif; ?>
 							</div>
 							<h2 class="bb-header"><?php echo get_field('header'); ?></h2>
@@ -33,12 +37,12 @@ Template Name: Technology Backup
 			<div class="row">
 				<div class="large-6 medium-10 large-centered medium-centered columns">
 					<div class="center-icon">
-						<?php 
+						<?php
 
 						$icon_1 = get_field('icon_1');
 						if( !empty($icon_1) ): ?>
 						<img class="three-mod-icon" src="<?php echo $icon_1['url']; ?>" alt="<?php echo $icon_1['alt'] ?>" />
-						
+
 						<?php endif; ?>
 					</div>
 					<p class="interior-header"><?php echo get_field('headline_1'); ?></p>
@@ -54,10 +58,10 @@ Template Name: Technology Backup
 
 					<div class="centered-thumb" style="padding-top: .25rem;">
 					<p><a data-toggle="exampleModal1">
-						<?php 
+						<?php
 
 						$thumb = get_field('thumbnail_image');
-						if( !empty($thumb) ): ?>						
+						if( !empty($thumb) ): ?>
 						<img class="centered-thumb-im" src="<?php echo $thumb['url']; ?>" alt="<?php echo $thumb['alt'] ?>" />
 						<?php endif; ?>
 					</a></p>
@@ -67,8 +71,8 @@ Template Name: Technology Backup
 				</div>
 				<!-- THIS IS THE LIGHTBOX -->
 					<div class="reveal" id="exampleModal1" data-reveal>
-						<p style="margin-bottom:3rem;"></p>	
-						<?php 
+						<p style="margin-bottom:3rem;"></p>
+						<?php
 
 						$illu_i = get_field('illustration_image');
 						if( !empty($illu_i) ): ?>
@@ -87,7 +91,7 @@ Template Name: Technology Backup
 			<div class="row">
 				<div class="large-6 medium-10 large-centered medium-centered columns">
 					<div class="center-icon">
-						<?php 
+						<?php
 
 						$icon_2 = get_field('icon_2');
 						if( !empty($icon_2) ): ?>
@@ -106,7 +110,7 @@ Template Name: Technology Backup
 				<div class="large-8 medium-10 large-centered medium-centered columns">
 					<div class="centered-thumb" style="padding-top: .25rem;">
 						<p><a data-toggle="exampleModal2">
-						<?php 
+						<?php
 
 						$thumb_2 = get_field('thumbnail_image_2');
 						if( !empty($thumb_2) ): ?>
@@ -119,11 +123,11 @@ Template Name: Technology Backup
 					</div>
 				<!-- THIS IS THE LIGHTBOX -->
 					<div class="reveal" id="exampleModal2" data-reveal>
-						<p style="margin-bottom:3rem;"></p>	
-						<?php 
+						<p style="margin-bottom:3rem;"></p>
+						<?php
 
 						$illu_i_2 = get_field('illustration_image_2');
-						if( !empty($illu_i_2) ): ?>	  
+						if( !empty($illu_i_2) ): ?>
 						<img class="left-align-image" src="<?php echo $illu_i_2['url']; ?>" alt="<?php echo $illu_i_2['alt'] ?>" />
 						<?php endif; ?>
 						<button class="close-button" data-close aria-label="Close modal" type="button">
@@ -132,15 +136,15 @@ Template Name: Technology Backup
 					</div>
 				</div>
 			</div>
-		</div>	
-		
-		
+		</div>
+
+
 	<!-- SECTION 3 -->
 		<div class="fullwidth-module no-top-pad" style="background: url('<?php echo get_field('background_3'); ?>');">
 			<div class="row">
 				<div class="large-6 medium-10 large-centered medium-centered columns">
 					<div class="center-icon">
-						<?php 
+						<?php
 
 						$icon_3 = get_field('icon_3');
 						if( !empty($icon_3) ): ?>
@@ -163,7 +167,7 @@ Template Name: Technology Backup
 				<div class="medium-8 large-centered medium-centered columns">
 					<div class="row">
 						<?php if( have_rows('executives') ): ?>
-						<?php while( have_rows('executives') ): the_row(); 
+						<?php while( have_rows('executives') ): the_row();
 						// vars
 						$portrait = get_sub_field('portrait');
 						$name = get_sub_field('name');
@@ -185,9 +189,9 @@ Template Name: Technology Backup
 			<!-- ADVISORS -->
 			<p class="interior-header"><?php echo get_field('headline_4'); ?></p>
 			<div class="row small-up-2 medium-up-5 medium-centered large-up-5">
-			
+
 				<?php if( have_rows('advisors') ): ?>
-				<?php while( have_rows('advisors') ): the_row(); 
+				<?php while( have_rows('advisors') ): the_row();
 				// vars
 				$portrait_2 = get_sub_field('portrait_2');
 				$name2 = get_sub_field('name_2');
@@ -201,9 +205,9 @@ Template Name: Technology Backup
 				<?php endwhile; ?>
 				<?php endif; ?>
 
-			</div>	
+			</div>
 		</div>
-			
+
 	<!-- CTA -->
 		<div class="cta-fullwidth-banner">
 			<div class="row">
@@ -211,7 +215,7 @@ Template Name: Technology Backup
 					<p class="cta-header"><?php echo get_field('cta_caption'); ?></p>
 					<div class="button-div">
 						<?php if( have_rows('cta') ): ?>
-						<?php while( have_rows('cta') ): the_row(); 
+						<?php while( have_rows('cta') ): the_row();
 						// vars
 						$ctabl = get_sub_field('cta_button_text');
 						$link = get_sub_field('link');
@@ -228,8 +232,8 @@ Template Name: Technology Backup
 
 						<?php endwhile; ?>
 						<?php endif; ?>
-						
-						
+
+
 					</div>
 				</div>
 			</div>

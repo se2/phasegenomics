@@ -1,24 +1,19 @@
 <?php
-/*
-Template Name: Hi-C Kit Details
-*/
-?>
+/**
+ * Template Hi-C Kit Details
+ *
+ * @package    Backup
+ * @deprecated No longer used.
+ */
 
-<?php get_header(); ?>
-			
+get_header(); ?>
+
+<?php // phpcs:disable ?>
 
 		<div class="header-bg" style="background: url('<?php echo get_field('background_image'); ?>');">
 			<div class="row">
 				<div class="large-10 medium-12 large-centered medium-centered columns">
 					<div class="fullwidth-module">
-						<div class="center-icon">
-							<?php 
-
-							$icon = get_field('icon');
-							if( !empty($icon) ): ?>
-								<img class="three-mod-icon" src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt'] ?>" />
-							<?php endif; ?>
-						</div>
 							<h2 class="bb-header"><?php echo get_field('header'); ?></h2>
 							<p class="bb-sub"><?php echo get_field('sub_header'); ?></p>
 					</div>
@@ -31,14 +26,6 @@ Template Name: Hi-C Kit Details
 			<div class="fullwidth-module" style="background: url('<?php echo get_field('overview_background'); ?>');">
 				<div class="row">
 					<div class="large-10 medium-10 large-centered medium-centered columns">
-						<div class="center-icon">
-							<?php 
-	
-							$icon_1 = get_field('icon_1');
-							if( !empty($icon_1) ): ?>
-							<img class="three-mod-icon" src="<?php echo $icon_1['url']; ?>" alt="<?php echo $icon_1['alt'] ?>" />
-							<?php endif; ?>
-						</div>
 						<div class="large-12 medium-12 large-centered medium-centered columns">
 							<div class="kit-cell medium-4 columns">
 								<img src="<?php echo get_field('kit_image'); ?>" class="kit-cell"/>
@@ -51,7 +38,7 @@ Template Name: Hi-C Kit Details
 					<div class="medium-6 large-centered medium-centered columns">
 						<p><?php echo get_field('text_area_2'); ?></p>
 					</div>
-				</div>	
+				</div>
 			</div>
 					<div class="fullwidth-module">
 					<div class="large-10 medium-10 large-centered medium-centered columns">
@@ -97,7 +84,7 @@ Template Name: Hi-C Kit Details
 				</div>
 			</div>
 		</div>
-			
+
 		<!-- CTA -->
 			<div class="cta-fullwidth-banner">
 				<div class="row">
@@ -105,7 +92,7 @@ Template Name: Hi-C Kit Details
 						<p class="cta-header"><?php echo get_field('cta_caption'); ?></p>
 					<div class="button-div">
 						<?php if( have_rows('cta') ): ?>
-						<?php while( have_rows('cta') ): the_row(); 
+						<?php while( have_rows('cta') ): the_row();
 						// vars
 						$ctabl = get_sub_field('cta_button_text');
 						$link = get_sub_field('link');
@@ -122,7 +109,7 @@ Template Name: Hi-C Kit Details
 
 						<?php endwhile; ?>
 						<?php endif; ?>
-						
+
 					</div>
 					</div>
 				</div>

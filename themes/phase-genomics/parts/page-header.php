@@ -15,7 +15,7 @@ if ( is_front_page() ) : ?>
 <!-- Banner -->
 <section class="home bg-cover bg-center-top banner" style="background-image:url('<?php the_field( 'home_banner_image' ); ?>');">
 	<div class="main-container pos-rel h100p">
-		<h1 class="white-color lighter text-shadow uppercase text-center abs-center"><?php the_field( 'home_banner_header' ); ?></h1>
+		<h1 class="white-color lighter text-shadow uppercase text-center banner__title--home"><?php the_field( 'home_banner_header' ); ?></h1>
 		<div class="grid-x banner__cta-group">
 			<div class="cell small-12 medium-4">
 				<a href="#!">

@@ -2,6 +2,7 @@
   font-size: 22px;
   line-height: 1;
 }
+
 .top-bar {
   background-color: transparent;
   min-height: 106px;
@@ -10,6 +11,13 @@
   ul {
     background-color: white;
   }
+  .header-logo {
+    max-width: 200px;
+  }
+}
+
+#off-canvas,
+.top-bar {
   .menu {
     &.dropdown li {
       margin: 0;
@@ -33,15 +41,15 @@
         display: inline-block;
       }
       a {
-				font-size: 13px;
-				padding: 0 5px;
+        font-size: 13px;
+        padding: 0 5px;
       }
     }
     &.submenu {
       min-width: 163px;
       border-color: #9fbbcf;
-			margin-top: 23px;
-			border-top: none;
+      margin-top: 23px;
+      border-top: none;
       a {
         text-transform: none;
         text-align: right;
@@ -51,6 +59,7 @@
       }
     }
     li {
+      outline: none;
       margin-bottom: 20px;
       line-height: 1;
       &.orange-menu a {
@@ -65,12 +74,50 @@
       font-weight: 500;
       padding: 0 10px;
       line-height: 1;
+      outline: none;
       &:hover {
         color: $secondary-color;
       }
     }
   }
-  .header-logo {
-    max-width: 200px;
+}
+
+#off-canvas {
+  .menu {
+		@include breakpoint(mobile down) {
+    	&.vertical {
+        ul {
+          list-style-type: none;
+          li {
+            margin-bottom: 0;
+          }
+        }
+			}
+			&.menu-social-media {
+				justify-content: center;
+				li {
+					text-align: center;
+					width: 33.3333%;
+					&.icon-menu i {
+						font-size: 42px;
+					}
+				}
+			}
+			.sub-menu {
+				margin-left: 40px;
+				a:before {
+					content: "― ";
+				}
+			}
+    }
+  }
+}
+
+.top-bar .top-bar-right {
+  width: auto;
+  position: absolute;
+  right: 0;
+  button {
+    outline: none;
   }
 }

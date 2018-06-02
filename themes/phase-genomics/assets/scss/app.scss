@@ -63,6 +63,8 @@
 /* Libraries */
 @import "../../vendor/slick-carousel/slick.scss";
 @import "../../vendor/slick-carousel/slick-theme.scss";
+@import "hamburger_settings";
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 
 /* Templates */
 @import "page/home";

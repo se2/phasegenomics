@@ -1,6 +1,6 @@
 .footer {
   clear: both;
-  padding: 36px 0;
+  padding: 36px 0 36px;
   background-color: #363636;
   li,
   p {
@@ -12,22 +12,38 @@
   .menu {
     li {
       &.small-menu a {
-        font-size: 14px;
-        margin-bottom: 20px;
+				@include breakpoint(medium) {
+					font-size: 14px;
+					margin-bottom: 20px;
+				}
       }
       a {
         color: white;
-        font-size: 16px;
         font-weight: 500;
 				padding: 0;
-				margin-right: 20px;
-				margin-bottom: 36px;
+				@include breakpoint(medium) {
+					font-size: 16px;
+					margin-right: 20px;
+					margin-bottom: 36px;
+				}
 				&:hover {
 					color: $secondary-color;
 				}
       }
     }
-  }
+	}
+	@include breakpoint(mobile down) {
+		.social-icons {
+			text-align: center;
+			a {
+				padding: 0 20px 20px;
+				display: inline-block;
+				i {
+					font-size: 42px;
+				}
+			}
+		}
+	}
 }
 
 .footer .menu .active>a,
@@ -40,7 +56,12 @@
 .source-org {
   font-size: 14px;
   color: #a8a8a8;
-  line-height: 1;
+	@include breakpoint(small) {
+		text-align: center;
+	}
+	@include breakpoint(medium) {
+		text-align: left;
+	}
   a {
     text-transform: uppercase;
 		color: white;

@@ -39,14 +39,6 @@ only screen and (max-device-width: 51em) {
 
 @media only screen and (max-width: 39.9375em) {
   /** Mobile Nav **/
-  .top-bar {
-    .top-bar-left {
-      width: 50%;
-    }
-    .top-bar-right {
-      width: 35%;
-    }
-  }
   .menu>li>a {
     padding: 1.25rem 0.65rem 1rem !important;
   }
@@ -118,31 +110,6 @@ only screen and (max-device-width: 51em) {
     margin-bottom: 0;
     padding: 0 !important;
     width: 100%;
-  }
-  /********** FOOTER ************/
-  .footer {
-    padding-bottom: .5rem;
-  }
-  .mobile-logo-center {
-    width: 100%;
-    display: table;
-    padding-top: .5rem;
-  }
-  .mobile-logo-cell {
-    display: table-cell;
-    text-align: center;
-  }
-  .footer .menu {
-    >li>a {
-      padding: 0.7rem 0.5rem !important;
-      text-align: center;
-    }
-    &.horizontal>li {
-      display: inline;
-    }
-  }
-  .menu>li {
-    display: inline;
   }
 }
 

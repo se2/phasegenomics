@@ -171,18 +171,7 @@ if ( have_posts() ) :
 </div>
 <!-- /About Team -->
 
-<!-- CTA -->
-<section class="home page-block--cta bg-cover bg-center-right" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/06/about-cta.png');">
-	<div class="container">
-			<div class="grid-x">
-				<div class="cell small-12 medium-12 large-7">
-					<h5 class="title blue-color">Interested in joining our team?</h5>
-					<a href="<?php the_clean_url(); ?>/careers" class="button secondary uppercase small">View Openings</a>
-				</div>
-			</div>
-	</div>
-</section>
-<!-- /CTA -->
+<?php get_template_part( 'parts/page', 'footer' ); ?>
 
 <!-- Testimonials -->
 <div class="page-block--testimonial fullwidth-module bg-center-top bg-cover" id="<?php the_field( 'section_id_2' ); ?>" style="background-image: url('<?php the_field( 'background_2' ); ?>');">

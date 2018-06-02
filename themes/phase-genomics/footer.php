@@ -21,7 +21,7 @@
 									<?php joints_footer_links(); ?>
 								</nav>
 							</div>
-							<div class="cell medium-2 large-1 large-offset-6 text-right">
+							<div class="cell small-12 medium-2 large-1 large-offset-6 text-right social-icons">
 								<a href="https://twitter.com/phasegenomics" class="icon-menu" target="_blank">
 									<i class="step fi-social-twitter"></i>
 								</a>
@@ -33,7 +33,7 @@
 						<div class="grid-x">
 							<div class="cell">
 								<p class="source-org copyright">
-									Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?><?php the_field( 'footer_info', 'option', false, false ); ?> <a href="/terms-of-service/">Terms of Service</a>
+									Copyright &copy; <?php echo esc_html( date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?><?php the_field( 'footer_info', 'option', false, false ); ?> <a href="/terms-of-service/">Terms of Service</a>
 								</p>
 							</div>
 						</div>

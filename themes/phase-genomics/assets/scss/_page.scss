@@ -13,23 +13,40 @@
 }
 
 .banner {
-  @include breakpoint(small) {
+	@include breakpoint(small) {
+    .main-container,
+    .container {
+      height: 75vh;
+		}
+		&__title {
+			&--home {
+				position: absolute;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				top: 25vh;
+			}
+		}
+		&__content {
+			margin-bottom: 20px;
+		}
+	}
+  @include breakpoint(medium) {
     .main-container,
     .container {
       height: 345px;
     }
-    &__content {
-      margin-bottom: 20px;
-    }
-  }
-  @include breakpoint(medium) {
-    &__title {
-      margin-bottom: 0;
-      letter-spacing: 0.02em;
-    }
-    &__content {
-      margin-bottom: 30px;
-    }
+		&__title {
+			margin-bottom: 0;
+			letter-spacing: 0.02em;
+			&--home {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+		&__content {
+			margin-bottom: 30px;
+		}
   }
   &--video {
     .flex-bottom {
@@ -137,18 +154,27 @@
 		}
 	}
   &--cta {
+		@include breakpoint(small) {
+			padding-top: $mobile-padding;
+			padding-bottom: $mobile-padding;
+			&--large {
+				min-height: unset;
+			}
+		}
     @include breakpoint(medium) {
       padding-top: 65px;
-      padding-bottom: 65px;
+			padding-bottom: 65px;
+			&--large {
+				min-height: 360px;
+			}
     }
     .title {
       line-height: 1;
       margin-bottom: 21px;
     }
     &--large {
-      padding-top: 0;
-      padding-bottom: 0;
-      height: 360px;
+			display: flex;
+			align-items: center;
       .title {
         margin-bottom: 35px;
       }
@@ -186,14 +212,19 @@
   }
   &--announcement {
     padding-top: 24px;
-    padding-bottom: 24px;
+		padding-bottom: 24px;
+		@include breakpoint(small) {
+			text-align: center;
+		}
+		@include breakpoint(medium) {
+			text-align: unset;
+		}
     &__content {
       color: white;
       .title {
         font-size: 20px;
         font-weight: bold;
         line-height: 1.2;
-        margin-bottom: 0;
       }
     }
     &--normal {

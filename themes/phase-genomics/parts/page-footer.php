@@ -12,15 +12,17 @@
 
 ?>
 
+<?php if ( get_field( 'show_footer_cta' ) ) : ?>
 <!-- CTA -->
-<section class="home page-block--cta bg-cover bg-center-right" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/cta-bg.png');">
+<section class="home page-block--cta bg-cover bg-center-right" style="background-image:url('<?php the_field( 'page_footer_background_image' ); ?>');">
 	<div class="container">
 			<div class="grid-x">
 				<div class="cell small-12 medium-12 large-7">
-					<h5 class="title blue-color">Interested in proximity-guided assembly?</h5>
-					<a href="<?php the_clean_url(); ?>/contact" class="button secondary uppercase small">Contact Us</a>
+					<h5 class="title blue-color"><?php the_field( 'page_footer_cta_title' ); ?></h5>
+					<a href="<?php the_field( 'page_footer_cta_button_link' ); ?>/contact" class="button secondary uppercase small"><?php the_field( 'page_footer_cta_button_title' ); ?></a>
 				</div>
 			</div>
 	</div>
 </section>
 <!-- /CTA -->
+<?php endif; ?>

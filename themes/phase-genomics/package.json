@@ -26,6 +26,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.5",
+    "hamburgers": "^0.9.3",
     "jshint-stylish": "^2.0.0",
     "slick-carousel": "^1.8.1"
   },

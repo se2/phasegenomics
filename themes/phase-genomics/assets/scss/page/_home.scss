@@ -1,11 +1,19 @@
 .home {
   &--products {
-    @include breakpoint(medium) {
+		@include breakpoint(small) {
+			padding: $mobile-padding 0;
+		}
+		@include breakpoint(medium) {
       padding: 70px 0 55px;
     }
     $padding: 3px;
     &__kits {
-      margin-bottom: 40px;
+			@include breakpoint(small) {
+				margin-bottom: 0;
+			}
+			@include breakpoint(medium) {
+				margin-bottom: 40px;
+			}
     }
     &__hic {
 			margin: 0;
@@ -181,9 +189,16 @@
       margin-bottom: 28px;
     }
     &__cell {
-      text-align: left;
-      @include breakpoint(large) {
-        padding: 0 48px;
+			text-align: left;
+      @include breakpoint(small) {
+				margin-bottom: 50px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+      @include breakpoint(medium) {
+				padding: 0 48px;
+				margin-bottom: 0;
       }
       .quote {
         font-size: 18px;

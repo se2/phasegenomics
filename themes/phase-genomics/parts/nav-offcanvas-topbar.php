@@ -24,19 +24,21 @@
 
 	<div class="top-bar-right show-for-medium">
 		<?php
-			wp_nav_menu(array(
-				'container'  => false,
-				'menu'       => 'Social Media',
-				'menu_class' => 'menu menu-social-media',
-			));
+		wp_nav_menu(array(
+			'container'  => false,
+			'menu'       => 'Social Media',
+			'menu_class' => 'menu menu-social-media',
+		));
 		?>
 		<?php joints_top_nav(); ?>
 	</div>
 
-	<div class="top-bar-right float-right show-for-small-only show-for-mobile-only">
-		<ul class="menu">
-			<li id="menu-icon"><a data-toggle="off-canvas"><?php esc_html_e( 'Menu', 'phasegenomics' ); ?></a></li>
-		</ul>
+	<div class="top-bar-right float-right hide-for-medium">
+		<button class="hamburger hamburger--collapse" type="button" aria-label="Menu" aria-controls="navigation" aria-expanded="true/false" data-toggle="off-canvas">
+			<span class="hamburger-box">
+			<span class="hamburger-inner"></span>
+		</span>
+		</button>
 	</div>
 
 </div>

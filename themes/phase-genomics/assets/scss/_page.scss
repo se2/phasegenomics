@@ -300,4 +300,14 @@
 			padding-bottom: 70px;
 		}
 	}
+	&--cta-group {
+		padding-top: 70px;
+		padding-bottom: 75px;
+		&__btn-group {
+			margin-top: 35px;
+			.button {
+				margin: 0 11px;
+			}
+		}
+	}
 }

@@ -77,7 +77,7 @@ if ( is_front_page() ) : ?>
 <div class="reveal" id="video-popup" data-reveal data-animation-in="ease-in">
 	<?php the_field( 'page_header_embed' ); ?>
 	<button class="close-button" data-close aria-label="Close modal" type="button">
-		<span aria-hidden="true">&times;</span>
+		<i class="secondary-color fa fa-close" style="font-size:36px"></i>
 	</button>
 </div>
 <?php endif; ?>

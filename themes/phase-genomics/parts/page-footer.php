@@ -1,3 +1,17 @@
+<?php
+	/**
+	 * Page Header
+	 *
+	 * @category   Components
+	 * @package    WordPress
+	 * @subpackage PhaseGenomics
+	 * @author     Delin Design <contact@delindesign.com>
+	 * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+	 * @link       https://delindesign.com
+	 */
+
+?>
+
 <!-- CTA -->
 <section class="home page-block--cta bg-cover bg-center-right" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/cta-bg.png');">
 	<div class="container">

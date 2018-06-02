@@ -41,7 +41,7 @@ if ( have_posts() ) :
 	<?php
 	// Hi-C Category, change this if admin changes category for Hi-C products.
 	$hic_category = 57;
-	$products = get_products_query( $hic_category, 'NOT IN' );
+	$products     = get_products_query( $hic_category, 'NOT IN' );
 	if ( $products->have_posts() ) :
 		while ( $products->have_posts() ) :
 			$products->the_post();
@@ -52,7 +52,7 @@ if ( have_posts() ) :
 			<div class="grid-x grid-margin-x">
 				<div class="cell large-8">
 					<h4 class="bold uppercase secondary-color"><?php the_title(); ?></h4>
-					<p><?php the_field( 'product_description_overview' ) ?></p>
+					<p><?php the_field( 'product_description_overview' ); ?></p>
 				</div>
 				<div class="cell large-3 large-offset-1">
 					<a href="<?php the_permalink(); ?>" class="button uppercase secondary w100p">Buy Kits</a>

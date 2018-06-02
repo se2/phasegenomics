@@ -261,6 +261,25 @@ p.small {
   margin-bottom: 0;
 }
 
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 // Responsive Mixins for iPad Pro
 @mixin respond($media) {
   @if $media==ipad-pro {

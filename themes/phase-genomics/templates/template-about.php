@@ -26,8 +26,8 @@ if ( have_posts() ) :
 		<?php if ( have_rows( 'events' ) ) : ?>
 		<div id="events-carousel">
 			<?php
-				while ( have_rows( 'events' ) ) :
-					the_row();
+			while ( have_rows( 'events' ) ) :
+				the_row();
 			?>
 			<div class="event-item">
 				<div class="inner pos-rel box-shadow--posts text-center" style="background-color:#ffffff;">
@@ -45,14 +45,14 @@ if ( have_posts() ) :
 <!-- /Upcoming events -->
 
 <!-- About Team -->
-<div class="page-block--team fullwidth-module bg-cover bg-center" style="background-image: url('<?php echo get_field('background_3'); ?>');">
+<div class="page-block--team fullwidth-module bg-cover bg-center" style="background-image: url('<?php the_field( 'background_3' ); ?>');">
 
 	<div class="main-container">
 
 		<div class="grid-x align-center">
 			<div class="cell small-12">
-				<p class="interior-header mb0"><?php echo get_field( 'headline_3' ); ?></p>
-				<p class="interior-intro centered"><?php echo get_field( 'intro_text_3' ); ?></p>
+				<p class="interior-header mb0"><?php the_field( 'headline_3' ); ?></p>
+				<p class="interior-intro centered"><?php the_field( 'intro_text_3' ); ?></p>
 			</div>
 		</div>
 
@@ -60,7 +60,7 @@ if ( have_posts() ) :
 
 	<div class="row">
 		<div class="medium-12 large-centered medium-centered columns">
-			<p class="interior-header margin-bottom-0"><?php echo get_field( 'headline_3b' ); ?></p>
+			<p class="interior-header margin-bottom-0"><?php the_field( 'headline_3b' ); ?></p>
 		</div>
 	</div>
 
@@ -83,24 +83,24 @@ if ( have_posts() ) :
 					<a data-toggle="<?php echo esc_attr( $l_link ); ?>" class="no-outline">
 						<div class="lg-portrait-wrap">
 							<div class="overlay-container">
-								<img class="lg-portrait block-display-img" src="<?php echo $portrait['url']; ?>" alt="<?php echo $portrait['alt'] ?>" />
+								<img class="lg-portrait block-display-img" src="<?php echo esc_attr( $portrait['url'] ); ?>" alt="<?php echo esc_attr( $portrait['alt'] ); ?>" />
 								<div class="overlay">
-									<div class="overlay-title"><?php echo $readmore; ?></div>
+									<div class="overlay-title"><?php echo esc_attr( $readmore ); ?></div>
 								</div>
 							</div>
-							<p class="orange-bold"><?php echo $name; ?></p>
-							<p class="small-p"><?php echo $title; ?></p>
+							<p class="orange-bold"><?php echo esc_attr( $name ); ?></p>
+							<p class="small-p"><?php echo esc_attr( $title ); ?></p>
 						</div>
 					</a>
 				</div>
 				<!-- Lightbox -->
 				<div class="reveal bio-reveal" id="<?php echo esc_attr( $l_link ); ?>" data-reveal>
 					<div class="lg-portrait-wrap">
-						<img class="lg-portrait" src="<?php echo $portrait['url']; ?>" alt="<?php echo $portrait['alt'] ?>" />
-						<p class="orange-bold centered"><?php echo $name; ?></p>
-						<p class="small-p centered"><?php echo $title; ?></p>
+						<img class="lg-portrait" src="<?php echo esc_attr( $portrait['url'] ); ?>" alt="<?php echo esc_attr( $portrait['alt'] ); ?>" />
+						<p class="orange-bold centered"><?php echo esc_attr( $name ); ?></p>
+						<p class="small-p centered"><?php echo esc_attr( $title ); ?></p>
 					</div>
-					<p><?php echo $bio; ?></p>
+					<p><?php echo esc_attr( $bio ); ?></p>
 					<div class="text-center">
 						<img class="three-mod-icon" src="https://www.phasegenomics.com/wp-content/uploads/2017/06/logomark.png" alt="Phase Genomics" />
 					</div>
@@ -119,11 +119,11 @@ if ( have_posts() ) :
 	<!-- Advisors -->
 	<div class="row">
 		<div class="medium-8 large-centered medium-centered columns">
-			<p class="interior-header mb0"><?php echo get_field('headline_4'); ?></p>
+			<p class="interior-header mb0"><?php the_field( 'headline_4' ); ?></p>
 			<div class="row small-up-2 medium-up-3 medium-centered large-up-3">
 				<?php
 				if ( have_rows( 'advisors' ) ) :
-					while ( have_rows( 'advisors' ) ):
+					while ( have_rows( 'advisors' ) ) :
 						the_row();
 						$portrait_2 = get_sub_field( 'portrait_2' );
 						$name2      = get_sub_field( 'name_2' );
@@ -136,23 +136,23 @@ if ( have_posts() ) :
 					<a data-toggle="<?php echo esc_attr( $l_link ); ?>" class="no-outline">
 						<div class="sm-portrait-wrap">
 							<div class="overlay-container">
-								<img class="sm-portrait block-display-img" src="<?php echo $portrait_2['url']; ?>" alt="<?php echo $portrait_2['alt'] ?>" />
+								<img class="sm-portrait block-display-img" src="<?php echo esc_attr( $portrait_2['url'] ); ?>" alt="<?php echo esc_attr( $portrait_2['alt'] ); ?>" />
 								<div class="overlay">
-									<div class="overlay-title-advisors"><?php echo $readmore; ?></div>
+									<div class="overlay-title-advisors"><?php echo esc_attr( $readmore ); ?></div>
 								</div>
 							</div>
-							<p class="small-blue-bold"><?php echo $name2; ?></p>
+							<p class="small-blue-bold"><?php echo esc_attr( $name2 ); ?></p>
 						</div>
 					</a>
 				</div>
 				<!-- Lightbox -->
 				<div class="reveal bio-reveal" id="<?php echo esc_attr( $l_link ); ?>" data-reveal>
 					<div class="lg-portrait-wrap">
-						<img class="lg-portrait" src="<?php echo $portrait_2['url']; ?>" alt="<?php echo $portrait_2['alt'] ?>" />
-						<p class="orange-bold centered"><?php echo $name2; ?></p>
-						<p class="small-p centered"><?php echo $title; ?></p>
+						<img class="lg-portrait" src="<?php echo esc_attr( $portrait_2['url'] ); ?>" alt="<?php echo esc_attr( $portrait_2['alt'] ); ?>" />
+						<p class="orange-bold centered"><?php echo esc_attr( $name2 ); ?></p>
+						<p class="small-p centered"><?php echo esc_attr( $title ); ?></p>
 					</div>
-					<p><?php echo $bio; ?></p>
+					<p><?php echo esc_attr( $bio ); ?></p>
 					<div class="text-center">
 						<img class="three-mod-icon" src="https://www.phasegenomics.com/wp-content/uploads/2017/06/logomark.png" alt="Phase Genomics" />
 					</div>
@@ -185,13 +185,13 @@ if ( have_posts() ) :
 <!-- /CTA -->
 
 <!-- Testimonials -->
-<div class="page-block--testimonial fullwidth-module bg-center-top bg-cover" id="<?php echo get_field('section_id_2'); ?>" style="background-image: url('<?php echo get_field('background_2'); ?>');">
+<div class="page-block--testimonial fullwidth-module bg-center-top bg-cover" id="<?php the_field( 'section_id_2' ); ?>" style="background-image: url('<?php the_field( 'background_2' ); ?>');">
 
 	<div class="main-container">
 
 		<div class="grid-x align-center">
 			<div class="cell small-12">
-				<p class="interior-header"><?php echo get_field( 'headline_2' ); ?></p>
+				<p class="interior-header"><?php the_field( 'headline_2' ); ?></p>
 			</div>
 		</div>
 
@@ -204,10 +204,10 @@ if ( have_posts() ) :
 				<div class="orbit" role="region" aria-label="Testimonials" data-orbit>
 					<div class="orbit-controls">
 						<div class="orbit-previous arrow">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/left-arrow.png" alt="">
+							<img src="<?php echo esc_attr( get_template_directory_uri() ); ?>/assets/images/left-arrow.png" alt="">
 						</div>
 						<div class="orbit-next arrow">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/right-arrow.png" alt="">
+							<img src="<?php echo esc_attr( get_template_directory_uri() ); ?>/assets/images/right-arrow.png" alt="">
 						</div>
 					</div>
 					<div class="orbit-wrapper">
@@ -222,10 +222,10 @@ if ( have_posts() ) :
 									$company_logo     = get_sub_field( 'attribution_company_logo' );
 							?>
 							<li class="orbit-slide">
-								<p class="quote w400 oblique centered"><?php echo $testimonial_text; ?></p>
-								<p class="small-p centered"><?php echo $attribution; ?></p>
+								<p class="quote w400 oblique centered"><?php echo esc_attr( $testimonial_text ); ?></p>
+								<p class="small-p centered"><?php echo esc_attr( $attribution ); ?></p>
 								<div class="text-center">
-									<img class="three-mod-icon" src="<?php echo $company_logo['url']; ?>" alt="<?php echo $company_logo['alt'] ?>" />
+									<img class="three-mod-icon" src="<?php echo esc_attr( $company_logo['url'] ); ?>" alt="<?php echo esc_attr( $company_logo['alt'] ); ?>" />
 								</div>
 							</li>
 							<?php endwhile; ?>
@@ -234,11 +234,19 @@ if ( have_posts() ) :
 						<hr>
 					</div>
 					<nav class="orbit-bullets">
-						<?php $bullet_counter = 0; while( have_rows('testimonial') ) : the_row(); $company_logo = get_sub_field('attribution_company_logo'); ?>
-						<button<?php if( $bullet_counter === 0 ) : echo ' class="is-active"'; endif; ?> data-slide="<?php echo $bullet_counter; ?>">
-							<span class="show-for-sr">Slide of <?php echo $company_logo['alt']; ?></span>
+						<?php
+						$bullet_counter = 0;
+						while ( have_rows( 'testimonial' ) ) :
+							the_row();
+							$company_logo = get_sub_field( 'attribution_company_logo' );
+						?>
+						<button<?php echo ( 0 === $bullet_counter ) ? ' class="is-active"' : ''; ?> data-slide="<?php echo esc_attr( $bullet_counter ); ?>">
+							<span class="show-for-sr">Slide of <?php echo esc_attr( $company_logo['alt'] ); ?></span>
 						</button>
-						<?php $bullet_counter++; endwhile; ?>
+						<?php
+							$bullet_counter++;
+						endwhile;
+						?>
 					</nav>
 				</div>
 			</div>
@@ -248,8 +256,6 @@ if ( have_posts() ) :
 
 </div>
 <!-- /Testimonials -->
-
-<?php // get_template_part( 'parts/page', 'footer' ); ?>
 
 <?php endwhile; else : ?>
 	<div class="main-container">

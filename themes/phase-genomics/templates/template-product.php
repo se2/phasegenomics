@@ -29,6 +29,8 @@ if ( have_posts() ) :
 					<h2 class="lighter text-center secondary-color">
 						ProxiMeta Hi-C is available as both a kit-plus-software product and a service.
 					</h2>
+				</div>
+				<div class="cell large-10 large-centered">
 					<p class="text-center small">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum vestibulum finibus.
 						Phasellus magna nibh, egestas eu porttitor eu, pretium sit amet nulla. Ut aliquam justo id quam efficitur,
@@ -42,6 +44,8 @@ if ( have_posts() ) :
 		</div>
 	</section>
 	<!-- /Big Text -->
+
+	<?php get_template_part( 'parts/page', 'blocks' ); ?>
 
 	<?php get_template_part( 'parts/page', 'footer' ); ?>
 

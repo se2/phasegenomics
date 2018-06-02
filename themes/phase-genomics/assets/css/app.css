@@ -9966,6 +9966,21 @@ p.small {
 .responsive-embed {
   margin-bottom: 0; }
 
+.cursor-pointer {
+  cursor: pointer; }
+
+.alignright {
+  float: right; }
+
+.alignleft {
+  float: left; }
+
+.aligncenter {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
 /******************************************************************
 
 Stylesheet: Retina Screens & Devices Stylesheet
@@ -10660,7 +10675,8 @@ COMMENT FORM STYLES
     .top-bar .menu.menu-social-media li {
       display: inline-block; }
     .top-bar .menu.menu-social-media a {
-      font-size: 13px; }
+      font-size: 13px;
+      padding: 0 5px; }
   .top-bar .menu.submenu {
     min-width: 163px;
     border-color: #9fbbcf;
@@ -10963,6 +10979,10 @@ COMMENT FORM STYLES
       .page-block--testimonial .orbit-controls .orbit-next {
         margin-right: 0;
         right: 40px; } }
+
+.page-block--editor .main-container {
+  padding-top: 40px;
+  padding-bottom: 70px; }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome

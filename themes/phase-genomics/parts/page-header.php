@@ -1,4 +1,16 @@
-<?php if ( is_front_page() ) : ?>
+<?php
+	/**
+	 * Page Header
+	 *
+	 * @category   Components
+	 * @package    WordPress
+	 * @subpackage PhaseGenomics
+	 * @author     Delin Design <contact@delindesign.com>
+	 * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+	 * @link       https://delindesign.com
+	 */
+
+if ( is_front_page() ) : ?>
 
 <!-- Banner -->
 <section class="home bg-cover bg-center-top banner" style="background-image:url('<?php the_field( 'home_banner_image' ); ?>');">
@@ -41,25 +53,34 @@
 	<div class="main-container pos-rel h100p">
 		<div class="grid-x h100p flex-bottom">
 			<div class="cell small-12 large-7 banner__content">
-				<h3 class="white-color bold text-shadow uppercase banner__title"><?php get_field( 'page_title' ) ? the_field( 'page_title' ) : the_title() ; ?></h3>
+				<h3 class="white-color bold text-shadow uppercase banner__title"><?php get_field( 'page_title' ) ? the_field( 'page_title' ) : the_title(); ?></h3>
 				<?php if ( get_field( 'page_subtitle' ) ) : ?>
 				<h5 class="white-color banner__subtitle"><?php the_field( 'page_subtitle' ); ?></h5><br>
 				<?php endif; ?>
 				<?php if ( get_field( 'page_header_cta_title' ) && ( get_field( 'page_header_cta_link' ) ) ) : ?>
-				<a href="<?php the_field( 'page_header_cta_link' ) ?>" class="button secondary"><?php the_field( 'page_header_cta_title' ); ?></a>
+				<a href="<?php the_field( 'page_header_cta_link' ); ?>" class="button secondary"><?php the_field( 'page_header_cta_title' ); ?></a>
 				<?php endif; ?>
 			</div>
-			<?php if ( get_field( 'page_header_embed' ) ) : ?>
+			<?php if ( get_field( 'page_header_embed' ) && get_field( 'page_header_embed_poster' ) ) : ?>
 			<div class="cell small-12 large-5 banner__embed">
-				<div class="responsive-embed">
-					<?php the_field( 'page_header_embed' ); ?>
-				</div>
+				<img class="cursor-pointer" data-open="video-popup" src="<?php the_field( 'page_header_embed_poster' ); ?>" alt="">
 			</div>
 			<?php endif; ?>
 		</div>
 	</div>
 </section>
 <!-- /Banner -->
+
+<?php if ( get_field( 'page_header_embed' ) && get_field( 'page_header_embed_poster' ) ) : ?>
+<!-- Known issue if using data-animation-out -->
+<!-- https://github.com/zurb/foundation-sites/issues/10626 -->
+<div class="reveal" id="video-popup" data-reveal data-animation-in="ease-in">
+	<?php the_field( 'page_header_embed' ); ?>
+	<button class="close-button" data-close aria-label="Close modal" type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+<?php endif; ?>
 
 <?php endif; ?>
 

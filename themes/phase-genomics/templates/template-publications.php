@@ -207,19 +207,19 @@ if ( have_posts() ) :
 		<div class="grid-x grid-margin-x page-block--posts__grid">
 			<?php
 			$args  = array(
-				'post_type' => 'post',
+				'post_type'      => 'post',
 				'posts_per_page' => '3',
-				'orderby' => 'post_date',
-				'order' => 'DESC',
-				'post_status' => 'publish',
+				'orderby'        => 'post_date',
+				'order'          => 'DESC',
+				'post_status'    => 'publish',
 			);
 			$posts_query = new WP_Query( $args );
-			while ( $posts_query->have_posts()) :
+			while ( $posts_query->have_posts() ) :
 				$posts_query->the_post();
 				$thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'large' );
 			?>
 			<div class="cell small-12 medium-4 text-center box-shadow--posts" style="background-color:#ffffff;">
-				<div class="page-block--posts__thumbnail bg-contain bg-center" style="background-image:url('<?php echo esc_attr( $thumb_url ) ?>');"></div>
+				<div class="page-block--posts__thumbnail bg-contain bg-center" style="background-image:url('<?php echo esc_attr( $thumb_url ); ?>');"></div>
 				<div class="page-block--posts__info">
 					<p class="bold"><?php the_date( 'F d, Y' ); ?></p>
 					<p class="mb0"><a class="primary-color light" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>

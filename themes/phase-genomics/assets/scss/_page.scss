@@ -293,5 +293,11 @@
         }
       }
     }
-  }
+	}
+	&--editor {
+		.main-container {
+			padding-top: 40px;
+			padding-bottom: 70px;
+		}
+	}
 }

@@ -10817,6 +10817,10 @@ COMMENT FORM STYLES
 
 .banner .main-container,
 .banner .container {
+  height: 345px; }
+
+.banner.home .main-container,
+.banner.home .container {
   height: 75vh; }
 
 .banner__title--home {
@@ -10830,8 +10834,8 @@ COMMENT FORM STYLES
   margin-bottom: 20px; }
 
 @media print, screen and (min-width: 48em) {
-  .banner .main-container,
-  .banner .container {
+  .banner.home .main-container,
+  .banner.home .container {
     height: 345px; }
   .banner__title {
     margin-bottom: 0;
@@ -10842,14 +10846,32 @@ COMMENT FORM STYLES
   .banner__content {
     margin-bottom: 30px; } }
 
+.banner--video .main-container,
+.banner--video .container {
+  height: auto;
+  padding-top: 30px; }
+
+@media print, screen and (min-width: 48em) {
+  .banner--video .main-container,
+  .banner--video .container {
+    height: 345px; } }
+
 .banner--video .flex-bottom {
   -ms-flex-align: center;
   align-items: center; }
 
 .banner--video .banner__content,
 .banner--video .banner__embed {
-  width: 50%;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px; }
+  @media print, screen and (min-width: 48em) {
+    .banner--video .banner__content,
+    .banner--video .banner__embed {
+      width: 50%;
+      text-align: inherit;
+      margin-bottom: 0; } }
 
 .banner__cta-group {
   position: absolute;
@@ -10921,8 +10943,22 @@ COMMENT FORM STYLES
     line-height: 1.4; }
 
 .page-block--text-2col {
-  padding-top: 80px;
-  padding-bottom: 70px; }
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  .page-block--text-2col::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8); }
+  @media print, screen and (min-width: 48em) {
+    .page-block--text-2col {
+      padding-top: 80px;
+      padding-bottom: 70px; }
+      .page-block--text-2col::before {
+        content: none; } }
   .page-block--text-2col h2 {
     margin-bottom: 23px; }
   .page-block--text-2col .button {
@@ -10930,13 +10966,15 @@ COMMENT FORM STYLES
 
 .page-block--cta {
   padding-top: 30px;
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+  text-align: center; }
   .page-block--cta--large {
     min-height: unset; }
   @media print, screen and (min-width: 48em) {
     .page-block--cta {
       padding-top: 65px;
-      padding-bottom: 65px; }
+      padding-bottom: 65px;
+      text-align: inherit; }
       .page-block--cta--large {
         min-height: 360px; } }
   .page-block--cta .title {
@@ -10951,7 +10989,10 @@ COMMENT FORM STYLES
       margin-bottom: 35px; }
 
 .page-block--product-cta {
-  padding: 70px 80px; }
+  padding: 30px 0; }
+  @media print, screen and (min-width: 48em) {
+    .page-block--product-cta {
+      padding: 70px 80px; } }
   .page-block--product-cta h4 {
     margin-bottom: 20px; }
   .page-block--product-cta .button {
@@ -10960,13 +11001,19 @@ COMMENT FORM STYLES
 .page-block--products-overlap {
   padding-top: 60px; }
   .page-block--products-overlap--bottom {
-    margin-top: 50px;
-    margin-bottom: -20.5px; }
+    margin-top: 50px; }
+    @media print, screen and (min-width: 48em) {
+      .page-block--products-overlap--bottom {
+        margin-bottom: -20.5px; } }
   .page-block--products-overlap__cell {
     min-height: 260px;
     position: relative;
     height: auto;
-    padding-bottom: 42px; }
+    padding-bottom: 42px;
+    margin-bottom: 30px; }
+    @media print, screen and (min-width: 48em) {
+      .page-block--products-overlap__cell {
+        margin-bottom: 0; } }
     .page-block--products-overlap__cell img {
       margin-bottom: 18px; }
     .page-block--products-overlap__cell .button {
@@ -10978,9 +11025,12 @@ COMMENT FORM STYLES
   padding-top: 24px;
   padding-bottom: 24px;
   text-align: center; }
+  .page-block--announcement__content {
+    margin-bottom: 30px; }
   @media print, screen and (min-width: 48em) {
     .page-block--announcement {
-      text-align: unset; } }
+      text-align: inherit;
+      margin-bottom: 0; } }
   .page-block--announcement__content {
     color: white; }
     .page-block--announcement__content .title {
@@ -10999,6 +11049,11 @@ COMMENT FORM STYLES
   padding-bottom: 70px; }
   .page-block--posts__grid {
     margin-top: 30px; }
+    .page-block--posts__grid .cell {
+      margin-bottom: 30px; }
+      @media print, screen and (min-width: 48em) {
+        .page-block--posts__grid .cell {
+          margin-bottom: 0; } }
   .page-block--posts__thumbnail {
     width: 100%;
     height: 0;
@@ -11067,12 +11122,19 @@ COMMENT FORM STYLES
   padding-bottom: 70px; }
 
 .page-block--cta-group {
-  padding-top: 70px;
-  padding-bottom: 75px; }
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  @media print, screen and (min-width: 48em) {
+    .page-block--cta-group {
+      padding-top: 70px;
+      padding-bottom: 75px; } }
   .page-block--cta-group__btn-group {
     margin-top: 35px; }
     .page-block--cta-group__btn-group .button {
-      margin: 0 11px; }
+      margin: 0 0 20px; }
+      @media print, screen and (min-width: 48em) {
+        .page-block--cta-group__btn-group .button {
+          margin: 0 11px; } }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome

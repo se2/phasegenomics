@@ -57,7 +57,7 @@ if ( have_posts() ) :
 				$ctas = get_field( 'ctas' );
 				foreach ( $ctas as $key => $cta ) :
 				?>
-				<a href="<?php echo esc_attr( $cta['cta_button_link'] ); ?>" class="button blue large uppercase regular mb0"><?php echo esc_html( $cta['cta_button_title'] ); ?></a>
+				<a href="<?php echo esc_attr( $cta['cta_button_link'] ); ?>" class="button blue large uppercase regular"><?php echo esc_html( $cta['cta_button_title'] ); ?></a>
 				<?php endforeach; ?>
 			</div>
 		</div>

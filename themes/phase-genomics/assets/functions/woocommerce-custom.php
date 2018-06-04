@@ -190,7 +190,7 @@ function custom_add_to_cart_redirect() {
 	* Replace with the url of your choosing
 	* e.g. return 'http://www.yourshop.com/'
 	*/
-	return get_permalink( get_option( 'woocommerce_checkout_page_id' ) );
+	return get_permalink( get_option( 'woocommerce_cart_page_id' ) );
 }
 
 add_filter( 'woocommerce_add_to_cart_redirect', 'custom_add_to_cart_redirect' );

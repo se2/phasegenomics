@@ -8,8 +8,8 @@ Author URI: http://cagewebdev.com
 Author: CAGE Web Design | Rolf van Gelder, Eindhoven, The Netherlands
 Requires at least: 2.8
 Tested up to: 4.9.5
-Stable tag: 4.6
-Version: 4.6
+Stable tag: 4.6.1
+Version: 4.6.1
 License: GPLv2 or later
 
 == Description ==
@@ -104,6 +104,9 @@ http://cagewebdev.com/wordpress-plugins/
 * If you run the plugin from any of the sites, it will cleanup ALL the sites in the network!
 
 == Changelog ==
+= 4.6.1 [06/04/2018] =
+* BUG FIX: Fixed the WordPress Admin Menu dropdowns on 'View Log' page
+
 = 4.6 [05/08/2018] =
 * NEW: Logging system has been totally rewritten (from now it will store the logs in the database)
 * NEW: Export the log to a CSV file

@@ -48,6 +48,32 @@ if ( have_rows( 'page_blocks' ) ) :
 <!-- /CTAs Group -->
 <?php
 				break;
+			case 'faq_block':
+?>
+<!-- FAQ Block -->
+<div class="page-block page-block--faq mt50">
+	<div class="main-container">
+		<h3 class="secondary-color regular mb20 fz-36"><?php the_sub_field( 'faq_title' ); ?></h3>
+		<?php if ( get_sub_field( 'faqs' ) ) : ?>
+		<ul class="accordion accordion--faq" data-accordion data-allow-all-closed="true">
+			<?php
+			$faqs = get_sub_field( 'faqs' );
+			foreach ($faqs as $key => $faq) :
+			?>
+			<li class="accordion-item" data-accordion-item>
+				<a href="#" class="accordion-title bold primary-color"><?php echo esc_html( $faq['question'] ); ?></a>
+				<div class="accordion-content" data-tab-content>
+					<?php echo esc_html( $faq['answer'] ); ?>
+				</div>
+			</li>
+			<?php endforeach; ?>
+		</ul>
+		<?php endif; ?>
+	</div>
+</div>
+<!-- FAQ Block -->
+<?php
+				break;
 			default:
 				break;
 		}

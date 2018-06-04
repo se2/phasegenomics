@@ -523,7 +523,7 @@ function confirm_delete() {
 </script>    
 		<br><br>
 		&nbsp;
-		<input class="button odb-normal" type="button" name="view_log" value="<?php _e('View Log', $odb_class->odb_txt_domain);?>" onclick="self.location='tools.php?page=rvg-optimize-database&action=show_log'" />
+		<input class="button odb-normal" type="button" name="view_log" value="<?php _e('View Log', $odb_class->odb_txt_domain);?>" onclick="self.location='tools.php?page=rvg-optimize-database&action=view_log'" />
 		&nbsp;
 		<input class="button odb-normal" type="button" name="delete_log" value="<?php _e('Clear Log', $odb_class->odb_txt_domain);?>" onclick="return confirm_delete();" />
 		<?php	

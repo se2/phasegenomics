@@ -9985,6 +9985,9 @@ a {
     .fz-36 {
       font-size: 36px; } }
 
+.fz-18 {
+  font-size: 18px; }
+
 p.small {
   font-size: 16px !important;
   font-weight: 500; }
@@ -10015,6 +10018,44 @@ p.small {
     .content-padding {
       padding-top: 60px;
       padding-bottom: 70px; } }
+
+input.product-qty {
+  height: 37px;
+  line-height: 37px;
+  margin: 0;
+  padding: 0;
+  background-color: #f4fbff;
+  font-size: 16px;
+  outline: none;
+  box-shadow: none; }
+
+.accordion .accordion-item.is-active .accordion-title:before {
+  transform: rotate(180deg); }
+
+.accordion .accordion-title {
+  border: 0 !important;
+  background-color: #eef7fd;
+  font-size: 16px;
+  padding-left: 22px;
+  padding-right: 54px;
+  padding-top: 13px;
+  padding-bottom: 13px; }
+  .accordion .accordion-title:before {
+    right: 27px;
+    transition: transform 400ms;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 6px 0 6px;
+    border-color: #40647e transparent transparent transparent; }
+
+.accordion .accordion-content {
+  color: #466880;
+  border: 0 !important;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  padding-left: 22px; }
 
 /******************************************************************
 
@@ -11211,31 +11252,34 @@ COMMENT FORM STYLES
 .page-block--shop h2 {
   margin-bottom: 50px; }
 
-.page-block--shop__padding {
-  padding-left: 25px; }
+@media print, screen and (min-width: 48em) {
+  .page-block--shop__padding {
+    padding-left: 25px; } }
 
 .page-block--shop__row {
   margin-bottom: 6px; }
   .page-block--shop__row .page-block--shop__padding {
-    height: 37px; }
+    min-height: 37px; }
     .page-block--shop__row .page-block--shop__padding p {
-      letter-spacing: -0.03em;
-      line-height: 37px; }
+      letter-spacing: -0.03em; }
+      @media print, screen and (min-width: 48em) {
+        .page-block--shop__row .page-block--shop__padding p {
+          line-height: 37px; } }
   .page-block--shop__row:nth-child(even) .page-block--shop__padding {
     background-color: #f4fbff; }
 
 .page-block--shop__checkout {
   margin-top: 50px; }
 
-.page-block--shop .product-qty {
-  height: 37px;
-  line-height: 37px;
-  margin: 0;
-  padding: 0;
-  background-color: #f4fbff;
-  font-size: 16px;
-  outline: none;
-  box-shadow: none; }
+.page-block--shop-resources {
+  padding: 50px 0; }
+  .page-block--shop-resources h2 {
+    margin-bottom: 30px; }
+  .page-block--shop-resources .product-hexagon {
+    max-width: 144px; }
+  @media screen and (max-width: 47.9375em) {
+    .page-block--shop-resources .cell {
+      margin-bottom: 30px; } }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome

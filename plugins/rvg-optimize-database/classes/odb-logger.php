@@ -86,11 +86,11 @@ class ODB_Logger {
 
 
 	/********************************************************************************************
-	 *	SHOW THE LOGS - v4.6
+	 *	VIEW THE LOGS - v4.6.1
 	 ********************************************************************************************/	
-	function odb_show_log() {
+	function odb_view_log() {
 		global $odb_class, $wpdb;
-		
+	
 		$this->sql = "
 		SELECT * FROM `" . $odb_class->odb_logtable_name . "` ORDER BY odb_id ASC
 		";
@@ -171,7 +171,7 @@ function odb_confirm_delete() {
 &nbsp;&nbsp;
 <input class="button-primary button-large" type="button" name="start_optimization" value="<?php _e('Start Optimization', $odb_class->odb_txt_domain)?>" onclick="self.location='tools.php?page=rvg-optimize-database&action=run'" class="odb-bold" />
 <?php
-	} // odb_show_log()
+	} // odb_view_log()
 
 
 	/********************************************************************************************

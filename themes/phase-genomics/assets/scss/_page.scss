@@ -454,15 +454,19 @@
 			margin-bottom: 50px;
 		}
 		&__padding {
-			padding-left: 25px;
+      @include breakpoint(medium) {
+        padding-left: 25px;
+      }
 		}
 		&__row {
 			margin-bottom: 6px;
 			.page-block--shop__padding {
-				height: $row-height;
+				min-height: $row-height;
 				p {
-					letter-spacing: -0.03em;
-					line-height: $row-height;
+          letter-spacing: -0.03em;
+          @include breakpoint(medium) {
+            line-height: $row-height;
+          }
 				}
 			}
 			&:nth-child(even) {
@@ -474,15 +478,21 @@
 		&__checkout {
 			margin-top: 50px;
 		}
-		.product-qty {
-			height: $row-height;
-			line-height: $row-height;
-			margin: 0;
-			padding: 0;
-			background-color: #f4fbff;
-			font-size: 16px;
-			outline: none;
-			box-shadow: none;
-		}
-	}
+  }
+  &--shop-resources {
+    padding: 50px 0;
+    h2 {
+      margin-bottom: 30px;
+    }
+    .product-hexagon {
+      max-width: 144px;
+    }
+    @include breakpoint(mobile down) {
+      .cell {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  &--faq {
+  }
 }

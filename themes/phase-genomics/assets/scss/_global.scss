@@ -1,6 +1,7 @@
 // Colors
 $blue-color: #2a627a;
 $mobile-padding: 30px;
+$row-height: 37px;
 h1 a,
 .h1 a,
 h2 a,
@@ -288,6 +289,10 @@ a {
   }
 }
 
+.fz-18 {
+  font-size: 18px;
+}
+
 p.small {
   font-size: 16px !important;
   font-weight: 500;
@@ -324,6 +329,51 @@ p.small {
 		padding-top: 60px;
 		padding-bottom: 70px;
 	}
+}
+
+input.product-qty {
+  height: $row-height;
+  line-height: $row-height;
+  margin: 0;
+  padding: 0;
+  background-color: #f4fbff;
+  font-size: 16px;
+  outline: none;
+  box-shadow: none;
+}
+
+.accordion {
+  .accordion-item.is-active {
+    .accordion-title:before {
+      transform: rotate(180deg);
+    }
+  }
+  .accordion-title {
+    border: 0 !important;
+    background-color: #eef7fd;
+    font-size: 16px;
+    padding-left: 22px;
+    padding-right: 54px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    &:before {
+      right: 27px;
+      transition: transform 400ms;
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 12px 6px 0 6px;
+      border-color: #40647e transparent transparent transparent;
+    }
+  }
+  .accordion-content {
+    color: $primary-color;
+    border: 0 !important;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    padding-left: 22px;
+  }
 }
 
 // Responsive Mixins for iPad Pro

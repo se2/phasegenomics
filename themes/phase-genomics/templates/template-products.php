@@ -82,8 +82,7 @@ if ( have_posts() ) :
 				</div>
 			</div>
 			<?php
-			// Hi-C Category, change this if admin changes category for Hi-C products.
-			$hic_category = 57;
+			global $hic_category;
 			$hic_products = get_products_query( $hic_category );
 			if ( $hic_products->have_posts() ) :
 			?>

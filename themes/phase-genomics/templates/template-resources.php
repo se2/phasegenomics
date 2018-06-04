@@ -19,7 +19,17 @@ if ( have_posts() ) :
 
 <?php get_template_part( 'parts/page', 'header' ); ?>
 
+<div class="content-padding">
+
+	<div class="page page-block page-block--title">
+		<div class="main-container">
+			<h2 class="text-center secondary-color mb50"><?php the_title(); ?></h2>
+		</div>
+	</div>
+
 <?php get_template_part( 'parts/page', 'blocks' ); ?>
+
+</div>
 
 <?php get_template_part( 'parts/page', 'footer' ); ?>
 

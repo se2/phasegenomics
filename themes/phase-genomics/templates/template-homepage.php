@@ -29,8 +29,7 @@ if ( have_posts() ) :
 	</div>
 	<div class="main-content-full-width home--products__kits">
 		<?php
-		// Hi-C Category, change this if admin changes category for Hi-C products.
-		$hic_category = 57;
+		global $hic_category;
 		$hic_products = get_products_query( $hic_category );
 		if ( $hic_products->have_posts() ) :
 		?>
@@ -74,7 +73,7 @@ if ( have_posts() ) :
 	</div>
 	<div class="container">
 		<?php
-		$products_overview_page = 7;
+		global $products_overview_page;
 		$parent                 = new WP_Query(array(
 			'post_type'   => 'page',
 			'post_parent' => $products_overview_page,

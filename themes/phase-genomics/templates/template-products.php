@@ -39,12 +39,14 @@ if ( have_posts() ) :
 	<!-- /Big Text -->
 
 	<?php
-	// Hi-C Category, change this if admin changes category for Hi-C products.
-	$hic_category = 57;
-	$products     = get_products_query( $hic_category, 'NOT IN' );
-	if ( $products->have_posts() ) :
-		while ( $products->have_posts() ) :
-			$products->the_post();
+	$parent = new WP_Query(array(
+		'post_type'   => 'page',
+		'post_parent' => $post->ID,
+		'order'       => 'ASC',
+		'orderby'     => 'menu_order',
+	));
+	while ( $parent->have_posts() ) :
+		$parent->the_post();
 	?>
 	<!-- Product CTA -->
 	<section class="page page-block page-block--product-cta bg-cover bg-center-bottom" style="background-image:url('<?php the_field( 'background_image' ); ?>');">
@@ -69,7 +71,6 @@ if ( have_posts() ) :
 	</section>
 	<!-- /Product CTA -->
 	<?php endwhile; ?>
-	<?php endif; ?>
 	<?php wp_reset_postdata(); ?>
 
 	<!-- Overlap Products -->
@@ -81,6 +82,8 @@ if ( have_posts() ) :
 				</div>
 			</div>
 			<?php
+			// Hi-C Category, change this if admin changes category for Hi-C products.
+			$hic_category = 57;
 			$hic_products = get_products_query( $hic_category );
 			if ( $hic_products->have_posts() ) :
 			?>

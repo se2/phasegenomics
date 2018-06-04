@@ -646,6 +646,202 @@
                         ],
                         "min": "",
                         "max": ""
+                    },
+                    "5b13593642a89": {
+                        "key": "5b13593642a89",
+                        "name": "faq_block",
+                        "label": "FAQ Block",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_5b13595442a8a",
+                                "label": "FAQ Title",
+                                "name": "faq_title",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b13595d42a8b",
+                                "label": "FAQs",
+                                "name": "faqs",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "collapsed": "field_5b13597342a8c",
+                                "min": 0,
+                                "max": 0,
+                                "layout": "row",
+                                "button_label": "Add FAQ",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5b13597342a8c",
+                                        "label": "Question",
+                                        "name": "question",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    },
+                                    {
+                                        "key": "field_5b13597e42a8d",
+                                        "label": "Answer",
+                                        "name": "answer",
+                                        "type": "textarea",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "maxlength": "",
+                                        "rows": "",
+                                        "new_lines": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "5b14c1bb7777c": {
+                        "key": "5b14c1bb7777c",
+                        "name": "cta_group_block",
+                        "label": "CTA Group Block",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_5b14c1cf7777d",
+                                "label": "CTA Group Title",
+                                "name": "cta_group_title",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5b14c1dd7777e",
+                                "label": "CTAs",
+                                "name": "ctas",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "collapsed": "",
+                                "min": 0,
+                                "max": 0,
+                                "layout": "row",
+                                "button_label": "Add CTA",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5b14c1ef7777f",
+                                        "label": "CTA Button Title",
+                                        "name": "cta_button_title",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    },
+                                    {
+                                        "key": "field_5b14c1f477780",
+                                        "label": "CTA Button Link",
+                                        "name": "cta_button_link",
+                                        "type": "link",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "url"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_5b14c20c77781",
+                                "label": "Background Image",
+                                "name": "background_image",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "url",
+                                "preview_size": "medium",
+                                "library": "all",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": ""
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
                     }
                 },
                 "button_label": "Add Block",
@@ -1012,134 +1208,6 @@
         "description": ""
     },
     {
-        "key": "group_5b12b3dd11dcf",
-        "title": "Product CTA Group",
-        "fields": [
-            {
-                "key": "field_5b12b3f1e5db2",
-                "label": "CTA Group Title",
-                "name": "cta_group_title",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
-            },
-            {
-                "key": "field_5b12b406e5db3",
-                "label": "CTAs",
-                "name": "ctas",
-                "type": "repeater",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "collapsed": "field_5b12b41ce5db4",
-                "min": 0,
-                "max": 0,
-                "layout": "row",
-                "button_label": "Add CTA",
-                "sub_fields": [
-                    {
-                        "key": "field_5b12b41ce5db4",
-                        "label": "CTA Button Title",
-                        "name": "cta_button_title",
-                        "type": "text",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
-                    },
-                    {
-                        "key": "field_5b12b425e5db5",
-                        "label": "CTA Button Link",
-                        "name": "cta_button_link",
-                        "type": "link",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "return_format": "url"
-                    }
-                ]
-            },
-            {
-                "key": "field_5b12b6e2b6f17",
-                "label": "Background Image",
-                "name": "background_image",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "return_format": "url",
-                "preview_size": "medium",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": ""
-            }
-        ],
-        "location": [
-            [
-                {
-                    "param": "page_template",
-                    "operator": "==",
-                    "value": "templates\/template-products.php"
-                }
-            ],
-            [
-                {
-                    "param": "page_template",
-                    "operator": "==",
-                    "value": "templates\/template-product.php"
-                }
-            ]
-        ],
-        "menu_order": 0,
-        "position": "normal",
-        "style": "default",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": "",
-        "active": 1,
-        "description": ""
-    },
-    {
         "key": "group_5b06d649820ac",
         "title": "Product Hexagon",
         "fields": [
@@ -1190,6 +1258,25 @@
         "key": "group_5b06f9238f9c6",
         "title": "Product Overview",
         "fields": [
+            {
+                "key": "field_5b14bcb5762a2",
+                "label": "Product Description for Home",
+                "name": "product_description_home",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
             {
                 "key": "field_5b06f9375df5f",
                 "label": "Product Description for Overview",
@@ -1292,14 +1379,14 @@
         "location": [
             [
                 {
-                    "param": "post_type",
+                    "param": "page_template",
                     "operator": "==",
-                    "value": "product"
+                    "value": "templates\/template-product.php"
                 }
             ]
         ],
         "menu_order": 0,
-        "position": "normal",
+        "position": "acf_after_title",
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",

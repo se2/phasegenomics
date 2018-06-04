@@ -55,8 +55,11 @@ require_once get_template_directory() . '/assets/translation/translation.php';
 
 // phpcs:enable
 
-// Miscellaneous function.
+// Miscellaneous functions.
 require_once get_template_directory() . '/assets/functions/misc.php';
+
+// Woocommerce custom functions.
+require_once get_template_directory() . '/assets/functions/woocommerce-custom.php';
 
 // Option Page.
 if ( function_exists( 'acf_add_options_page' ) ) {

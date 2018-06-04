@@ -23,6 +23,10 @@
 	</div>
 
 	<div class="top-bar-right show-for-medium">
+		<!-- This should be identical to the section in function woocommerce_header_add_to_cart_fragment() (/functions/misc.php) -->
+		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr( 'View your shopping cart' ); ?>">
+			<?php echo ( WC()->cart->get_cart_contents_count() > 0 ) ? '<span class="shopping-label">Cart<sup>' . esc_html( WC()->cart->get_cart_contents_count() ) . '</sup></span>' : ''; ?>
+		</a>
 		<?php
 		wp_nav_menu(array(
 			'container'  => false,

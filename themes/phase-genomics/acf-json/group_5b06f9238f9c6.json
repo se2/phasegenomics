@@ -3,6 +3,25 @@
     "title": "Product Overview",
     "fields": [
         {
+            "key": "field_5b14bcb5762a2",
+            "label": "Product Description for Home",
+            "name": "product_description_home",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_5b06f9375df5f",
             "label": "Product Description for Overview",
             "name": "product_description_overview",
@@ -104,19 +123,19 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "product"
+                "value": "templates\/template-product.php"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1527602439
+    "modified": 1528085710
 }

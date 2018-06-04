@@ -22,8 +22,11 @@ function site_scripts() {
 	// Adding Foundation scripts file in the footer.
 	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/vendor/foundation-sites/dist//js/foundation.min.js', array( 'jquery' ), '6.2.3', true );
 
-	// Adding Slick carousel
+	// Adding Slick carousel.
 	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/vendor/slick-carousel/slick.min.js', array( 'jquery' ), '6.2.3', true );
+
+	// Twitter JavaScript.
+	wp_enqueue_script( 'twitter-js', 'http://platform.twitter.com/widgets.js', array( 'jquery' ), '', true );
 
 	// Adding scripts file in the footer.
 	wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', true );

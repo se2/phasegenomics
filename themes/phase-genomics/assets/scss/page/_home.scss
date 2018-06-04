@@ -69,6 +69,7 @@
           img {
             @include breakpoint(small) {
 							width: auto;
+							max-width: 200px;
 							height: 88px;
 							margin-top: -44px;
 							margin-bottom: 23px;

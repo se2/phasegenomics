@@ -9939,6 +9939,33 @@ a {
 .mb0 {
   margin-bottom: 0 !important; }
 
+.mb5 {
+  margin-bottom: 5px; }
+
+.mb10 {
+  margin-bottom: 10px; }
+
+.mb20 {
+  margin-bottom: 20px; }
+
+.mb50 {
+  margin-bottom: 50px; }
+
+.mt0 {
+  margin-top: 0 !important; }
+
+.mt5 {
+  margin-top: 5px; }
+
+.mt10 {
+  margin-top: 10px; }
+
+.mt20 {
+  margin-top: 20px; }
+
+.mt50 {
+  margin-top: 50px; }
+
 .lh1 {
   line-height: 1; }
 
@@ -9980,6 +10007,14 @@ p.small {
   display: block;
   margin-left: auto;
   margin-right: auto; }
+
+.content-padding {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  @media print, screen and (min-width: 48em) {
+    .content-padding {
+      padding-top: 60px;
+      padding-bottom: 70px; } }
 
 /******************************************************************
 
@@ -10660,6 +10695,14 @@ COMMENT FORM STYLES
     background-color: white; }
   .top-bar .header-logo {
     max-width: 200px; }
+  .top-bar .cart-contents {
+    position: absolute;
+    z-index: 1;
+    line-height: 1;
+    font-size: 13px;
+    text-transform: uppercase;
+    left: 160px;
+    top: 5px; }
 
 #off-canvas .menu.dropdown li,
 .top-bar .menu.dropdown li {
@@ -10932,6 +10975,29 @@ COMMENT FORM STYLES
           .banner__cta-group .cell:nth-child(2):after {
             right: -1px; } }
 
+.woocommerce-page .banner .main-container,
+.woocommerce-page .banner .container,
+.woocommerce-cart .banner .main-container,
+.woocommerce-cart .banner .container,
+.woocommerce-checkout .banner .main-container,
+.woocommerce-checkout .banner .container,
+.page-shop .banner .main-container,
+.page-shop .banner .container {
+  height: 155px; }
+  .woocommerce-page .banner .main-container h3,
+  .woocommerce-page .banner .container h3,
+  .woocommerce-cart .banner .main-container h3,
+  .woocommerce-cart .banner .container h3,
+  .woocommerce-checkout .banner .main-container h3,
+  .woocommerce-checkout .banner .container h3,
+  .page-shop .banner .main-container h3,
+  .page-shop .banner .container h3 {
+    font-size: 28px;
+    font-weight: 500 !important;
+    color: #466880;
+    box-shadow: none;
+    text-shadow: none; }
+
 .page-block--text {
   padding-top: 50px;
   padding-bottom: 30px; }
@@ -11000,6 +11066,9 @@ COMMENT FORM STYLES
 
 .page-block--products-overlap {
   padding-top: 60px; }
+  .page-block--products-overlap .main-container,
+  .page-block--products-overlap .container {
+    z-index: 11; }
   .page-block--products-overlap--bottom {
     margin-top: 50px; }
     @media print, screen and (min-width: 48em) {
@@ -11015,7 +11084,8 @@ COMMENT FORM STYLES
       .page-block--products-overlap__cell {
         margin-bottom: 0; } }
     .page-block--products-overlap__cell img {
-      margin-bottom: 18px; }
+      margin-bottom: 18px;
+      max-width: 146px; }
     .page-block--products-overlap__cell .button {
       position: absolute;
       left: 0;
@@ -11030,7 +11100,9 @@ COMMENT FORM STYLES
   @media print, screen and (min-width: 48em) {
     .page-block--announcement {
       text-align: inherit;
-      margin-bottom: 0; } }
+      margin-bottom: 0; }
+      .page-block--announcement__content {
+        margin-bottom: 0; } }
   .page-block--announcement__content {
     color: white; }
     .page-block--announcement__content .title {
@@ -11135,6 +11207,35 @@ COMMENT FORM STYLES
       @media print, screen and (min-width: 48em) {
         .page-block--cta-group__btn-group .button {
           margin: 0 11px; } }
+
+.page-block--shop h2 {
+  margin-bottom: 50px; }
+
+.page-block--shop__padding {
+  padding-left: 25px; }
+
+.page-block--shop__row {
+  margin-bottom: 6px; }
+  .page-block--shop__row .page-block--shop__padding {
+    height: 37px; }
+    .page-block--shop__row .page-block--shop__padding p {
+      letter-spacing: -0.03em;
+      line-height: 37px; }
+  .page-block--shop__row:nth-child(even) .page-block--shop__padding {
+    background-color: #f4fbff; }
+
+.page-block--shop__checkout {
+  margin-top: 50px; }
+
+.page-block--shop .product-qty {
+  height: 37px;
+  line-height: 37px;
+  margin: 0;
+  padding: 0;
+  background-color: #f4fbff;
+  font-size: 16px;
+  outline: none;
+  box-shadow: none; }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -14403,6 +14504,7 @@ COMMENT FORM STYLES
         height: 100%; }
         .home--products__cell__inner--mask img {
           width: auto;
+          max-width: 200px;
           height: 88px;
           margin-top: -44px;
           margin-bottom: 23px; }

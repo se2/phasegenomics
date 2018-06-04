@@ -227,6 +227,42 @@ a {
   margin-bottom: 0 !important;
 }
 
+.mb5 {
+	margin-bottom: 5px;
+}
+
+.mb10 {
+	margin-bottom: 10px;
+}
+
+.mb20 {
+	margin-bottom: 20px;
+}
+
+.mb50 {
+	margin-bottom: 50px;
+}
+
+.mt0 {
+  margin-top: 0 !important;
+}
+
+.mt5 {
+	margin-top: 5px;
+}
+
+.mt10 {
+	margin-top: 10px;
+}
+
+.mt20 {
+	margin-top: 20px;
+}
+
+.mt50 {
+	margin-top: 50px;
+}
+
 .lh1 {
   line-height: 1;
 }
@@ -279,6 +315,15 @@ p.small {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.content-padding {
+	padding-top: $mobile-padding;
+	padding-bottom: $mobile-padding;
+	@include breakpoint(medium) {
+		padding-top: 60px;
+		padding-bottom: 70px;
+	}
 }
 
 // Responsive Mixins for iPad Pro

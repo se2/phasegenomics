@@ -74,17 +74,23 @@ if ( have_posts() ) :
 	</div>
 	<div class="container">
 		<?php
-		$products = get_products_query( $hic_category, 'NOT IN' );
-		if ( $products->have_posts() ) :
+		$products_overview_page = 7;
+		$parent                 = new WP_Query(array(
+			'post_type'   => 'page',
+			'post_parent' => $products_overview_page,
+			'order'       => 'ASC',
+			'orderby'     => 'menu_order',
+		));
+		if ( $parent->have_posts() ) :
 		?>
 		<div class="grid-x grid-margin-x home--products__regular">
 			<?php
-			while ( $products->have_posts() ) :
-				$products->the_post();
+			while ( $parent->have_posts() ) :
+				$parent->the_post();
 			?>
 			<div class="cell medium-6 home--products__cell home--products__cell--border">
 				<h4 class="bold secondary-color uppercase"><?php the_title(); ?></h4>
-				<?php the_excerpt(); ?>
+				<?php the_field( 'product_description_home' ); ?>
 				<a href="<?php the_permalink(); ?>" class="button secondary uppercase large">Learn More</a>
 			</div>
 			<?php endwhile; ?>

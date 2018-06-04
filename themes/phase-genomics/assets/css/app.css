@@ -10938,7 +10938,8 @@ COMMENT FORM STYLES
 @media print, screen and (min-width: 48em) {
   .banner--video .main-container,
   .banner--video .container {
-    height: 345px; } }
+    height: 345px;
+    padding-top: 0; } }
 
 .banner--video .flex-bottom {
   -ms-flex-align: center;

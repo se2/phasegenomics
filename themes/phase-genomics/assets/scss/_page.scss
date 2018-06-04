@@ -65,7 +65,8 @@
 		@include breakpoint(medium) {
 			.main-container,
 			.container {
-				height: 345px;
+        height: 345px;
+        padding-top: 0;
 			}
 		}
     .flex-bottom {

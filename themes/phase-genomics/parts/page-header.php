@@ -63,24 +63,14 @@ if ( is_front_page() ) : ?>
 			</div>
 			<?php if ( get_field( 'page_header_embed' ) && get_field( 'page_header_embed_poster' ) ) : ?>
 			<div class="cell small-12 large-5 banner__embed">
-				<img class="cursor-pointer" data-open="video-popup" src="<?php the_field( 'page_header_embed_poster' ); ?>" alt="">
+				<?php the_field( 'page_header_embed' ); ?>
+				<!-- <img class="cursor-pointer" data-open="video-popup" src="<?php the_field( 'page_header_embed_poster' ); ?>" alt=""> -->
 			</div>
 			<?php endif; ?>
 		</div>
 	</div>
 </section>
 <!-- /Banner -->
-
-<?php if ( get_field( 'page_header_embed' ) && get_field( 'page_header_embed_poster' ) ) : ?>
-<!-- Known issue if using data-animation-out -->
-<!-- https://github.com/zurb/foundation-sites/issues/10626 -->
-<div class="reveal" id="video-popup" data-reveal data-animation-in="ease-in">
-	<?php the_field( 'page_header_embed' ); ?>
-	<button class="close-button" data-close aria-label="Close modal" type="button">
-		<i class="secondary-color fa fa-close" style="font-size:36px"></i>
-	</button>
-</div>
-<?php endif; ?>
 
 <?php endif; ?>
 

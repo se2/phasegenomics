@@ -75,3 +75,7 @@ function wpb_add_google_fonts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
+
+// Speed up ACF backend loading time.
+// https://www.advancedcustomfields.com/blog/acf-pro-5-5-13-update/ .
+add_filter( 'acf/settings/remove_wp_meta_box', '__return_true' );

@@ -28,16 +28,16 @@ if ( is_front_page() ) : ?>
 			<div class="cell small-12 medium-4">
 				<a href="#!">
 					<div class="inner">
-						<h6 class="mb0">Explore</h6>
-						<p class="white-color light uppercase mb0" href="#!">Plant/Animal/Human »</p>
+						<h6 class="mb0">Analyze</h6>
+						<p class="white-color light uppercase mb0" href="#!">Hi-C Kits »</p>
 					</div>
 				</a>
 			</div>
 			<div class="cell small-12 medium-4">
 				<a href="#!">
 					<div class="inner">
-						<h6 class="mb0">Analyze</h6>
-						<p class="white-color light uppercase mb0" href="#!">Hi-C Kits »</p>
+						<h6 class="mb0">Explore</h6>
+						<p class="white-color light uppercase mb0" href="#!">Plant/Animal/Human »</p>
 					</div>
 				</a>
 			</div>
@@ -61,10 +61,9 @@ if ( is_front_page() ) : ?>
 				<a href="<?php the_field( 'page_header_cta_link' ); ?>" class="button secondary"><?php the_field( 'page_header_cta_title' ); ?></a>
 				<?php endif; ?>
 			</div>
-			<?php if ( get_field( 'page_header_embed' ) && get_field( 'page_header_embed_poster' ) ) : ?>
+			<?php if ( get_field( 'page_header_embed' ) ) : ?>
 			<div class="cell small-12 large-5 banner__embed">
 				<?php the_field( 'page_header_embed' ); ?>
-				<!-- <img class="cursor-pointer" data-open="video-popup" src="<?php the_field( 'page_header_embed_poster' ); ?>" alt=""> -->
 			</div>
 			<?php endif; ?>
 		</div>

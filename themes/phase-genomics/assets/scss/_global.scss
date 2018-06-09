@@ -39,6 +39,14 @@ a {
   position: relative;
 }
 
+.grid-centered {
+	justify-content: center;
+}
+
+.grid-right {
+	justify-content: flex-end;
+}
+
 .flex-bottom {
   display: flex;
   display: -webkit-flex;
@@ -228,41 +236,22 @@ a {
   margin-bottom: 0 !important;
 }
 
-.mb5 {
-	margin-bottom: 5px;
-}
-
-.mb10 {
-	margin-bottom: 10px;
-}
-
-.mb20 {
-	margin-bottom: 20px;
-}
-
-.mb50 {
-	margin-bottom: 50px;
-}
-
 .mt0 {
   margin-top: 0 !important;
 }
 
-.mt5 {
-	margin-top: 5px;
+$margin: 20;
+@mixin margin-classes {
+  @for $i from 1 through $margin {
+    .mb#{$i * 5} {
+      margin-bottom: #{$i * 5}px;
+    }
+    .mt#{$i * 5} {
+      margin-top: #{$i * 5}px;
+    }
+  }
 }
-
-.mt10 {
-	margin-top: 10px;
-}
-
-.mt20 {
-	margin-top: 20px;
-}
-
-.mt50 {
-	margin-top: 50px;
-}
+@include margin-classes();
 
 .lh1 {
   line-height: 1;
@@ -291,6 +280,11 @@ a {
 
 .fz-18 {
   font-size: 18px;
+}
+
+.fz-14 {
+	font-size: 14px;
+	line-height: 1.15;
 }
 
 p.small {

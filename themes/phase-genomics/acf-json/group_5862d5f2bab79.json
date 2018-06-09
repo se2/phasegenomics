@@ -519,6 +519,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_5b1bfc2c0f9ec",
+            "label": "Show Testimonials?",
+            "name": "show_testimonials",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_595532f786283",
             "label": "Headline 2",
             "name": "headline_2",
@@ -674,5 +693,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1527863356
+    "modified": 1528560711
 }

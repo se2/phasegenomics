@@ -26,18 +26,11 @@ if ( have_posts() ) :
 		<div class="container pos-rel">
 			<div class="grid-x">
 				<div class="cell large-11 large-centered">
-					<h2 class="lighter text-center secondary-color">
-						ProxiMeta Hi-C is available as both a kit-plus-software product and a service.
-					</h2>
+					<h2 class="lighter text-center secondary-color">Delve into the microbiome</h2>
 				</div>
 				<div class="cell large-10 large-centered">
 					<p class="text-center small">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum vestibulum finibus.
-						Phasellus magna nibh, egestas eu porttitor eu, pretium sit amet nulla. Ut aliquam justo id quam efficitur,
-						a molestie ex finibus. Etiam eros nulla, commodo vitae accumsan a, porttitor et quam. In consequat molestie
-						velit, vitae commodo risus. Integer ultricies arcu felis, euismod imperdiet massa viverra vitae. Curabitur
-						id luctus justo. Duis eleifend maximus metus, ac rutrum tortor pretium eu. Suspendisse blandit justo
-						interdum fermentum tristique. Integer porttitor elit augue.
+						Extract reference-quality genomes for rare, novel, and unculturable microbes directly from mixed populations.
 					</p>
 				</div>
 			</div>

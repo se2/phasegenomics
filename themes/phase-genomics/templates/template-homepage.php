@@ -23,8 +23,8 @@ if ( have_posts() ) :
 <section class="home home--products">
 	<div class="container pos-rel">
 		<div class="section-heading">
-			<h2 class="section-heading__title">Put the Power of Hi-C in Your Hands.</h2>
-			<p class="section-heading__subtitle">All our Hi-C kits go from sample to sequencer in a day and have no HMW DNA extraction.</p>
+			<h2 class="section-heading__title">The world’s best genome and metagenome assemblies.</h2>
+			<p class="section-heading__subtitle">Put the power of Hi-C in your hands with our industry-leading kits and services.</p>
 		</div>
 	</div>
 	<div class="main-content-full-width home--products__kits">
@@ -67,14 +67,14 @@ if ( have_posts() ) :
 	</div>
 	<div class="container">
 		<div class="section-heading">
-			<h2 class="section-heading__title">The world’s most complete genome and metagenome assemblies.</h2>
-			<p class="section-heading__subtitle">Our genome and metagenome platforms allow for highly accurate, affordable, rapid results.</p>
+			<h2 class="section-heading__title">Save time, effort, and money</h2>
+			<p class="section-heading__subtitle">Our genome and metagenome assembly platforms yield publication-quality results quickly and affordably.</p>
 		</div>
 	</div>
 	<div class="container">
 		<?php
 		global $products_overview_page;
-		$parent                 = new WP_Query(array(
+		$parent = new WP_Query(array(
 			'post_type'   => 'page',
 			'post_parent' => $products_overview_page,
 			'order'       => 'ASC',

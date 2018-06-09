@@ -12,7 +12,7 @@
 				margin-bottom: 0;
 			}
 			@include breakpoint(medium) {
-				margin-bottom: 40px;
+				margin-bottom: 20px;
 			}
     }
     &__hic {
@@ -42,7 +42,7 @@
 				max-height: 470px;
 				padding-left: #{$padding};
 				padding-right: #{$padding};
-				margin-bottom: 0;
+				margin-bottom: 20px;
 				overflow: hidden;
 				&:hover {
 					.home--products__cell__inner--mask {

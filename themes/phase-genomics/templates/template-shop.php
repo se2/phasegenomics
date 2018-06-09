@@ -28,8 +28,6 @@ if ( have_posts() ) :
 		<div class="main-container">
 			<h2 class="lighter secondary-color text-center">Available Products</h2>
 			<?php
-			// $product_ids      = '1429,1259:2';
-			// $add_to_cart_url  = esc_url_raw( add_query_arg( 'add-to-cart', $product_ids, wc_get_checkout_url() ) );
 			global $hic_category;
 			$hic_products = get_products_query( $hic_category );
 			if ( $hic_products->have_posts() ) :
@@ -52,7 +50,7 @@ if ( have_posts() ) :
 				<div class="cell small-9 medium-10 page-block--shop__padding">
 					<p class="small mb0">
 						<?php the_title(); ?> <?php echo esc_html( '(' . $pack . '-pack)' ); ?>
-						<strong><?php echo ( $_product->get_price_html() ) ? ' – ' . $_product->get_price_html() : ''; ?></strong>
+						<strong><?php echo ( $_product->get_price_html() ) ? ' – ' . $_product->get_price_html() : ''; // phpcs:ignore ?></strong>
 					</p>
 				</div>
 				<div class="cell small-3 medium-2">
@@ -74,7 +72,7 @@ if ( have_posts() ) :
 			?>
 			<div class="grid-x grid-margin-x mb10">
 				<div class="cell <?php echo $_product->get_price() ? 'small-9' : 'small-12'; ?> medium-9 page-block--shop__padding">
-					<h5 class="secondary-color bold mb20"><?php the_title(); ?><?php echo ( $_product->get_price_html() ) ? ' – ' . $_product->get_price_html() : ' – REQUEST QUOTE'; ?></h5>
+					<h5 class="secondary-color bold mb20"><?php the_title(); ?><?php echo ( $_product->get_price_html() ) ? ' – ' . $_product->get_price_html() : ' – REQUEST QUOTE'; // phpcs:ignore ?></h5>
 					<p><?php the_excerpt(); ?></p>
 					<hr>
 				</div>

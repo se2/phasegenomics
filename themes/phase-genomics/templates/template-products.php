@@ -26,12 +26,8 @@ if ( have_posts() ) :
 		<div class="container pos-rel">
 			<div class="grid-x">
 				<div class="cell">
-					<h2 class="lighter text-center secondary-color">Hi-C genome assembly and metagenome deconvolution products and services</h2>
-					<p class="text-center">
-						Get complete data with clear interpretations to quickly advance your research and publications.
-						Our breadth of delivered data also enables researchers to explore future applications and make
-						new discoveries hidden in every genome.
-					</p>
+					<h2 class="lighter text-center secondary-color">Hi-C genome assembly and metagenome deconvolution products and services.</h2>
+					<p class="text-center">We provide access to proximity-guided assembly technology with the latest laboratory and computational tools.</p>
 				</div>
 			</div>
 		</div>
@@ -47,13 +43,14 @@ if ( have_posts() ) :
 	));
 	while ( $parent->have_posts() ) :
 		$parent->the_post();
+		$title = get_field( 'page_title' ) ? get_field( 'page_title' ) : get_the_title();
 	?>
 	<!-- Product CTA -->
 	<section class="page page-block page-block--product-cta bg-cover bg-center-bottom" style="background-image:url('<?php the_field( 'background_image' ); ?>');">
 		<div class="main-container">
 			<div class="grid-x grid-margin-x">
 				<div class="cell large-8">
-					<h4 class="bold uppercase secondary-color"><?php the_title(); ?></h4>
+					<h4 class="bold uppercase secondary-color"><?php echo esc_html( $title ); ?></h4>
 					<p><?php the_field( 'product_description_overview' ); ?></p>
 				</div>
 				<div class="cell large-3 large-offset-1">
@@ -96,7 +93,7 @@ if ( have_posts() ) :
 				<div class="cell medium-3 page-block--products-overlap__cell pos-rel no-overflow text-center">
 					<img src="<?php the_field( 'hexagon_thumbnail' ); ?>" alt="<?php the_title(); ?>">
 					<h6 class="bold white-color"><?php the_title(); ?></h6>
-					<a href="<?php the_permalink(); ?>" class="button blue uppercase small w100p">Explore Kit</a>
+					<a href="/shop" class="button blue uppercase small w100p">Explore Kit</a>
 				</div>
 				<?php endwhile; ?>
 			</div>
@@ -107,10 +104,10 @@ if ( have_posts() ) :
 	<!-- /Overlap Products -->
 
 	<!-- 2-Column Text Block -->
-	<section class="page page-block page-block--text-2col bg-center-left bg-cover" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/quality.png');">
+	<!-- <section class="page page-block page-block--text-2col bg-center-left bg-cover" style="background-image:url('<?php // the_clean_url(); ?>/wp-content/uploads/2018/05/quality.png');">
 		<div class="main-container">
-			<div class="grid-x">
-				<div class="cell large-7 large-offset-5">
+			<div class="grid-x grid-right">
+				<div class="cell large-7">
 					<h2 class="lighter secondary-color fz-36">The Highest Quality Results Customized for You</h2>
 					<p class="small">
 						Get complete data with clear interpretations to quickly advance your research and publications.
@@ -121,11 +118,11 @@ if ( have_posts() ) :
 						Complete chromosome-scale scaffolds and deconvoluted metagenomic assemblies, along with a continuing
 						commitment to personalized service without hidden costs.
 					</p>
-					<a href="<?php the_clean_url(); ?>/product" class="button secondary uppercase semibold small">Shop Products</a>
+					<a href="<?php // the_clean_url(); ?>/product" class="button secondary uppercase semibold small">Shop Products</a>
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- /2-Column Text Block -->
 
 	<!-- 2-Column Text Block -->
@@ -133,19 +130,17 @@ if ( have_posts() ) :
 		<div class="main-container">
 			<div class="grid-x">
 				<div class="cell large-7">
-					<h2 class="lighter secondary-color fz-36">Get Results. Proven and Fast.</h2>
+					<h2 class="lighter secondary-color fz-36">Bring Hi-C into your lab with our easy kits</h2>
 					<p class="small">
-						Results are available within 30 days from receipt of sample for most service projects,
-						and ProxiMeta kits typically ship within a few business days. Along with a FASTA files
-						containing your results, you’ll receive publication-ready figures, statistics, and reports.
-						Supporting metadata and raw chromatin conformation data (Hi-C read pairs) are also provided.
+						<ul>
+							<li>Protocol takes approximately one day</li>
+							<li>Yields dual-indexed Illumina-compatible Hi-C library</li>
+							<li>All components included, no special equipment required.</li>
+							<li>Simple steps, user-friendly instructions.</li>
+							<li>Dedicated technical support</li>
+						</ul>
 					</p>
-					<p class="small">
-						Biological samples can be solid tissue, cell pellets, or other minimally processed samples
-						containing intact cells. Our Customer Satisfaction Guarantee means we will keep working with
-						you at no charge on service projects until you agree that your results are great, and we offer
-						a full money back guarantee on kits.
-					</p>
+					<a href="<?php the_clean_url(); ?>/shop" class="button secondary uppercase semibold small">Shop Products</a>
 				</div>
 			</div>
 		</div>

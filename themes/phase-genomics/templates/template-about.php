@@ -22,7 +22,7 @@ if ( have_posts() ) :
 <!-- Upcoming events -->
 <div class="page-block page-block--posts page-block--events bg-cover bg-center-bottom" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/latest-blog.png');">
 	<div class="main-container">
-		<h2 class="text-center secondary-color light">Upcoming Events</h2>
+		<h2 class="text-center secondary-color lighter">Upcoming Events</h2>
 		<?php if ( have_rows( 'events' ) ) : ?>
 		<div id="events-carousel">
 			<?php
@@ -51,8 +51,12 @@ if ( have_posts() ) :
 
 		<div class="grid-x align-center">
 			<div class="cell small-12">
+				<?php if ( get_field( 'headline_3' ) ) : ?>
 				<p class="interior-header mb0"><?php the_field( 'headline_3' ); ?></p>
+				<?php endif; ?>
+				<?php if ( get_field( 'intro_text_3' ) ) : ?>
 				<p class="interior-intro centered"><?php the_field( 'intro_text_3' ); ?></p>
+				<?php endif; ?>
 			</div>
 		</div>
 
@@ -173,6 +177,7 @@ if ( have_posts() ) :
 
 <?php get_template_part( 'parts/page', 'footer' ); ?>
 
+<?php if ( get_field( 'show_testimonials' ) ) : ?>
 <!-- Testimonials -->
 <div class="page-block--testimonial fullwidth-module bg-center-top bg-cover" id="<?php the_field( 'section_id_2' ); ?>" style="background-image: url('<?php the_field( 'background_2' ); ?>');">
 
@@ -245,6 +250,7 @@ if ( have_posts() ) :
 
 </div>
 <!-- /Testimonials -->
+<?php endif; ?>
 
 <?php endwhile; else : ?>
 	<div class="main-container">

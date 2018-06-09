@@ -22,7 +22,7 @@ if ( have_posts() ) :
 <!-- 2-Column News -->
 <div class="page page-block page-block--news">
 	<div class="main-container">
-		<h2 class="text-center secondary-color light">Papers</h2>
+		<h2 class="text-center secondary-color lighter">Papers</h2>
 		<div class="grid-x grid-margin-x page-block--news__grid">
 			<div class="cell small-12 medium-6">
 				<div class="page-block--news__item">
@@ -114,7 +114,7 @@ if ( have_posts() ) :
 <!-- 2-Column News -->
 <div class="page page-block page-block--news" style="background-color:#eef7fd;">
 	<div class="main-container">
-		<h2 class="text-center secondary-color light">In the News</h2>
+		<h2 class="text-center secondary-color lighter">In the News</h2>
 		<div class="grid-x grid-margin-x page-block--news__grid">
 			<div class="cell small-12 medium-6">
 				<div class="page-block--news__item">
@@ -201,9 +201,9 @@ if ( have_posts() ) :
 <!-- /2-Column News -->
 
 <!-- Latest Blog Posts -->
-<div class="page page-block page-block--posts bg-cover bg-center-bottom" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/latest-blog.png');">
+<div class="page page-block page-block--posts page-block--padding bg-cover bg-center-bottom" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/latest-blog.png');">
 	<div class="main-container">
-		<h2 class="text-center secondary-color light">Latest Blog Posts</h2>
+		<h2 class="text-center secondary-color lighter">Latest Blog Posts</h2>
 		<div class="grid-x grid-margin-x page-block--posts__grid">
 			<?php
 			$args  = array(

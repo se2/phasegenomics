@@ -131,6 +131,60 @@
             "height": ""
         },
         {
+            "key": "field_5b1ea258bcb4e",
+            "label": "Page Intro",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5b1ea268bcb4f",
+            "label": "Page Intro Title",
+            "name": "page_intro_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b1ea276bcb50",
+            "label": "Page Intro Content",
+            "name": "page_intro_content",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_5b12caa5e1a18",
             "label": "Page Footer CTA",
             "name": "",
@@ -313,5 +367,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528557685
+    "modified": 1528734376
 }

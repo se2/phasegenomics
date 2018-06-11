@@ -20,19 +20,19 @@ if ( have_posts() ) :
 <?php get_template_part( 'parts/page', 'header' ); ?>
 
 <!-- Upcoming events -->
-<div class="page-block page-block--posts page-block--events bg-cover bg-center-bottom" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/latest-blog.png');">
+<div class="page-block page-block--posts page-block--events page-block--padding bg-cover bg-center-bottom" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/latest-blog.png');">
 	<div class="main-container">
 		<h2 class="text-center secondary-color lighter">Upcoming Events</h2>
 		<?php if ( have_rows( 'events' ) ) : ?>
-		<div id="events-carousel">
+		<div id="events-carousel" class="grid-x">
 			<?php
 			while ( have_rows( 'events' ) ) :
 				the_row();
 			?>
-			<div class="event-item">
-				<div class="inner pos-rel box-shadow--posts text-center" style="background-color:#ffffff;">
+			<div class="event-item cell">
+				<div class="inner h100p pos-rel box-shadow--posts text-center" style="background-color:#ffffff;">
 					<p class="small event-item__date-location bold"><?php the_sub_field( 'event_date' ); ?> | <?php the_sub_field( 'event_location' ); ?></p>
-					<p class="small event-item__title mb0"><?php the_sub_field( 'event_title' ); ?></p>
+					<p class="event-item__title mb0"><?php the_sub_field( 'event_title' ); ?></p>
 					<a href="<?php the_sub_field( 'event_cta_link' ); ?>" class="button secondary small"><?php the_sub_field( 'event_cta_title' ); ?></a>
 				</div>
 			</div>

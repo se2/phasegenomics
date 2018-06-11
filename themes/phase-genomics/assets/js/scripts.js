@@ -42,6 +42,13 @@ jQuery(document).ready(function () {
 			}
 		]
 	});
+	// equal height
+	jQuery('#events-carousel').on('setPosition', function () {
+		jQuery(this).find('.slick-slide').height('auto');
+		var slickTrack = jQuery(this).find('.slick-track');
+		var slickTrackHeight = jQuery(slickTrack).height();
+		jQuery(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
+	});
 
 	// Toggle hamburger 'is-active' class
 	jQuery('.js-off-canvas-overlay').on('click', function () {

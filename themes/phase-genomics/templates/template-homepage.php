@@ -100,44 +100,7 @@ if ( have_posts() ) :
 </section>
 <!-- /Home Products -->
 
-<!-- Home CTA Large -->
-<section class="home page-block--cta page-block--cta--large bg-cover bg-center" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/background-blue.png');">
-	<div class="container h100p">
-			<div class="grid-x h100p flex-center-items">
-				<div class="cell small-12 medium-12 large-12 text-center">
-					<h2 class="title white-color">Shorten the path to complete genomes</h2>
-					<a href="<?php the_clean_url(); ?>/blog" class="button secondary uppercase large">Latest News</a>
-				</div>
-			</div>
-	</div>
-</section>
-<!-- /Home CTA Large -->
-
-<!-- Home Quotes -->
-<section class="home home--quotes">
-	<div class="container text-center">
-		<h2 class="secondary-color">Testimonials</h2>
-		<?php if ( have_rows( 'testimonial' ) ) : ?>
-		<div class="grid-x grid-margin-x home--quotes__wrapper">
-			<?php
-			while ( have_rows( 'testimonial' ) ) :
-				the_row();
-			?>
-			<div class="cell medium-6 home--quotes__cell">
-				<p class="quote"><?php the_sub_field( 'quote' ); ?></p>
-				<strong class="referee primary-color"><?php the_sub_field( 'referee' ); ?></strong>
-				<p class="source"><?php the_sub_field( 'source' ); ?></p>
-			</div>
-			<?php endwhile; ?>
-			<?php reset_rows(); ?>
-		</div>
-		<?php endif; ?>
-		<?php wp_reset_postdata(); ?>
-	</div>
-</section>
-<!-- /Home Quotes -->
-
-<?php get_template_part( 'parts/page', 'footer' ); ?>
+<?php get_template_part( 'parts/page', 'blocks' ); ?>
 
 <?php endwhile; else : ?>
 	<div class="main-container">

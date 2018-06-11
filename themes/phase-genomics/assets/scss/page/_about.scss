@@ -73,7 +73,7 @@
     .button {
       position: absolute;
       width: 160px;
-      bottom: 23px;
+      bottom: 25px;
       left: 0;
       right: 0;
       margin: 0 auto;
@@ -81,9 +81,7 @@
     .inner {
       width: 100%;
       min-height: 175px;
-      padding-top: 23px;
-      padding-left: 17px;
-      padding-right: 17px;
+      padding: 23px 17px 70px;
     }
     &__date-location {
       font-size: 13px;

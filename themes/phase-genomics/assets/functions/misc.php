@@ -14,13 +14,14 @@
  * Global variables
  */
 
- // Hi-C Category, change this if admin changes category for Hi-C products.
+// Hi-C Category, change this if admin changes category for Hi-C products.
 global $hic_category;
 $hic_category = 57;
 
- // Products Overview page ID.
+// Products Overview page ID.
 global $products_overview_page;
 $products_overview_page = 7;
+
 /**
  * Print clean current site's URL.
  */

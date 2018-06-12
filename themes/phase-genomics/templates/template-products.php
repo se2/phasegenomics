@@ -21,21 +21,6 @@ if ( have_posts() ) :
 
 	<?php get_template_part( 'parts/page', 'header' ); ?>
 
-	<?php if ( get_field( 'page_intro_title' ) || get_field( 'page_intro_content' ) ) : ?>
-	<!-- Page Intro -->
-	<section class="page page-block page-block--text">
-		<div class="container pos-rel">
-			<div class="grid-x">
-				<div class="cell">
-					<h2 class="lighter text-center secondary-color"><?php the_field( 'page_intro_title' ); ?></h2>
-					<p class="text-center"><?php the_field( 'page_intro_content' ); ?></p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- /Page Intro -->
-	<?php endif; ?>
-
 	<?php
 	$parent = new WP_Query(array(
 		'post_type'   => 'page',
@@ -105,67 +90,7 @@ if ( have_posts() ) :
 	</section>
 	<!-- /Overlap Products -->
 
-	<!-- 2-Column Text Block -->
-	<!-- <section class="page page-block page-block--text-2col bg-center-left bg-cover" style="background-image:url('<?php // the_clean_url(); ?>/wp-content/uploads/2018/05/quality.png');">
-		<div class="main-container">
-			<div class="grid-x grid-right">
-				<div class="cell large-7">
-					<h2 class="lighter secondary-color fz-36">The Highest Quality Results Customized for You</h2>
-					<p class="small">
-						Get complete data with clear interpretations to quickly advance your research and publications.
-						Our breadth of delivered data also enables researchers to explore future applications and make new
-						discoveries hidden in every genome.
-					</p>
-					<p class="small">
-						Complete chromosome-scale scaffolds and deconvoluted metagenomic assemblies, along with a continuing
-						commitment to personalized service without hidden costs.
-					</p>
-					<a href="<?php // the_clean_url(); ?>/product" class="button secondary uppercase semibold small">Shop Products</a>
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!-- /2-Column Text Block -->
-
-	<!-- 2-Column Text Block -->
-	<section class="page page-block page-block--text-2col bg-center-right bg-contain" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/results.png');">
-		<div class="main-container">
-			<div class="grid-x">
-				<div class="cell large-7">
-					<h2 class="lighter secondary-color fz-36">Bring Hi-C into your lab with our easy kits</h2>
-					<p class="small">
-						<ul>
-							<li>Protocol takes approximately one day</li>
-							<li>Yields dual-indexed Illumina-compatible Hi-C library</li>
-							<li>All components included, no special equipment required.</li>
-							<li>Simple steps, user-friendly instructions.</li>
-							<li>Dedicated technical support</li>
-						</ul>
-					</p>
-					<a href="<?php the_clean_url(); ?>/shop" class="button secondary uppercase semibold small">Shop Products</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- /2-Column Text Block -->
-
-	<?php if ( get_field( 'cta_group_title' ) && get_field( 'ctas' ) ) : ?>
-	<!-- CTAs Group -->
-	<div class="page-block page-block--cta-group" style="background-image:url('<?php the_field( 'background_image' ); ?>');">
-		<div class="main-container">
-			<h2 class="white-color text-center lighter mb0"><?php the_field( 'cta_group_title' ); ?></h2>
-			<div class="text-center page-block--cta-group__btn-group">
-				<?php
-				$ctas = get_field( 'ctas' );
-				foreach ( $ctas as $key => $cta ) :
-				?>
-				<a href="<?php echo esc_attr( $cta['cta_button_link'] ); ?>" class="button blue large uppercase regular mb0"><?php echo esc_html( $cta['cta_button_title'] ); ?></a>
-				<?php endforeach; ?>
-			</div>
-		</div>
-	</div>
-	<!-- /CTAs Group -->
-	<?php endif; ?>
+	<?php get_template_part( 'parts/page', 'blocks' ); ?>
 
 	<?php get_template_part( 'parts/page', 'footer' ); ?>
 

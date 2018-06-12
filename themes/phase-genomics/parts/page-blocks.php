@@ -157,7 +157,7 @@ if ( have_rows( 'page_blocks' ) ) :
 				break;
 			case '2_column_links_block':
 				$links   = get_sub_field( 'links' );
-				$columns = array_chunk($links, ceil( count( $links ) / 2 ));
+				$columns = array_chunk( $links, ceil( count( $links ) / 2 ) );
 ?>
 <!-- 2-Column News -->
 <div class="page page-block page-block--news" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
@@ -169,7 +169,7 @@ if ( have_rows( 'page_blocks' ) ) :
 				<div class="page-block--news__item">
 					<p class="bold uppercase page-block--news__date"><?php echo esc_html( $link['link_date'] ); ?></p>
 					<p class="mb0">
-						<a href="<?php echo esc_attr( $link['link_url'] ) ?>" class="primary-color light">
+						<a href="<?php echo esc_attr( $link['link_url'] ); ?>" class="primary-color light">
 							<?php echo esc_html( $link['link_title'] ); ?>
 						</a>
 					</p>
@@ -181,7 +181,7 @@ if ( have_rows( 'page_blocks' ) ) :
 				<div class="page-block--news__item">
 					<p class="bold uppercase page-block--news__date"><?php echo esc_html( $link['link_date'] ); ?></p>
 					<p class="mb0">
-						<a href="<?php echo esc_attr( $link['link_url'] ) ?>" class="primary-color light">
+						<a href="<?php echo esc_attr( $link['link_url'] ); ?>" class="primary-color light">
 							<?php echo esc_html( $link['link_title'] ); ?>
 						</a>
 					</p>
@@ -191,12 +191,31 @@ if ( have_rows( 'page_blocks' ) ) :
 		</div>
 		<?php if ( get_sub_field( 'block_cta_title' ) && get_sub_field( 'block_cta_link' ) ) : ?>
 		<div class="text-center">
-			<a href="<?php the_sub_field( 'block_cta_link' ) ?>" class="button secondary uppercase"><?php the_sub_field( 'block_cta_title' ); ?></a>
+			<a href="<?php the_sub_field( 'block_cta_link' ); ?>" class="button secondary uppercase"><?php the_sub_field( 'block_cta_title' ); ?></a>
 		</div>
 		<?php endif; ?>
 	</div>
 </div>
 <!-- /2-Column News -->
+<?php
+				break;
+			case 'left_right_text_block':
+?>
+<!-- 2-Column Text Block -->
+<section class="page page-block page-block--text-2col <?php echo ( 'right' === get_sub_field( 'block_layout' ) ) ? 'bg-center-left' : 'bg-center-right'; ?> bg-contain" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+	<div class="main-container">
+		<div class="grid-x <?php echo ( 'right' === get_sub_field( 'block_layout' ) ) ? 'grid-right' : ''; ?>">
+			<div class="cell large-7">
+				<h2 class="lighter secondary-color fz-36"><?php the_sub_field( 'block_title' ); ?></h2>
+				<?php the_sub_field( 'block_content' ); ?>
+				<?php if ( get_sub_field( 'block_cta_title' ) && get_sub_field( 'block_cta_link' ) ) : ?>
+				<a href="<?php the_sub_field( 'block_cta_link' ); ?>" class="button secondary uppercase semibold small"><?php the_sub_field( 'block_cta_title' ); ?></a>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /2-Column Text Block -->
 <?php
 				break;
 			default:

@@ -19,11 +19,11 @@ if ( have_posts() ) :
 
 <?php get_template_part( 'parts/page', 'header' ); ?>
 
+<?php if ( have_rows( 'events' ) ) : ?>
 <!-- Upcoming events -->
 <div class="page-block page-block--posts page-block--events page-block--padding bg-cover bg-center-bottom" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/latest-blog.png');">
 	<div class="main-container">
 		<h2 class="text-center secondary-color lighter">Upcoming Events</h2>
-		<?php if ( have_rows( 'events' ) ) : ?>
 		<div id="events-carousel" class="grid-x">
 			<?php
 			while ( have_rows( 'events' ) ) :
@@ -39,10 +39,10 @@ if ( have_posts() ) :
 			<?php endwhile; ?>
 			<?php reset_rows(); ?>
 		</div>
-		<?php endif; ?>
 	</div>
 </div>
 <!-- /Upcoming events -->
+<?php endif; ?>
 
 <!-- About Team -->
 <div class="page-block--team fullwidth-module bg-cover bg-center" style="background-image: url('<?php the_field( 'background_3' ); ?>');">

@@ -124,8 +124,12 @@
 
 .top-bar .top-bar-right {
   width: auto;
+  float: right;
   position: absolute;
   right: 0;
+  @include breakpoint(medium) {
+    position: relative;
+  }
   button {
     outline: none;
   }

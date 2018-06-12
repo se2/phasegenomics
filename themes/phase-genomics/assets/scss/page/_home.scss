@@ -46,7 +46,7 @@
 				overflow: hidden;
 				&:hover {
 					.home--products__cell__inner--mask {
-						top: calc(-100% - 10px);
+						top: -100%;
 					}
 					.button.border {
 						background: $secondary-color;

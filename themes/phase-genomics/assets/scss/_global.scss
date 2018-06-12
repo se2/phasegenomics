@@ -2,6 +2,7 @@
 $blue-color: #2a627a;
 $mobile-padding: 30px;
 $row-height: 37px;
+
 h1 a,
 .h1 a,
 h2 a,
@@ -40,11 +41,11 @@ a {
 }
 
 .grid-centered {
-	justify-content: center;
+  justify-content: center;
 }
 
 .grid-right {
-	justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .flex-bottom {
@@ -251,8 +252,8 @@ $margin: 20;
     }
   }
 }
-@include margin-classes();
 
+@include margin-classes();
 .lh1 {
   line-height: 1;
 }
@@ -283,8 +284,8 @@ $margin: 20;
 }
 
 .fz-14 {
-	font-size: 14px;
-	line-height: 1.15;
+  font-size: 14px;
+  line-height: 1.15;
 }
 
 p.small {
@@ -298,42 +299,75 @@ p.small {
 }
 
 .cursor-pointer {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .alignright {
-	float: right;
+  float: right;
 }
 
 .alignleft {
-	float: left;
+  float: left;
 }
 
 .aligncenter {
-	text-align: center;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content-padding {
-	padding-top: $mobile-padding;
-	padding-bottom: $mobile-padding;
-	@include breakpoint(medium) {
-		padding-top: 60px;
-		padding-bottom: 70px;
-	}
+  padding-top: $mobile-padding;
+  padding-bottom: $mobile-padding;
+  @include breakpoint(medium) {
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
 }
 
 input.product-qty {
   height: $row-height;
   line-height: $row-height;
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
   background-color: #f4fbff;
   font-size: 16px;
   outline: none;
   box-shadow: none;
+}
+
+.woocommerce {
+  input[type=color],
+  input[type=date],
+  input[type=datetime-local],
+  input[type=datetime],
+  input[type=email],
+  input[type=month],
+  input[type=number],
+  input[type=password],
+  input[type=search],
+  input[type=tel],
+  input[type=text],
+  input[type=time],
+  input[type=url],
+  input[type=week],
+  textarea {
+    @extend input.product-qty;
+    background-color: $light-gray;
+  }
+  input[type=number] {
+    max-width: 100px;
+  }
+  textarea {
+    min-height: 100px;
+  }
+}
+
+.form-row.place-order {
+  .button {
+    margin-right: 20px;
+  }
 }
 
 .accordion {

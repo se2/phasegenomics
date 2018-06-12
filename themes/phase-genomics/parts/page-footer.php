@@ -19,7 +19,7 @@
 			<div class="grid-x">
 				<div class="cell small-12 medium-12 large-7">
 					<h5 class="title blue-color"><?php the_field( 'page_footer_cta_title' ); ?></h5>
-					<a href="<?php the_field( 'page_footer_cta_button_link' ); ?>" class="button secondary uppercase small"><?php the_field( 'page_footer_cta_button_title' ); ?></a>
+					<a href="<?php the_field( 'page_footer_cta_link' ); ?>" class="button secondary uppercase small"><?php the_field( 'page_footer_cta_button_title' ); ?></a>
 				</div>
 			</div>
 	</div>

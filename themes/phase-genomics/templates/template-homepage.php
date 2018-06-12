@@ -53,11 +53,11 @@ if ( have_posts() ) :
 					<div class="home--products__cell__content">
 						<h5 class="home--products__title secondary-color"><?php the_title(); ?></h5>
 						<p class="home--products__desc primary-color hide-for-large">Complete chromosome-scale scaffolds and deconvoluted metagenomes.</p>
-						<a href="<?php the_permalink(); ?>" class="button secondary uppercase border semibold small hide-for-large">Order</a>
+						<a href="<?php the_clean_url(); ?>/shop" class="button secondary uppercase border semibold small hide-for-large">Order</a>
 					</div>
 				</div>
 				<div class="home--products__cell__content show-for-large">
-					<a href="<?php the_permalink(); ?>" class="button secondary uppercase border semibold small">Order</a>
+					<a href="<?php the_clean_url(); ?>/shop" class="button secondary uppercase border semibold small">Order</a>
 				</div>
 			</div>
 			<?php endwhile; ?>

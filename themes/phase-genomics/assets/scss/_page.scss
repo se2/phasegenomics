@@ -159,6 +159,7 @@
   }
 }
 
+// Woocommerce custom styling
 .woocommerce-page,
 .woocommerce-cart,
 .woocommerce-checkout,
@@ -168,7 +169,7 @@
 			.main-container,
 			.container {
 				height: 155px;
-				h3 {
+        h3 {
 					font-size: 28px;
 					font-weight: 500 !important;
 					color: $primary-color;
@@ -180,6 +181,59 @@
 	}
 }
 
+.woocommerce-page,
+.woocommerce-cart,
+.woocommerce-checkout {
+  h2,
+  h3 {
+    font-size: 28px;
+    font-weight: 500 !important;
+    color: $primary-color;
+    box-shadow: none;
+    text-shadow: none;
+    text-transform: uppercase;
+  }
+  #content #inner-content {
+    padding-top: $mobile-padding;
+    padding-bottom: $mobile-padding;
+    @include breakpoint(medium) {
+      padding-top: 50px;
+      padding-bottom: 70px;
+    }
+  }
+  .cart-collaterals,
+  .woocommerce-order-details,
+  .woocommerce-customer-details,
+  .woocommerce-additional-fields,
+  #order_review_heading {
+    margin-top: $mobile-padding;
+    @include breakpoint(medium) {
+      margin-top: 50px;
+      h2 {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .woocommerce-message {
+    margin-bottom: 20px;
+  }
+}
+
+.angelleye-woocommerce-customer-details-email::before,
+.angelleye-woocommerce-customer-details-phone::before {
+  font-family: FontAwesome;
+}
+
+.angelleye-woocommerce-customer-details-email::before {
+  content: "\f0e0";
+}
+
+.angelleye-woocommerce-customer-details-phone::before {
+  content: "\f095";
+}
+// End Woocommerce custom styling
+
+// Page blocks styling
 .page-block {
 	&--padding {
 		padding-top: $mobile-padding;
@@ -504,3 +558,4 @@
   &--faq {
   }
 }
+// End Page blocks styling

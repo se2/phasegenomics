@@ -10,23 +10,13 @@ Template Name: Blog
 				<div class="row">
 					<div class="large-10 medium-12 large-centered medium-centered columns">
 						<div class="fullwidth-module">
-							<div class="center-icon">
-							<?php 
-
-							$icon = get_field('icon');
-							if( !empty($icon) ): ?>
-							
-								<img class="three-mod-icon" src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt'] ?>" />
-								
-							<?php endif; ?>
-							</div>
 							<h2 class="bb-header"><?php echo get_field('header'); ?></h2>
 							<p class="bb-sub"><?php echo get_field('sub_header'); ?></p>
 						</div>
                     </div>
                 </div>
    		 	</div>
-		
+
 		<!-- SECTION 1 HEADING -->
 		<div class="fullwidth-module" style="background: url('<?php echo get_field('background_4'); ?>'); padding: 3.5rem 0 2.5rem">
 			<div class="row">
@@ -35,7 +25,7 @@ Template Name: Blog
 				</div>
 			</div>
 		</div>
-					
+
 	<!-- POSTS -->
 	<article>
 		<?php // Display blog posts on any page @ https://m0n.co/l
@@ -58,7 +48,7 @@ Template Name: Blog
 						</table>
 				</div>
 		</div>
-		
+
 
 		<?php endwhile; ?>
 		<hr>
@@ -87,9 +77,9 @@ Template Name: Blog
 		<?php } ?>
 
 		<?php wp_reset_postdata(); ?>
-	</article> 
-					
-			
+	</article>
+
+
 	<!-- CTA -->
 		<div class="cta-fullwidth-banner">
 			<div class="row">
@@ -97,7 +87,7 @@ Template Name: Blog
 					<p class="cta-header"><?php echo get_field('cta_caption'); ?></p>
 					<div class="button-div">
 						<?php if( have_rows('cta') ): ?>
-						<?php while( have_rows('cta') ): the_row(); 
+						<?php while( have_rows('cta') ): the_row();
 						// vars
 						$ctabl = get_sub_field('cta_button_text');
 						$link = get_sub_field('link');
@@ -114,8 +104,8 @@ Template Name: Blog
 
 						<?php endwhile; ?>
 						<?php endif; ?>
-						
-						
+
+
 					</div>
 				</div>
 			</div>

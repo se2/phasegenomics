@@ -153,19 +153,21 @@ class ODB_Logger {
 		echo '
 </table>
 		';
+		// v4.6.2
+		$msg = str_replace("'", "\'", __('Clear the log?', $odb_class->odb_txt_domain));		
 ?>
 <script>
 function odb_confirm_delete() {
-	if(confirm('<?php _e('Clear the log?', $odb_class->odb_txt_domain)?>')) {
-		self.location = 'tools.php?page=rvg-optimize-database&action=delete_log'
+	if(confirm('<?php echo $msg?>')) {
+		self.location = 'tools.php?page=rvg-optimize-database&action=clear_log'
 		return;
 	}
-}
+} // function odb_confirm_delete()
 </script> 
 <br>
 <input class="button odb-normal" type="button" name="change_options" value="<?php _e('Change Settings', $odb_class->odb_txt_domain)?>" onclick="self.location='options-general.php?page=odb_settings_page'" />
 &nbsp;
-<input class="button odb-normal" type="button" name="delete_log" value="<?php _e('Clear Log', $odb_class->odb_txt_domain) ?>" onclick="return odb_confirm_delete();" />
+<input class="button odb-normal" type="button" name="clear_log" value="<?php _e('Clear Log', $odb_class->odb_txt_domain) ?>" onclick="return odb_confirm_delete();" />
 &nbsp;
 <input class="button odb-normal" type="button" name="odb_download_csv" value="<?php _e('Export to CSV', $odb_class->odb_txt_domain)?>" onclick="self.location='tools.php?page=rvg-optimize-database&action=odb_download_csv'" />
 &nbsp;&nbsp;

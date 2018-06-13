@@ -26,7 +26,7 @@ if ( have_posts() ) :
 	<!-- Products display -->
 	<div class="page page-block page-block--shop content-padding">
 		<div class="main-container">
-			<h2 class="lighter secondary-color text-center">Available Products</h2>
+			<!-- <h2 class="lighter secondary-color text-center">Available Products</h2> -->
 			<?php
 			global $hic_category;
 			$hic_products = get_products_query( $hic_category );

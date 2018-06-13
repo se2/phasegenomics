@@ -10979,8 +10979,12 @@ COMMENT FORM STYLES
 
 .top-bar .top-bar-right {
   width: auto;
+  float: right;
   position: absolute;
   right: 0; }
+  @media print, screen and (min-width: 48em) {
+    .top-bar .top-bar-right {
+      position: relative; } }
   .top-bar .top-bar-right button {
     outline: none; }
 
@@ -11041,7 +11045,7 @@ COMMENT FORM STYLES
   margin-bottom: 40px; }
   .section-heading__title {
     color: #ff7200;
-    line-height: 1.2; }
+    line-height: 1.24; }
   .section-heading__subtitle {
     font-size: 20px;
     color: #466880;
@@ -14773,7 +14777,7 @@ COMMENT FORM STYLES
         margin-bottom: 20px;
         overflow: hidden; }
         .home--products__cell:hover .home--products__cell__inner--mask {
-          top: calc(-100% - 10px); }
+          top: -100%; }
         .home--products__cell:hover .button.border {
           background: #ff7200;
           border-color: #ff7200;

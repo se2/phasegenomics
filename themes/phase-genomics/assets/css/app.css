@@ -10108,10 +10108,12 @@ p.small {
   cursor: pointer; }
 
 .alignright {
-  float: right; }
+  float: right;
+  margin-left: 10px; }
 
 .alignleft {
-  float: left; }
+  float: left;
+  margin-right: 10px; }
 
 .aligncenter {
   text-align: center;

@@ -18,26 +18,26 @@ if ( is_front_page() ) : ?>
 		<h1 class="white-color lighter text-shadow uppercase text-center banner__title--home"><?php the_field( 'home_banner_header' ); ?></h1>
 		<div class="grid-x banner__cta-group">
 			<div class="cell small-12 medium-4">
-				<a href="#!">
+				<a href="/products/proximeta/">
 					<div class="inner">
 						<h6 class="mb0">Discover</h6>
-						<p class="white-color light uppercase mb0" href="#!">Microbiome »</p>
+						<p class="white-color light uppercase mb0" href="/products/proximeta/">Microbiome »</p>
 					</div>
 				</a>
 			</div>
 			<div class="cell small-12 medium-4">
-				<a href="#!">
+				<a href="/hi-c-kits/">
 					<div class="inner">
 						<h6 class="mb0">Analyze</h6>
-						<p class="white-color light uppercase mb0" href="#!">Hi-C Kits »</p>
+						<p class="white-color light uppercase mb0" href="/hi-c-kits/">Hi-C Kits »</p>
 					</div>
 				</a>
 			</div>
 			<div class="cell small-12 medium-4">
-				<a href="#!">
+				<a href="/products/proximo/">
 					<div class="inner">
 						<h6 class="mb0">Explore</h6>
-						<p class="white-color light uppercase mb0" href="#!">Plant/Animal/Human »</p>
+						<p class="white-color light uppercase mb0" href="/products/proximo/">Plant/Animal/Human »</p>
 					</div>
 				</a>
 			</div>

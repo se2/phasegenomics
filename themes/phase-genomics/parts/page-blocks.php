@@ -169,7 +169,7 @@ if ( have_rows( 'page_blocks' ) ) :
 				<div class="page-block--news__item">
 					<p class="bold uppercase page-block--news__date"><?php echo esc_html( $link['link_date'] ); ?></p>
 					<p class="mb0">
-						<a href="<?php echo esc_attr( $link['link_url'] ); ?>" class="primary-color light">
+						<a href="<?php echo esc_attr( $link['link_url'] ); ?>" class="primary-color light" target="_blank">
 							<?php echo esc_html( $link['link_title'] ); ?>
 						</a>
 					</p>
@@ -181,7 +181,7 @@ if ( have_rows( 'page_blocks' ) ) :
 				<div class="page-block--news__item">
 					<p class="bold uppercase page-block--news__date"><?php echo esc_html( $link['link_date'] ); ?></p>
 					<p class="mb0">
-						<a href="<?php echo esc_attr( $link['link_url'] ); ?>" class="primary-color light">
+						<a href="<?php echo esc_attr( $link['link_url'] ); ?>" class="primary-color light" target="_blank">
 							<?php echo esc_html( $link['link_title'] ); ?>
 						</a>
 					</p>

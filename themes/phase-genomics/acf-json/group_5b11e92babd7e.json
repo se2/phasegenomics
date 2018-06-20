@@ -817,6 +817,30 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_5b2a9886a17db",
+                            "label": "Background Size",
+                            "name": "background_size",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "bg-contain": "Contain",
+                                "bg-cover": "Cover"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "bg-contain",
+                            "layout": "horizontal",
+                            "return_format": "value"
                         }
                     ],
                     "min": "",
@@ -845,5 +869,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1528744409
+    "modified": 1529518279
 }

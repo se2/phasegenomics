@@ -200,9 +200,10 @@ if ( have_rows( 'page_blocks' ) ) :
 <?php
 				break;
 			case 'left_right_text_block':
+				$bg_size = get_sub_field( 'background_size' ) ? get_sub_field( 'background_size' ) : 'bg-contain';
 ?>
 <!-- 2-Column Text Block -->
-<section class="page page-block page-block--text-2col <?php echo ( 'right' === get_sub_field( 'block_layout' ) ) ? 'bg-center-left' : 'bg-center-right'; ?> bg-contain" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+<section class="page page-block page-block--text-2col <?php echo ( 'right' === get_sub_field( 'block_layout' ) ) ? 'bg-center-left ' : 'bg-center-right '; echo esc_attr( $bg_size ); ?>" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
 	<div class="main-container">
 		<div class="grid-x <?php echo ( 'right' === get_sub_field( 'block_layout' ) ) ? 'grid-right' : ''; ?>">
 			<div class="cell large-7">

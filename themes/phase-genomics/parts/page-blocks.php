@@ -61,9 +61,9 @@ if ( have_rows( 'page_blocks' ) ) :
 			foreach ( $faqs as $key => $faq ) :
 			?>
 			<li class="accordion-item" data-accordion-item>
-				<a href="#" class="accordion-title bold primary-color"><?php echo esc_html( $faq['question'] ); ?></a>
+				<a href="#" class="accordion-title bold primary-color"><?php echo $faq['question']; ?></a>
 				<div class="accordion-content" data-tab-content>
-					<?php echo esc_html( $faq['answer'] ); ?>
+					<?php echo $faq['answer']; ?>
 				</div>
 			</li>
 			<?php endforeach; ?>

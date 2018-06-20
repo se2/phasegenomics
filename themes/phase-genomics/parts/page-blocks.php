@@ -29,6 +29,25 @@ if ( have_rows( 'page_blocks' ) ) :
 <!-- /Editor Block -->
 <?php
 				break;
+			case 'column_editor_block':
+				$editors    = get_sub_field( 'editors' );
+				$grid_width = 12 / count( $editors );
+?>
+<!-- Column Editor Block -->
+<div class="page page-block page-block--editor" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
+	<div class="main-container">
+		<div class="grid-x grid-margin-x">
+			<?php foreach ( $editors as $key => $editor ) : ?>
+			<div class="cell small-12 medium-<?php echo esc_attr( $grid_width ); ?> <?php echo ( $key < count( $editors ) - 1 ) ? 'mb30-mobile' : ''; ?>">
+				<?php echo $editor['editor_content']; // phpcs:ignore ?>
+			</div>
+			<?php endforeach; ?>
+		</div>
+	</div>
+</div>
+<!-- /Column Editor Block -->
+<?php
+				break;
 			case 'cta_group_block':
 ?>
 <!-- CTAs Group -->

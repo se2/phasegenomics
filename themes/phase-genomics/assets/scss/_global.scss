@@ -246,6 +246,11 @@ $margin: 20;
   @for $i from 1 through $margin {
     .mb#{$i * 5} {
       margin-bottom: #{$i * 5}px;
+		}
+		.mb#{$i * 5}-mobile {
+			@include breakpoint(mobile down) {
+				margin-bottom: #{$i * 5}px;
+			}
     }
     .mt#{$i * 5} {
       margin-top: #{$i * 5}px;

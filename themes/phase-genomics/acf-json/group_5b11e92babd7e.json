@@ -23,6 +23,21 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5b11e961cb6f5",
+                            "label": "Background Color",
+                            "name": "background_color",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#ffffff"
+                        },
+                        {
                             "key": "field_5b11e950cb6f4",
                             "label": "Editor Content",
                             "name": "editor_content",
@@ -40,9 +55,19 @@
                             "toolbar": "full",
                             "media_upload": 1,
                             "delay": 0
-                        },
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5b2ac8575744d": {
+                    "key": "5b2ac8575744d",
+                    "name": "column_editor_block",
+                    "label": "Column Editor Block",
+                    "display": "block",
+                    "sub_fields": [
                         {
-                            "key": "field_5b11e961cb6f5",
+                            "key": "field_5b2ac8575744f",
                             "label": "Background Color",
                             "name": "background_color",
                             "type": "color_picker",
@@ -55,6 +80,46 @@
                                 "id": ""
                             },
                             "default_value": "#ffffff"
+                        },
+                        {
+                            "key": "field_5b2ac8575744e",
+                            "label": "Editors",
+                            "name": "editors",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 1,
+                            "max": 12,
+                            "layout": "row",
+                            "button_label": "Add Content",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5b2ac8db57450",
+                                    "label": "Editor Content",
+                                    "name": "editor_content",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -869,5 +934,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529520587
+    "modified": 1529530701
 }

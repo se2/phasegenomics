@@ -491,7 +491,19 @@
 		.main-container {
 			padding-top: 40px;
 			padding-bottom: 70px;
-		}
+    }
+    &--column {
+      .main-container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      .border-top {
+        border-top: 4px solid get-color(primary);
+      }
+      .border-bottom {
+        border-bottom: 4px solid get-color(primary);
+      }
+    }
 	}
 	&--cta-group {
 		padding-top: $mobile-padding;

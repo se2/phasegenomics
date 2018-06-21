@@ -30,12 +30,19 @@ if ( have_rows( 'page_blocks' ) ) :
 <?php
 				break;
 			case 'column_editor_block':
-				$editors    = get_sub_field( 'editors' );
-				$grid_width = 12 / count( $editors );
+				$borders_classes = '';
+				$editors         = get_sub_field( 'editors' );
+				$borders         = get_sub_field( 'borders' );
+				$grid_width      = 12 / count( $editors );
+				if ( $borders ) {
+					foreach ( $borders as $key => $border ) {
+						$borders_classes .= $border . ' ';
+					}
+				}
 ?>
 <!-- Column Editor Block -->
-<div class="page page-block page-block--editor" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
-	<div class="main-container">
+<div class="page page-block page-block--editor--column" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
+	<div class="main-container <?php echo esc_attr( $borders_classes ); ?>">
 		<div class="grid-x grid-margin-x">
 			<?php foreach ( $editors as $key => $editor ) : ?>
 			<div class="cell small-12 medium-<?php echo esc_attr( $grid_width ); ?> <?php echo ( $key < count( $editors ) - 1 ) ? 'mb30-mobile' : ''; ?>">

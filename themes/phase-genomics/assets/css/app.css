@@ -11567,6 +11567,16 @@ COMMENT FORM STYLES
   padding-top: 40px;
   padding-bottom: 70px; }
 
+.page-block--editor--column .main-container {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+
+.page-block--editor--column .border-top {
+  border-top: 4px solid #466880; }
+
+.page-block--editor--column .border-bottom {
+  border-bottom: 4px solid #466880; }
+
 .page-block--cta-group {
   padding-top: 30px;
   padding-bottom: 30px; }

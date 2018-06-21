@@ -73,17 +73,20 @@ if ( have_posts() ) :
 		<div class="medium-8 large-centered medium-centered columns">
 			<div class="row">
 				<?php
+				$total = count( get_field( 'executives' ) );
+				$min   = 4;
 				if ( have_rows( 'executives' ) ) :
 					while ( have_rows( 'executives' ) ) :
 						the_row();
-						$portrait = get_sub_field( 'portrait' );
 						$name     = get_sub_field( 'name' );
+						$portrait = get_sub_field( 'portrait' ) ? get_sub_field( 'portrait' ) : array( 'url' => get_template_directory_uri() . '/assets/images/placeholder.png', 'alt' => $name );
 						$title    = get_sub_field( 'title' );
 						$readmore = get_sub_field( 'read_more_text' );
 						$bio      = get_sub_field( 'bio', false, false );
 						$l_link   = get_sub_field( 'lightbox_link' );
+						$grid     = 12 / $total;
 				?>
-				<div class="medium-6 columns">
+				<div class="medium-<?php echo ( $grid >= $min ) ? $grid : $min; ?> columns">
 					<a data-toggle="<?php echo esc_attr( $l_link ); ?>" class="no-outline">
 						<div class="lg-portrait-wrap">
 							<div class="overlay-container">

@@ -411,6 +411,10 @@ input.product-qty {
   }
 }
 
+ul.more-margin {
+  margin-left: 3rem;
+}
+
 // Responsive Mixins for iPad Pro
 @mixin respond($media) {
   @if $media==ipad-pro {

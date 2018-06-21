@@ -10287,6 +10287,9 @@ input.product-qty, .woocommerce input[type=color],
   padding-bottom: 30px;
   padding-left: 22px; }
 
+ul.more-margin {
+  margin-left: 3rem; }
+
 /******************************************************************
 
 Stylesheet: Retina Screens & Devices Stylesheet

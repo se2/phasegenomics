@@ -216,11 +216,11 @@
                 "class": "",
                 "id": ""
             },
+            "collapsed": "",
             "min": 0,
-            "max": 2,
+            "max": 0,
             "layout": "row",
             "button_label": "Add Executive Member",
-            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_5862d879a4e32",
@@ -693,5 +693,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528560711
+    "modified": 1529594062
 }

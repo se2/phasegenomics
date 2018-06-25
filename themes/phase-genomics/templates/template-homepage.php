@@ -44,7 +44,7 @@ if ( have_posts() ) :
 				<div class="home--products__cell__inner pos-rel bg-cover show-for-large" style="background-image:url('<?php echo esc_attr( $product_image[0] ); ?>');">
 					<div class="home--products__cell__content">
 						<h5 class="home--products__title secondary-color"><?php the_title(); ?></h5>
-						<p class="white-color home--products__desc">Complete chromosome-scale scaffolds and deconvoluted metagenomes.</p>
+						<p class="white-color home--products__desc"><?php echo get_the_excerpt(); ?></p>
 						<a href="<?php the_permalink(); ?>" class="button secondary uppercase border semibold small">Order</a>
 					</div>
 				</div>
@@ -52,7 +52,7 @@ if ( have_posts() ) :
 					<img src="<?php the_field( 'hexagon_thumbnail' ); ?>" alt="<?php the_title(); ?>">
 					<div class="home--products__cell__content">
 						<h5 class="home--products__title secondary-color"><?php the_title(); ?></h5>
-						<p class="home--products__desc primary-color hide-for-large">Complete chromosome-scale scaffolds and deconvoluted metagenomes.</p>
+						<p class="home--products__desc primary-color hide-for-large"><?php echo get_the_excerpt(); ?></p>
 						<a href="<?php the_clean_url(); ?>/shop" class="button secondary uppercase border semibold small hide-for-large">Order</a>
 					</div>
 				</div>

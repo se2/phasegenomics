@@ -14842,9 +14842,11 @@ COMMENT FORM STYLES
     .home--products {
       padding: 70px 0 55px; } }
   .home--products__kits {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    margin-top: 60px; }
     @media print, screen and (min-width: 48em) {
       .home--products__kits {
+        margin-top: 0;
         margin-bottom: 20px; } }
   .home--products__hic {
     margin: 0;
@@ -14912,7 +14914,8 @@ COMMENT FORM STYLES
         @media screen and (max-width: 63.9375em) {
           .home--products__cell__inner--mask .home--products__title {
             font-size: 18px;
-            font-weight: 600; } }
+            font-weight: 600;
+            word-wrap: break-word; } }
         @media print, screen and (min-width: 64em) {
           .home--products__cell__inner--mask .home--products__title {
             color: #2a627a; } }

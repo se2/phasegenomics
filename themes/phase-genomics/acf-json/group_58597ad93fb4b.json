@@ -341,13 +341,6 @@
                 "operator": "!=",
                 "value": "templates\/template-homepage.php"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "product"
-            }
         ]
     ],
     "menu_order": 0,
@@ -367,5 +360,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528734376
+    "modified": 1529934101
 }

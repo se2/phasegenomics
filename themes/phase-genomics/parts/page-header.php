@@ -80,9 +80,9 @@ if ( is_front_page() ) : ?>
 	<!-- Thin Announcement -->
 	<section class="page page-block page-block--announcement" style="background-color:#99b7cc;">
 		<div class="container">
-			<div class="grid-x grid-margin-x">
+			<div class="grid-x grid-margin-x flex-center-items">
 				<div class="cell medium-9 page-block--announcement__content">
-					<h6 class="title"><?php the_field( 'announcement_title' ); ?></h6>
+					<h6 class="title mb0"><?php the_field( 'announcement_title' ); ?></h6>
 				</div>
 				<div class="cell medium-3 page-block--announcement__cta">
 					<a href="<?php the_field( 'announcement_cta_link' ); ?>" class="button secondary uppercase uppercase"><?php the_field( 'announcement_cta_title' ); ?></a>

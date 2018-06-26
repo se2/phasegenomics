@@ -33,7 +33,7 @@ if ( have_posts() ) :
 				<div class="inner h100p pos-rel box-shadow--posts text-center" style="background-color:#ffffff;">
 					<p class="small event-item__date-location bold"><?php the_sub_field( 'event_date' ); ?> | <?php the_sub_field( 'event_location' ); ?></p>
 					<p class="event-item__title mb0"><?php the_sub_field( 'event_title' ); ?></p>
-					<a href="<?php the_sub_field( 'event_cta_link' ); ?>" class="button secondary small"><?php the_sub_field( 'event_cta_title' ); ?></a>
+					<a href="<?php the_sub_field( 'event_cta_link' ); ?>" class="button secondary small" target="_blank"><?php the_sub_field( 'event_cta_title' ); ?></a>
 				</div>
 			</div>
 			<?php endwhile; ?>

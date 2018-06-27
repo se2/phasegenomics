@@ -71,6 +71,7 @@
 		}
     .flex-bottom {
       align-items: center;
+      -webkit-align-items: center;
     }
     .banner__content,
     .banner__embed {
@@ -95,6 +96,7 @@
     left: 0;
     min-height: 70px;
     align-items: center;
+    -webkit-align-items: center;
     color: white;
     h6 {
       font-size: 13px;
@@ -307,7 +309,8 @@
     }
     &--large {
 			display: flex;
-			align-items: center;
+      align-items: center;
+      -webkit-align-items: center;
       .title {
         margin-bottom: 35px;
       }
@@ -566,8 +569,6 @@
         margin-bottom: 30px;
       }
     }
-  }
-  &--faq {
   }
 }
 // End Page blocks styling

@@ -11180,7 +11180,8 @@ COMMENT FORM STYLES
 
 .banner--video .flex-bottom {
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  -webkit-align-items: center; }
 
 .banner--video .banner__content,
 .banner--video .banner__embed {
@@ -11204,6 +11205,7 @@ COMMENT FORM STYLES
   min-height: 70px;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-align-items: center;
   color: white; }
   .banner__cta-group h6 {
     font-size: 13px;
@@ -11428,7 +11430,8 @@ COMMENT FORM STYLES
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    -webkit-align-items: center; }
     .page-block--cta--large .title {
       margin-bottom: 35px; }
 

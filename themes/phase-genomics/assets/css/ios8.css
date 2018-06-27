@@ -1,0 +1,34 @@
+.top-bar,
+.row,
+.grid-x {
+  display: -webkit-flex;
+}
+
+.grid-x {
+  -webkit-flex-flow: row wrap;
+}
+
+.top-bar {
+  -webkit-flex-wrap: nowrap;
+  -webkit-align-items: center;
+}
+
+.menu.dropdown,
+.footer .menu {
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-flex-wrap: wrap;
+  -webkit-flex-direction: row;
+}
+
+.align-center {
+  -webkit-justify-content: center;
+}
+
+#off-canvas .menu.menu-social-media,
+.top-bar .menu.menu-social-media {
+  display: -webkit-flex;
+  -webkit-justify-content: flex-end;
+  -webkit-align-items: center;
+}
+

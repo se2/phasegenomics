@@ -14,7 +14,25 @@
 
 <!doctype html>
 
-	<html class="no-js"  <?php language_attributes(); ?>>
+	<!--[if IE ]>
+	<html class="ie9">
+		<h1 class="outdated-browser-msg">Your browser is not compatible, please consider updating to Internet Explorer 10 or later.</h1>
+		<style>
+			h1.outdated-browser-msg {
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				z-index: 999;
+				top: 0;
+				left: 0;
+				text-align: center;
+				background-color: white;
+			}
+		</style>
+	<![endif]-->
+	<!--[if !IE]>-->
+	<html class="no-js" <?php language_attributes(); ?>>
+	<!--<![endif]-->
 
 	<head>
 		<meta charset="utf-8">

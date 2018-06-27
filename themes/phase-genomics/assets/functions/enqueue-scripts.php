@@ -50,6 +50,8 @@ function site_scripts() {
 	// Register main stylesheet.
 	// wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/css/style.css', array(), '', 'all' );
 	wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/css/app.min.css', array(), '', 'all' );
+	// Support -webkit ios8
+	wp_enqueue_style( 'ios8-css', get_template_directory_uri() . '/assets/css/ios8.css', array(), '', 'all' );
 
 	// Comment reply script for threaded comments.
 	if ( is_singular() && comments_open() && ( get_option( 'thread_comments' ) === 1 ) ) {

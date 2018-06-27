@@ -96,15 +96,15 @@ if ( have_posts() ) :
 						var productsNum = 0;
 						// Loop through all inputs and append product IDs and quantities to URL
 						var inputs = document.querySelectorAll(".product-qty");
-						inputs.forEach(function(input) {
-							var productID = input.getAttribute('data-product'),
-									productQty = input.value;
+						for (var i = 0; i < inputs.length; i++) {
+							var productID = inputs[i].getAttribute('data-product'),
+									productQty = inputs[i].value;
 							// DO NOT append 0-quantity product to avoid bug
 							if ( productQty > 0 ) {
 								productsNum++;
 								products += productID + ':' + productQty + ',';
 							}
-						});
+						}
 						// Don't redirect if no product has quantity
 						if (products == '') {
 							alert('Please select product quantity');

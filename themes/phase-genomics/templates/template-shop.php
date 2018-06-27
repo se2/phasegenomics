@@ -127,14 +127,15 @@ if ( have_posts() ) :
 				</script>
 				<p style="font-size:14px;">
 					<br>
-					If you are unable to purchase with a credit card, or would like to request a quote, please contact us at <a href="mailto:info@phasegenomics.com">info@phasegenomics.com</a>
+					<?php the_field( 'cta_message' ); ?>
 				</p>
 			</div>
 		</div>
 	</div>
 	<!-- /Products display -->
 
-	<!-- Producs resources -->
+	<?php if ( get_field( 'enable_resources' ) ) : ?>
+	<!-- Products resources -->
 	<div class="page page-block page-block--shop-resources" style="background-color:#f4fbff;">
 		<div class="main-container">
 			<h2 class="lighter secondary-color text-center">Additional Resources</h2>
@@ -163,6 +164,7 @@ if ( have_posts() ) :
 		</div>
 	</div>
 	<!-- /Producs resources -->
+	<?php endif; ?>
 
 	<?php get_template_part( 'parts/page', 'footer' ); ?>
 

@@ -233,6 +233,22 @@
 .angelleye-woocommerce-customer-details-phone::before {
   content: "\f095";
 }
+
+// hide 'View Cart' on cart page by CSS
+.woocommerce-cart .woocommerce-message {
+  display: none;
+}
+
+#calc_shipping_state_field,
+#calc_shipping_city_field,
+#calc_shipping_postcode_field {
+  display: none !important;
+}
+
+#calc_shipping_country_field {
+  margin-bottom: 20px;
+}
+
 // End Woocommerce custom styling
 
 // Page blocks styling

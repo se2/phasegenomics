@@ -80,7 +80,7 @@ if ( have_posts() ) :
 				<div class="cell medium-3 page-block--products-overlap__cell pos-rel no-overflow text-center">
 					<img src="<?php the_field( 'hexagon_thumbnail' ); ?>" alt="<?php the_title(); ?>">
 					<h6 class="bold white-color"><?php the_title(); ?></h6>
-					<a href="/?p=1459" class="button blue uppercase small w100p">Explore Kit</a>
+					<a href="/hi-c-kits/" class="button blue uppercase small w100p">Explore Kit</a>
 				</div>
 				<?php endwhile; ?>
 			</div>

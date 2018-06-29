@@ -10683,6 +10683,9 @@ a {
   transition: .35s ease; }
 
 .overlay-title-advisors {
+  font-size: 14px;
+  width: 100%;
+  padding: 0 5px;
   color: #ffffff;
   text-transform: uppercase;
   text-align: center;

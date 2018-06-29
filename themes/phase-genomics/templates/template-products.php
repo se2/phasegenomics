@@ -41,7 +41,7 @@ if ( have_posts() ) :
 					<p><?php the_field( 'product_description_overview' ); ?></p>
 				</div>
 				<div class="cell large-3 large-offset-1">
-					<a href="<?php the_permalink(); ?>" class="button uppercase secondary w100p">Buy Kits</a>
+					<a href="/shop" class="button uppercase secondary w100p">Buy Kits</a>
 					<?php
 					while ( have_rows( 'product_overview_ctas' ) ) :
 						the_row();
@@ -80,7 +80,7 @@ if ( have_posts() ) :
 				<div class="cell medium-3 page-block--products-overlap__cell pos-rel no-overflow text-center">
 					<img src="<?php the_field( 'hexagon_thumbnail' ); ?>" alt="<?php the_title(); ?>">
 					<h6 class="bold white-color"><?php the_title(); ?></h6>
-					<a href="/shop" class="button blue uppercase small w100p">Explore Kit</a>
+					<a href="/?p=1459" class="button blue uppercase small w100p">Explore Kit</a>
 				</div>
 				<?php endwhile; ?>
 			</div>

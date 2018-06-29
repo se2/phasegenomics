@@ -18,26 +18,26 @@ if ( is_front_page() ) : ?>
 		<h1 class="white-color lighter text-shadow uppercase text-center banner__title--home"><?php the_field( 'home_banner_header' ); ?></h1>
 		<div class="grid-x banner__cta-group">
 			<div class="cell small-12 medium-4">
-				<a href="/products/proximeta/">
+				<a href="/?p=1351">
 					<div class="inner">
 						<h6 class="mb0">Discover</h6>
-						<p class="white-color light uppercase mb0" href="/products/proximeta/">Microbiome »</p>
+						<p class="white-color light uppercase mb0" href="/?p=1351">Microbiome »</p>
 					</div>
 				</a>
 			</div>
 			<div class="cell small-12 medium-4">
-				<a href="/hi-c-kits/">
+				<a href="/?p=1459">
 					<div class="inner">
 						<h6 class="mb0">Analyze</h6>
-						<p class="white-color light uppercase mb0" href="/hi-c-kits/">Hi-C Kits »</p>
+						<p class="white-color light uppercase mb0" href="/?p=1459">Hi-C Kits »</p>
 					</div>
 				</a>
 			</div>
 			<div class="cell small-12 medium-4">
-				<a href="/products/proximo/">
+				<a href="/?p=1455">
 					<div class="inner">
 						<h6 class="mb0">Explore</h6>
-						<p class="white-color light uppercase mb0" href="/products/proximo/">Plant/Animal/Human »</p>
+						<p class="white-color light uppercase mb0" href="/?p=1455">Plant/Animal/Human »</p>
 					</div>
 				</a>
 			</div>
@@ -55,9 +55,10 @@ if ( is_front_page() ) : ?>
 			<div class="cell small-12 large-7 banner__content">
 				<h3 class="white-color bold text-shadow uppercase banner__title"><?php get_field( 'page_title' ) ? the_field( 'page_title' ) : the_title(); ?></h3>
 				<?php if ( get_field( 'page_subtitle' ) ) : ?>
-				<h5 class="white-color banner__subtitle"><?php the_field( 'page_subtitle' ); ?></h5><br>
+				<h5 class="white-color banner__subtitle"><?php the_field( 'page_subtitle' ); ?></h5>
 				<?php endif; ?>
 				<?php if ( get_field( 'page_header_cta_title' ) && ( get_field( 'page_header_cta_link' ) ) ) : ?>
+				<br>
 				<a href="<?php the_field( 'page_header_cta_link' ); ?>" class="button secondary"><?php the_field( 'page_header_cta_title' ); ?></a>
 				<?php endif; ?>
 			</div>

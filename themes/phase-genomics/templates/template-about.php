@@ -71,7 +71,7 @@ if ( have_posts() ) :
 	<!-- Executives -->
 	<div class="row">
 		<div class="medium-8 large-centered medium-centered columns">
-			<div class="row">
+			<div class="grid-x grid-margin-x">
 				<?php
 				$total = count( get_field( 'executives' ) );
 				$min   = 4;
@@ -86,7 +86,7 @@ if ( have_posts() ) :
 						$l_link   = get_sub_field( 'lightbox_link' );
 						$grid     = 12 / $total;
 				?>
-				<div class="medium-<?php echo ( $grid >= $min ) ? $grid : $min; ?> columns">
+				<div class="small-12 medium-<?php echo ( $grid >= $min ) ? $grid : $min; ?> cell">
 					<a data-toggle="<?php echo esc_attr( $l_link ); ?>" class="no-outline">
 						<div class="lg-portrait-wrap">
 							<div class="overlay-container">
@@ -127,7 +127,7 @@ if ( have_posts() ) :
 	<div class="row">
 		<div class="medium-8 large-centered medium-centered columns">
 			<p class="interior-header mb0"><?php the_field( 'headline_4' ); ?></p>
-			<div class="row small-up-2 medium-up-3 medium-centered large-up-3">
+			<div class="grid-x">
 				<?php
 				if ( have_rows( 'advisors' ) ) :
 					while ( have_rows( 'advisors' ) ) :
@@ -139,7 +139,7 @@ if ( have_posts() ) :
 						$bio        = get_sub_field( 'bio', false, false );
 						$l_link     = get_sub_field( 'lightbox_link' );
 				?>
-				<div class="columns">
+				<div class="cell small-6 medium-4 large-4">
 					<a data-toggle="<?php echo esc_attr( $l_link ); ?>" class="no-outline">
 						<div class="sm-portrait-wrap">
 							<div class="overlay-container">
